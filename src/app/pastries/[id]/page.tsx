@@ -1,12 +1,12 @@
 import ProductDisplay from "@/components/ProductDisplay";
-import bestsellerCakes from "@/data/bestSeller";
+import pastries from "@/data/pastries";
 
 type Props = {
   params: { id: string };
 };
 
 export default function Page({ params }: Props) {
-  const cake = bestsellerCakes.find((cake) => cake.id === params.id);
+  const cake = pastries.find((cake) => cake.id === params.id);
   if (!cake) return <h2>Cake Not Found!</h2>;
 
   return <ProductDisplay data={cake} />;

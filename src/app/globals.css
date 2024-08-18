@@ -4,6 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
+.hide-scrollbar {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 h1 {
   font-size: 44px;
   line-height: 52.8px;

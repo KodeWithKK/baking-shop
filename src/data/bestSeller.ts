@@ -1,5 +1,3 @@
-import crypto from "crypto";
-
 type Reviews = {
   id: string;
   name: string;
@@ -24,7 +22,7 @@ type CakesData = {
 
 const bestsellerCakes: CakesData[] = [
   {
-    id: crypto.randomUUID(),
+    id: "1423bbbb-255f-4a4c-a981-34c090006baf",
     name: "Round Chocolate Truffle Cake",
     totalReviews: 1899,
     originalPrice: 599,
@@ -36,7 +34,7 @@ const bestsellerCakes: CakesData[] = [
       "The heavenly taste of this Round Choco Truffle Cake will even leave the hardest-to-please chocolate addicts tranquil in every sense. Prepared with three layers of relishing chocolate cream filled in between the soft stacks of chocolate cake, and adorned with beautiful chocolate icing and rich glaze chocolate coating, this one is just irresistible.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "7c66688f-c5be-4c7b-9c08-04a87ef14685",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -45,7 +43,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "3d0a22f7-4452-4a6e-b4d8-5e2aba95ddf8",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -54,7 +52,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "a7001335-32b5-40da-8564-f23bb1a76061",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -63,7 +61,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "95b20584-fc18-45c6-b966-02b835c774f9",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -74,7 +72,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "1ea3bb6f-f574-4545-bda2-50fbee6122e0",
     name: "Round Shape Butterscotch Cake",
     totalReviews: 1231,
     originalPrice: 549,
@@ -86,7 +84,7 @@ const bestsellerCakes: CakesData[] = [
       "Always and Forever Delight! This three layered moist and smooth cake filled with butterscotch chips and Vanilla cream is something not to be missed! Topped with Butterscotch glaze and white chocolate flakes, adorned with scrumptious caramel dressing on the sides, it's time to feel the crunch!",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "804fa16c-b8d8-4246-a655-c068a2385ac9",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -95,7 +93,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "f50ac2ff-2d08-44c8-8988-5194397d29d2",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -104,7 +102,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "9a9bc651-f08a-47e3-a46e-40b752bba34a",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -113,7 +111,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "ebaae1bf-8904-421c-95bd-0e7f32e7f534",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -124,7 +122,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "2d8989b1-195d-42ae-90ff-e811edeb193b",
     name: "Kitkat Chocolate Cake",
     totalReviews: 1214,
     originalPrice: null,
@@ -136,7 +134,7 @@ const bestsellerCakes: CakesData[] = [
       "KitKat cake is not like other cakes; it has delicious crunch in every bite; it offers something new for the taste buds and satisfies them to the fullest. Order this yummylicious baked KitKat cake for a KitKat lover in your friend and family circle.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "ba4b5647-ecf8-42ea-90be-5cff0ea8ba07",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -145,7 +143,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "094009a4-97a8-4b20-8b7c-ea7c92514d9b",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -154,7 +152,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "bc3f0aa5-14d6-4fa1-b1c0-655af9913791",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -163,7 +161,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "c45206a8-d73b-45fd-9f50-9fe1d5f21a7a",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -174,7 +172,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "d3f33905-0ff0-40ab-9646-6356e04a2ff1",
     name: "Pista Topped Rasmalai Cake",
     totalReviews: 1146,
     originalPrice: null,
@@ -186,7 +184,7 @@ const bestsellerCakes: CakesData[] = [
       "A fusion of tradition and contemporary delight, this cake brings the rich flavors of Rasmalai to the forefront. With a velvety vanilla cake base, it's adorned with an exquisite blend of Rasmalai chunks, delicate rose petals, and crunchy pistachios. The white vanilla frosting crowning this masterpiece adds a sweet, creamy touch that harmonizes perfectly with the indulgent Rasmalai essence. Each bite is a symphony of textures and tastes, marrying the time-honored charm of Rasmalai with the allure of a classic cake. Elevate your celebrations with this unique creation that pays homage to tradition while tantalizing your taste buds.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "0238dc52-2d4c-4ee8-abf6-14ba7d4e2974",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -195,7 +193,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "9d537020-b7c2-4e55-814c-69963a8c88f0",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -204,7 +202,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "8d3cb796-0005-4b19-8091-89d6c86aedcf",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -213,7 +211,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "ddccf8c3-f2e5-4927-9566-72dd8b02dcca",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -224,7 +222,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "9a59e340-525f-4af4-9ffc-a577277073f9",
     name: "Fruits N Roasted Almond Cake",
     totalReviews: 672,
     originalPrice: null,
@@ -235,7 +233,7 @@ const bestsellerCakes: CakesData[] = [
       "Freshly baked Vanilla cake, Whipped cream and bountiful tropical fruits come together to create a treat that is even tastier than it looks. This combination of whipped cream and fresh fruit is a perfect start for any celebration and an enticing end to any meal.Kindly note, assortment of fruits may vary depending on seasonal availability.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "42c24446-f6fd-472f-b9b9-daf035cc3c33",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -244,7 +242,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "0087f67d-f90b-4234-8f0d-fb2a01f44bc1",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -253,7 +251,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "84ceb0a1-be46-46f0-aa98-a5cab6924cde",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -262,7 +260,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "b6f029c1-2da5-4b80-80bb-b90bccacf17a",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -273,7 +271,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "5d19c622-89c3-4d88-9e37-a0bf2a02ee06",
     name: "Chocolate Vanilla Half N Half Cake",
     totalReviews: 612,
     originalPrice: null,
@@ -284,7 +282,7 @@ const bestsellerCakes: CakesData[] = [
       "A toothsome treat for the sugar lovers who are just passionate about chocolate and relish the mushiness of cake. Made of two layers of impossibly moist chocolate filled with mushy rich cream, this cake carries the enticing aroma of Vanilla and sumptuousness of chocolate. On top of it, the cake is garnished with handcrafted white and brown chocolate. Need I say more?",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "9bb92994-78ed-41a8-8dd0-1222c316b1fe",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -293,7 +291,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "28462623-22d9-4b29-b379-e9d671e2e896",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -302,7 +300,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "d33d2e6c-3703-4a6e-b37b-75899149f7ce",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -311,7 +309,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "a3a9e6c1-da56-400c-9beb-faf7da24c082",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -322,7 +320,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "364b0e54-c933-4ce6-9f49-be2c4510aecd",
     name: "Pineapple Cream Cake",
     totalReviews: 411,
     originalPrice: 549,
@@ -333,7 +331,7 @@ const bestsellerCakes: CakesData[] = [
       "This cake is meant for all celebratory occasions! This three layered delicious pineapple flavoured cake filled with intensely whipped rich cream and pineapple fillings, perfectly defines simplicity at its best. Topped with pineapple slices, chocolate flakes and a further adorned with cherries, this cake is the perfect blend of sweetness and fluffiness.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "4c02e356-43df-4842-a888-663b4633c01e",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -342,7 +340,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "b240da70-29e6-4850-9907-db63566e438b",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -351,7 +349,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "21d71d0c-ff92-43f6-869a-ffafe9f5938f",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -360,7 +358,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "e1729ad3-a25a-42bd-ba7c-0ef0046df22b",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -371,7 +369,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "63c625a1-555a-4c3d-ab82-9f0d8915362c",
     name: "Black Forest Cake With Cherries",
     totalReviews: 342,
     originalPrice: 599,
@@ -382,7 +380,7 @@ const bestsellerCakes: CakesData[] = [
       "We kept this Classic cake untouched and unblemished because we feel it's perfect as it is. Baked with the richness of cocoa and lusciousness of fresh vanilla cream, topped with soft chocolate shavings and fresh cherries, this delicious cake will make you surrender to the zest forces of Sweet Indulgence. Savour the original taste of the all time classic- The Black Forest.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "c2cf3290-208e-48c9-a513-1a5d55b9aad4",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -391,7 +389,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "beed4ebd-4fec-4b3e-80f3-602d754fcd20",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -400,7 +398,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "ade7315b-e3e8-4541-8d2c-91d4b3c3634a",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -409,7 +407,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "55c31ccb-4e80-443f-a1c7-47a96a4ae67f",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -420,7 +418,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "00ead085-242a-477d-afa5-bcb047159ac9",
     name: "Chocolate Ferrero Rocher Cake",
     totalReviews: 219,
     originalPrice: null,
@@ -432,7 +430,7 @@ const bestsellerCakes: CakesData[] = [
       "Wondering what form of temptation would it take if it was to materialize? The answer is simple- a magically delicious and temptingly mushy - Ferrero Rocher Cake. Made of three layers of rich Chocolate cream, Ferrero Rocher crunch and hazelnut flavour, this Choco ball treat is beyond doubt an irresistible treat. Note: Number of Ferrero Rocher will vary depending on cake weight",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "b25c101c-9de0-4b32-9b3c-074c6147397a",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -441,7 +439,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "0ed2aa3c-9cde-4e49-b04d-c83729145a41",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -450,7 +448,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "7fe4da3c-9b7c-4974-9e80-17158f46e6f0",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -459,7 +457,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "e64cb4d6-d6bf-4f40-b222-ace86836ccf0",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -470,7 +468,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "3cf56688-009a-41e6-8fca-f56a2180724a",
     name: "Teachers Day Strawberry Cream Cake",
     totalReviews: 85,
     originalPrice: 749,
@@ -482,7 +480,7 @@ const bestsellerCakes: CakesData[] = [
       "This Teacher's Day, thank your most loved teachers with this strawberry flavoured cake and let them know the love and acceptance you have for them in your heart. Baked with utmost perfection and love, it's time to honor them with a sweet gesture.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "7d56ab98-aacd-474f-ad7f-14b93199cd50",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -491,7 +489,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "23720aaa-787b-49c1-987d-984d8f20e181",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -500,7 +498,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "4308d55e-1b15-461f-b095-9146ed7feb97",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -509,7 +507,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "97a2f89c-adfd-4328-bfaf-fdaf043d123a",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -520,7 +518,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "8ffcfe51-ccf9-45c8-8050-61cbf7044647",
     name: "Choco Chip Truffle Cake",
     totalReviews: 128,
     originalPrice: null,
@@ -531,7 +529,7 @@ const bestsellerCakes: CakesData[] = [
       "Experience pure indulgence with our irresistible truffle cake. This delectable creation is adorned with an abundance of luscious choco chips, adding a delightful crunch to each bite. The choco chips infuse bursts of rich chocolate goodness, creating a harmonious dance of textures and tastes. Comes with a melt-in-mouth truffle base, every bite is a moment of pure bliss. Elevate your taste experience and savour the decadence of our extraordinary truffle cake.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "6b252437-95a3-48a4-b107-69775aeb22ba",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -540,7 +538,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "6abc5d0c-c120-4466-8819-8011f9fd5571",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -549,7 +547,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "b56a5af9-cb1c-4e08-87b8-4dd55d192489",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -558,7 +556,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "9ec99388-64fd-4850-9317-ffa765a3e568",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -569,7 +567,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "71f41418-f67f-4a41-bf50-b69f5fa3b135",
     name: "Rasmalai Cake",
     totalReviews: 263,
     originalPrice: null,
@@ -581,7 +579,7 @@ const bestsellerCakes: CakesData[] = [
       "This festive Rasmalai cake is a delicious Rasmalai is blend of rich quality ingredients and flavors making it an ultimate dessert to treat your sweet tooth! Rasmalai Cakes are loved by everyone nowadays, so if your loved ones also want Rasmalai Cakes online for their special day, then it's time to order it from Bakingo.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "4f17971c-b91b-4638-a132-6e99add5140f",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -590,7 +588,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "581377fc-1dee-4edf-9956-ea9c4f86b834",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -599,7 +597,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "c31fa1e9-549a-443d-a91a-a9aa6ab14052",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -608,7 +606,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "674119b6-7806-4f8b-8508-a1e74d9a3cee",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -619,7 +617,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "bf1ec6bb-34b4-488f-bc35-acaa310ed456",
     name: "Lip-smacking Chocolate Truffle Cake",
     totalReviews: 136,
     originalPrice: null,
@@ -631,7 +629,7 @@ const bestsellerCakes: CakesData[] = [
       "Express your love, care, and happiness to your loved ones and make cherishable moments with the luscious and enticing dark chocolate truffle cake. This enchanting chocolate cake is encrusted with salivating chocolate truffle cream and some chocolate shavings on top.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "889f5334-74b7-451e-b579-c3bfe7d88ad4",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -640,7 +638,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "a083da13-8c2e-4b6e-b29a-67177f14cf03",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -649,7 +647,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "83c34be6-6b03-48e3-831e-a513fc4743dc",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -658,7 +656,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "71b6593c-6015-4710-b145-3236de88bbf2",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -669,7 +667,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "e5382f5c-8244-4d04-90d2-90ee7c0dc627",
     name: "Cream Fantasy Barbie Cake",
     totalReviews: 39,
     originalPrice: null,
@@ -681,7 +679,7 @@ const bestsellerCakes: CakesData[] = [
       "Spoil your little one with this gorgeous Barbie themed cake. Every little girl dreams of a fairytale Barbie birthday party. Moreover, if you are looking for a way to surprise a young lady in your life this year, offer her an unforgettable birthday cake that will keep her smiling for weeks after.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "cab0715b-a014-4844-a4a8-642e0bc18b8f",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -690,7 +688,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "27c9a870-ee32-4cf4-bb4c-540d2ae716f8",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -699,7 +697,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "7b27a3a4-7b76-4edf-b210-16705f0d4585",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -708,7 +706,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "9f95b9d4-afa2-4d4d-84b8-1939210bb154",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -719,7 +717,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "1d6776b2-e884-4191-be8f-27b1041a08bd",
     name: "Red Velvet Coffee Cake",
     totalReviews: 142,
     originalPrice: null,
@@ -731,7 +729,7 @@ const bestsellerCakes: CakesData[] = [
       "This deliciously creamy temptation has a perfect blend of everything to beat both Chocolate and Coffee Craving. The red velvet shavings and creamy coffee flavor leaves you smacking your lips. Moist, mildly coffee-flavored and highly delicious, you just cannot resist its Red-ness, Chocolate-ness and creamy Frosting-ness.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "36ce384f-2cd1-47f4-b24f-ac60169c5529",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -740,7 +738,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "e623219f-d8a9-4162-9f3f-37cebfe78923",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -749,7 +747,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "fde2d9e9-cd4c-474e-9a50-f71531bc1d06",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -758,7 +756,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "fc0cc7ac-25f0-4d4a-9c64-7e7eb320f0ff",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -769,7 +767,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "2d8d8e39-0957-45ed-8529-017f3aa779ae",
     name: "Chocolate Truffle Symphony Cake",
     totalReviews: 81,
     originalPrice: null,
@@ -781,7 +779,7 @@ const bestsellerCakes: CakesData[] = [
       "Here comes a delectable masterpiece crafted to tantalize your taste buds and indulge your senses—the Chocolate Truffle Cake. This divine creation is a symphony of rich flavors and luxurious textures, designed to transport you to a world of pure bliss. Picture yourself savoring each decadent bite as the velvety chocolate ganache effortlessly melts in your mouth, leaving behind a luscious and unforgettable sensation. Adorned with delicate chocolate cream piping, this cake is a true work of art, showcasing the perfect balance between beauty and taste. The glistening white flakes and shimmering silver sprinkles delicately grace the cake, symbolizing celebration and joy.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "ee68659d-dbe5-4165-bec1-54f979d2126e",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -790,7 +788,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "8b3fd2c1-e283-4792-bfc9-766487eea579",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -799,7 +797,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "730c951c-96fb-426a-96ed-8e8372c7c718",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -808,7 +806,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "d196b9f4-8f19-43e6-bf37-ee554d637e17",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -819,7 +817,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "ec5bd262-eb11-4af9-ba79-fcc944076413",
     name: "Fruit Funfetti Vanilla Cake",
     totalReviews: 161,
     originalPrice: null,
@@ -831,7 +829,7 @@ const bestsellerCakes: CakesData[] = [
       "Who says the right place of fruits is just in the fridge or dining table? How about the toppings on a cake? If you love fruit so much then give this delicious flavorful fruit cake a try. We are sure you won't regret the taste. A delicious choice for every occasion.Kindly note, assortment of fruits may vary depending on seasonal availability.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "78255aec-9723-4f9c-9a9d-a05421b0f0b0",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -840,7 +838,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "03c35ca8-3c19-4865-9d2f-8bc13ce79ad0",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -849,7 +847,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "1ba8f819-d6c0-46c7-a1bc-ba0216b04357",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -858,7 +856,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "74cafc1a-77a8-4cbb-91e8-f40760568c61",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -869,7 +867,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "3d7e89ed-b2d6-48a3-86e4-12664f195711",
     name: "Chocolate Cake N Milk Chocolate Brooch",
     totalReviews: 165,
     originalPrice: null,
@@ -881,7 +879,7 @@ const bestsellerCakes: CakesData[] = [
       "Ever thought that the taste of the chocolate cake is so good that you would not be able to get enough of it? Well, this cake is all about making you fall in love with it. The smoothing chocolaty texture with choco dust can easily fulfill your chocolate craving in a most perfect manner.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "39d06191-a598-490c-8740-faf031eb419c",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -890,7 +888,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "5b191844-92a6-44b4-a1ce-9cceaada64c0",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -899,7 +897,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "3e47a4b9-c8d8-4ab0-9ead-1f54bd1c0dfe",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -908,7 +906,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "f990180a-5437-456c-a64e-30c5e380d0c5",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -919,7 +917,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "dbfadd39-3031-4e37-ad46-83a7f66b2af9",
     name: "Photo Birthday Cake",
     totalReviews: 49,
     originalPrice: null,
@@ -931,7 +929,7 @@ const bestsellerCakes: CakesData[] = [
       "Gift this personalised photo cake to someone special on their birthday. All you need to do is send us their high definition quality photograph and their name; rest is all on us. It is our duty to make it delicious, and we will do that to perfection. You just be ready to see a smile on their face.  Avoid placing the photo cake in a refrigerator as the chilled droplets can spoil the photo on the top of the cake. ",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "1a1f9ddd-7fc3-416c-9596-777ec042601c",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -940,7 +938,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "9ceef933-c1af-455e-a1cd-2576c2370f85",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -949,7 +947,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "2b72ed95-c9c6-4084-a916-59b4a2fdfe8d",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -958,7 +956,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "3d77240d-0abe-4f1d-a227-6ae40ff66271",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -969,7 +967,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "fc897258-264c-46a7-876f-505bae473172",
     name: "Heart Shaped Red Velvet Cake With Chocolate Hearts",
     totalReviews: 83,
     originalPrice: null,
@@ -981,7 +979,7 @@ const bestsellerCakes: CakesData[] = [
       "Just like the song of Erik Christine, Make them feel yours! Treat your beloved with this luscious heart shape red velvet cake. Baked with love and topped with red and white chocolate shavings, this mouth-watering red velvet cake is sure to melt their heart.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "4206c1bb-cec2-4225-9a1c-34c52723abb7",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -990,7 +988,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "0190172e-bcbb-4daf-ae3b-245150d78c7a",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -999,7 +997,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "e1573870-a108-41b3-8fa1-5e14776cad2e",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1008,7 +1006,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "58ce6361-05c8-45a3-9767-bc4a17808f9e",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1019,7 +1017,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "19822928-f205-45dd-8b3e-bb8592c31fa7",
     name: "Red Velvet Single Jar Cake",
     totalReviews: 732,
     originalPrice: null,
@@ -1030,7 +1028,7 @@ const bestsellerCakes: CakesData[] = [
       "Nothing matches to the goodness of a delectable red velvet jar cake and when it comes as a jar cake, it is sure to spread happiness and other good feelings to your loved ones. So, what's the wait for? Be it, any special occasion turn it into the best possible one by celebrating it over a rich, velvety smooth jar cake, like this.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "0a5e23f4-54d3-4c76-8f74-4671848b3eea",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1039,7 +1037,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "b113cf39-347e-452f-b401-5cca5256faf0",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1048,7 +1046,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "df52a4c0-493a-42fa-9a7e-a2a6de9ee18b",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1057,7 +1055,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "c9928d1e-5803-4148-97c7-2ce0a6e30291",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1068,7 +1066,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "d4fe4d9e-d479-41b8-b06a-3abd05df227b",
     name: "Barbie Doll Cream Cake",
     totalReviews: 19,
     originalPrice: null,
@@ -1080,7 +1078,7 @@ const bestsellerCakes: CakesData[] = [
       "Show your unconditional love to your little princess on her birthday by surprising her with this astounding Princess Barbie Cake. This adorable cake is dressed in the blue cream, which will drivel the taste buds of all the party attendees and, most importantly of your little princess.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "34f1d142-1e31-4932-8c23-b2a162a9974a",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1089,7 +1087,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "18ddc9a5-4359-4e50-ae04-6765a3d8fb42",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1098,7 +1096,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "30bc4f5f-f4e7-4dba-92cd-3184a1098bb6",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1107,7 +1105,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "3e84a8c4-59b9-4973-b777-88a8c82512ab",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1118,7 +1116,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "bdf9c59f-d3b1-4710-8fa6-4ec052dc3105",
     name: "Blueberry Cake With White Chocolate",
     totalReviews: 128,
     originalPrice: null,
@@ -1129,7 +1127,7 @@ const bestsellerCakes: CakesData[] = [
       "The all-new luscious blueberry cake has made its mark as an all-time favorite across the households. This cake a delight devour, not just to look at! You cannot go wrong with this flavorsome cake. Seize the day of your loved ones and celebrate it with this delicious cake.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "9ed6a10e-6216-4c13-a9fa-3754d2d5638c",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1138,7 +1136,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "dae87f7e-83ff-4c74-b597-87e01ebdafa6",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1147,7 +1145,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "0476776d-32ff-465b-949d-53b43ecd5a8f",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1156,7 +1154,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "52d07f8e-bad4-4dd5-9ada-5add25e68d48",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1167,7 +1165,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "e5fd1137-54b8-4ac8-8974-a29b7b06e6a8",
     name: "Gooey Chocolate Truffle Cake",
     totalReviews: 203,
     originalPrice: null,
@@ -1179,7 +1177,7 @@ const bestsellerCakes: CakesData[] = [
       "A true chocolate lover knows how indomitable the cravings can be when it comes to enjoying a decadent chocolate cake. This layered chocolate cake topped up with swirling design of chocolate shaving is the real show-stopper.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "b022371b-3805-4f59-afce-3c61328f2138",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1188,7 +1186,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "78804c9e-de15-471a-8af0-eee37f5e3203",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1197,7 +1195,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "00ba2979-2133-4540-8d83-5abaa9f8568d",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1206,7 +1204,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "638d0423-22d3-412e-90e6-18aebb5141f4",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1217,7 +1215,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "46a9dd6c-c0e9-4402-a580-a994a7ce7981",
     name: "Birthday Photo Cake 12 Square Shape",
     totalReviews: 60,
     originalPrice: 799,
@@ -1229,7 +1227,7 @@ const bestsellerCakes: CakesData[] = [
       "Avoid placing the photo and poster cake in a refrigerator as the chilled droplets can spoil the photo on the top of the cake.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "2aff34e4-98ad-4dc3-8be1-da0eb295f6b5",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1238,7 +1236,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "b52eb829-6a3b-41bf-9fc2-71e28b420ba5",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1247,7 +1245,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "e8bc4b15-f444-47d4-8c88-6ca931e28ea1",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1256,7 +1254,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "730f31ab-eef6-41b3-9459-26b8f5b84b63",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1267,7 +1265,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "c6d760f2-1c40-4a27-a110-6077d66ddd1f",
     name: "Birthday Photo Cake 16 Round Shape",
     totalReviews: 172,
     originalPrice: 799,
@@ -1279,7 +1277,7 @@ const bestsellerCakes: CakesData[] = [
       "Birthday comes only once in a year and is celebrated with loads of gifts, lovely people, but is incomplete without the delicious cake. An impeccable part of a celebration, it surprises the birthday girl/boy, and the bonanza is when this cake is a personalised photo cake having their picture and name. Show how much you love them and care for them.&lt;strong&gt; Avoid placing the photo and poster cake in a refrigerator as the chilled droplets can spoil the photo on the top of the cake. &lt;/strong&gt;",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "b7769f7f-2184-432c-ade2-036ba78db2de",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1288,7 +1286,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "cfecf5aa-e05d-46fd-bc95-23fcf881e0f4",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1297,7 +1295,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "bcf89a87-efcd-4e15-a3c8-e13d1cd49cbc",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1306,7 +1304,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "236e92ee-20d2-415b-a5f7-c194d988ecfd",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1317,7 +1315,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "dede6216-736e-4d54-a244-2f34e0311f42",
     name: "Pineapple Cake With Caramel",
     totalReviews: 80,
     originalPrice: null,
@@ -1329,7 +1327,7 @@ const bestsellerCakes: CakesData[] = [
       "Taste this and you will, without a doubt, want more. This is made of delicious butterscotch chips and pineapple chunks that are blended well with the mushy rich cream carrying the tempting aroma. Frosted with fresh slices of pineapple and cherry, this is a scrumptious treat for the ones absolutely enthralled with sweetness.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "0388323e-3b0c-47f9-803b-6a3a9eecf18e",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1338,7 +1336,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "41030ae6-169c-485b-82c3-90148f81413b",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1347,7 +1345,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "821fd24d-2085-4ba6-a6dd-0ccbc9646681",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1356,7 +1354,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "0679a583-7d5f-4fc9-9753-bada45aca8cc",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1367,7 +1365,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "3eeb997f-c183-46cb-8595-85872d1ed6ba",
     name: "Chocolate Mud Cake",
     totalReviews: 123,
     originalPrice: null,
@@ -1378,7 +1376,7 @@ const bestsellerCakes: CakesData[] = [
       "A true classic and dominant cake that is sure to gratiate your taste buds! Made with three layers of mushy chocolate sponge and whipped cream, and covered with creamy chocolate on the sides, this chocolate mud cake is truthfully one delicious feast! Further, crowned with white chocolate and cherry, this one is our favorite too!",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "d5bc54a2-146f-4044-bc2a-caa0f4a43eba",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1387,7 +1385,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "b2c131c4-ff4a-4251-9114-6dadf99cc27d",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1396,7 +1394,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "f02cb34f-e656-4a93-823e-21ec61b4cfea",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1405,7 +1403,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "a4a73935-bc99-43e1-a27a-001f55cab487",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1416,7 +1414,7 @@ const bestsellerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "395ef61a-9804-4c18-bf61-16030bad2f8a",
     name: "Glazing Red Velvet Cake",
     totalReviews: 66,
     originalPrice: null,
@@ -1428,7 +1426,7 @@ const bestsellerCakes: CakesData[] = [
       "Celebrate your birthday and the birthday of your loved ones with this aesthetically pleasing red velvet cake. It is half red and half orange in color and the taste is just a chef's kiss. The sheer beauty and taste of this lovely cake is sure to impress just about anyone.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "b8190760-923e-4e59-a0b1-e290fa5bd705",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1437,7 +1435,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "4ab8979d-afe6-4840-922f-2ba9330b4047",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1446,7 +1444,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "899e6a75-8bb3-4b6a-a379-4f3e11b77a4f",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1455,7 +1453,7 @@ const bestsellerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "dd6a0a6e-825d-4fa4-b99f-8f52544e1831",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",

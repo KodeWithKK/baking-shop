@@ -1,5 +1,3 @@
-import crypto from "crypto";
-
 type Reviews = {
   id: string;
   name: string;
@@ -24,7 +22,7 @@ type CakesData = {
 
 const pastries: CakesData[] = [
   {
-    id: crypto.randomUUID(),
+    id: "bfcc6ab9-bd5e-441c-8ffc-eda74bcc2fb6",
     name: "Fruit Pastries",
     totalReviews: 128,
     originalPrice: null,
@@ -36,7 +34,7 @@ const pastries: CakesData[] = [
       "For the times when your celebration needs a refreshing kick-start, this fruit pastries is here to load your occasion with bliss. The freshly baked pastries topped with juicy fruits like pineapple, cherries, kiwi, orange and grapes would give a healthy twist to your celebrations.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "1a0c2cc8-b4e8-4bfc-9db1-09deba20c32d",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -45,7 +43,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "6219a9b9-f523-4b62-aa4d-e9632918b314",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -54,7 +52,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "cd370397-b00a-4ecc-af41-93754e179dae",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -63,7 +61,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "dc3b1ca8-ed35-4ce7-bf8a-c08e5c161607",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -74,7 +72,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "f8dd15b9-4776-4e49-8502-aedfb7f69d85",
     name: "Butterscotch Pastries",
     totalReviews: 232,
     originalPrice: null,
@@ -86,7 +84,7 @@ const pastries: CakesData[] = [
       "Here's another classic flavour to leave you spellbound. This scrumptious butterscotch pastries with its luscious flavour is all set to entice you with its caramel shavings and delicious toppings. We bet you would swoon over the pleasing taste of your favourite flavour.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "5d53668d-1026-4c48-986d-5000a1dc1160",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -95,7 +93,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "f97c995c-0810-4ffd-8e73-d2e2efbf56bd",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -104,7 +102,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "5905738e-b461-4665-b85f-a76a1d444669",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -113,7 +111,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "f1d90152-2645-40d2-97eb-8b73bcdbeb76",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -124,7 +122,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "24371fdf-fb2a-43c6-a3a8-e8cc9ca7ade9",
     name: "Choco Walnut Pastries",
     totalReviews: 143,
     originalPrice: null,
@@ -136,7 +134,7 @@ const pastries: CakesData[] = [
       "Dive into a symphony of pure indulgence with our Choco Walnut Pastries. Imagine a rich, melt-in-your-mouth chocolate pastry, crafted with the finest ingredients. Each bite whispers promises of velvety cocoa, its sweetness kissed by the nutty crunch of toasted walnuts.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "31c95a19-1cd4-41bb-96a5-c3f09adedffa",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -145,7 +143,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "d10473c7-8ca4-4055-b14e-2dad072e033d",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -154,7 +152,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "5e5fb782-4511-46c0-9f13-dbc4b9917213",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -163,7 +161,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "9bb57fe6-a56f-4c0c-8b39-9e410e5d8663",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -174,7 +172,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "4c6dbe19-4f37-4f47-b91e-04bc1318475c",
     name: "Lemon Mousse Cheesecake",
     totalReviews: 122,
     originalPrice: null,
@@ -186,7 +184,7 @@ const pastries: CakesData[] = [
       "If you a sweet tooth this lemon cheese cake will be your first choice. Creamy and rich, it has a cookie crust and is topped with a tart lemon curd. If you are a lemon lover beautifully balanced dessert any cheesecake lover will absolutely love. Order now!",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "80e82a27-f5ac-4c81-a248-d8b9d51bc876",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -195,7 +193,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "093f0154-1da3-46a6-8b3c-ccb5b2d1ce13",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -204,7 +202,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "6aa5d946-4cec-4405-bcd1-53b18c4eeb09",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -213,7 +211,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "50bfb3ea-acf2-4e40-a741-2c900c21bc09",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -224,7 +222,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "283109c4-fe1a-45a6-aa95-5a2303753bff",
     name: "Choco Chip Pastries",
     totalReviews: 128,
     originalPrice: null,
@@ -236,7 +234,7 @@ const pastries: CakesData[] = [
       "It's time to fall in luxury..in love with this delish pastries loaded with choco chips and white chocolate crown to satiate your chocolate desires. The mushy base with a delicious chocolate topping is something you would have a hard time saying 'No' to.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "daf5eb63-5d0c-4f90-99cb-34d435119954",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -245,7 +243,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "280bf41c-6d60-4dda-8ba9-e86bca1af186",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -254,7 +252,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "f1ec9220-7a6f-4532-b52b-72b3d2bf8f05",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -263,7 +261,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "04e8194a-feb0-4598-b318-c1478fe737b1",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -274,7 +272,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "e6ce12f7-2b17-4776-b5d9-1022e453611a",
     name: "Chocolate Truffle Pastry",
     totalReviews: 101,
     originalPrice: null,
@@ -286,7 +284,7 @@ const pastries: CakesData[] = [
       "This pastry is all about perfection. Made from the finest quality of chocolate, this delicious pastry proudly boasts lips-smacking chocolate covering and cherry decoration. This pastry has been given an awesome touch with the liquid chocolate cream. ",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "5435dd9f-1344-4a13-b341-d33544bced46",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -295,7 +293,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "09cb8126-5bd3-4353-8f32-061c3ebaa9f0",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -304,7 +302,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "41849bc5-7f6a-43e6-b8d0-95663f0838bf",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -313,7 +311,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "a14e2468-e239-4b64-80ec-5ab8737edbf5",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -324,7 +322,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "00f83fc5-b78c-47f8-83ed-119fa952be42",
     name: "Six Assorted Red Velvet Chocolate and White Forest Pastries",
     totalReviews: 8,
     originalPrice: null,
@@ -336,7 +334,7 @@ const pastries: CakesData[] = [
       "Why bother getting a regular cake of just one flavor when you can get a set of six fresh assorted pastries that come in different exciting flavors? The set of six pastries has two white forest pastries, two chocolate pastries, and two red velvet pastries. ",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "310bebaa-717b-4a85-b54c-aab0ce0f5d64",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -345,7 +343,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "a66b2846-21be-4480-a80c-759520b3aa9d",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -354,7 +352,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "9fcbb38e-663b-429a-9940-b2ff0d1fc53b",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -363,7 +361,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "d8aa1670-e63e-4171-85ec-cd65dceb7347",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -374,7 +372,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "7892610f-206f-4926-a0c5-a7a4f2ad537b",
     name: "Red Velvet Pastry",
     totalReviews: 25,
     originalPrice: null,
@@ -386,7 +384,7 @@ const pastries: CakesData[] = [
       "This is a top to bottom dramatic looking pastry with its bright color of red which is sharply contrasted by a very fresh white cream frosting. This pastry can easily get you completely lost with the amazing flavor that derives when the pastry almost instantly melts in your mouth. Enjoy each bite of this scrumptious pastry. ",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "7ebc9d64-51b2-4518-a16e-e8c029873ef9",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -395,7 +393,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "40e04235-6526-4c75-a6be-b4da84ee81d2",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -404,7 +402,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "8b53e183-4793-4b37-b19e-a4f4e7c2807a",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -413,7 +411,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "e19a466d-2e32-448d-ac41-e5d0df6edaab",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -424,7 +422,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "81e86c4d-47ed-4aab-a35e-5da8363eb7d6",
     name: "Trio Chocolate Mousse 100ml",
     totalReviews: 9,
     originalPrice: null,
@@ -436,7 +434,7 @@ const pastries: CakesData[] = [
       "Your spoonful of delicious joy is packed in a triangular container! The Trio Mousse is more than a cake as it brings to your tastebuds a combination of dark chocolate, milk chocolate, and white chocolate with whipped cream infused with air bubbles to give it a light and airy texture.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "b9a32cf9-4091-407d-a44a-f359a7ded2d7",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -445,7 +443,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "7398e805-4674-411c-a61a-e8d22d771f30",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -454,7 +452,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "617fbe20-0e50-4d15-89e1-687974850aa5",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -463,7 +461,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "38a8f39b-f318-4fc7-954b-3dd11562f39d",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -474,7 +472,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "b57af9cf-593b-4971-b7f7-e67ff1767cbe",
     name: "Choco Chip Truffle N Kit Kat Delight Pastries",
     totalReviews: 9,
     originalPrice: null,
@@ -486,7 +484,7 @@ const pastries: CakesData[] = [
       "Make the best impressions on your sweet tooth loved ones on special occasions with a lip-smacking chocolate chip truffle Kit Kat pastries. These heart-warming gift comes in a salivating arrangement in three parts that has two pastries decorated with Chocolate chips, truffle, and Kit Kat Bars.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "118eccfc-6432-4c98-b79c-0d8079a27a1f",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -495,7 +493,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "cf9792f1-c903-4ebb-9700-1af7df5c70a9",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -504,7 +502,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "485fa1df-01d3-42e1-9e69-449c3248bed7",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -513,7 +511,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "37aa8e70-2a38-440f-9417-525364f802f8",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -524,7 +522,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "7697b4c7-ae65-4368-af14-94a7010e4325",
     name: "Set of Two Happy Birthday Pastry",
     totalReviews: 80,
     originalPrice: null,
@@ -536,7 +534,7 @@ const pastries: CakesData[] = [
       "Pastries are the new birthday delights. Celebrate the special day of your special someone with a slice of this heavenly delicious chocolate pastry. Baked with love to make your special moment extra special, order this set of two chocolate pastry and send it online to your loved ones. ",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "19874214-344d-46ee-8f3b-12dcb3f90cbe",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -545,7 +543,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "183683e2-17a8-46d6-9331-34be7f4542fb",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -554,7 +552,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "ee5c22a2-01f3-4152-b77f-280a217f41a1",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -563,7 +561,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "52a4575e-8e08-4730-9146-7d42f43f3b5b",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -574,7 +572,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "84cdb388-fe51-45f8-9d44-7975a970653d",
     name: "Red Velvet Pineapple Butterscotch Pastries Combo",
     totalReviews: 7,
     originalPrice: null,
@@ -586,7 +584,7 @@ const pastries: CakesData[] = [
       "Creamy, delicious and extremely decadent - grab this set of 6 very special dessert hamper pack for you and your special ones. Topped with soft and toothsome buttercream frosting along with fresh garnishes, this pack consists of a pair of each - red velvet, pineapple and butterscotch pastries.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "22dd8e35-f756-4454-8d8d-470fb89ad51d",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -595,7 +593,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "d4de23f4-97dc-4734-9ce8-aa67c09eb717",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -604,7 +602,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "c55dcb24-a799-4e28-9fdb-2ef3d5b1a285",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -613,7 +611,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "6ff1dd96-a6e5-40f0-8d97-5743bacf0cd4",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -624,7 +622,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "2700c467-6d77-4c6d-aebb-cd81b40dee0d",
     name: "Pineapple Pastries",
     totalReviews: 35,
     originalPrice: null,
@@ -636,7 +634,7 @@ const pastries: CakesData[] = [
       "Pineapple pastries because classic always works the best! These pineapple pastries topped with frozen pineapples and juicy maraschino cherries are sure to leave you craving for one bite after another. So, here's your favourite flavour wrapped in creamy vanilla to gratify your taste buds in the most delicious way!",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "7ad2ba7c-1e74-422b-a1f5-4f8ba3582af5",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -645,7 +643,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "736d851c-8742-47fa-a8c5-f0b3e1eede2b",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -654,7 +652,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "7ff2df7f-3d2b-4cfc-973d-1c3d8cff6590",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -663,7 +661,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "4887efa8-bdf5-4e1e-831b-854b35093327",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -674,7 +672,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "b4c33b5b-1496-432a-aa0c-eeab1e28499b",
     name: "Mango Pastries",
     totalReviews: 11,
     originalPrice: null,
@@ -686,7 +684,7 @@ const pastries: CakesData[] = [
       "Award yourself with the delish flavours of mango pastries and lose yourself in their sumptuous appeal like never before. The mushy base enrobed with almond shavings and topped with mango glaze and chocolate crown are not only going to satiate your sweet tooth desires but also remind you of the summertime goodness!",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "0f1f1101-f330-4b47-80ae-5725f4ea2e1b",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -695,7 +693,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "8f705907-7af1-4e21-b708-2478acee782b",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -704,7 +702,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "a7b11718-46a6-4d5d-9557-c2686952f156",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -713,7 +711,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "7dbbbaba-f7d1-4df4-b8b4-e279c40f17d8",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -724,7 +722,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "f9e41a3c-e6e2-4444-b8a6-5c933dfb0295",
     name: "Flavoursome Orange Chocolate Mousse",
     originalPrice: null,
     currPrice: 149,
@@ -735,7 +733,7 @@ const pastries: CakesData[] = [
       "Spoil yourself or your loved ones with this toothy orange chocolate mousse. The intense flavour of chocolate combined with a unique tangy taste of orange on the top will be a whole other experience for your taste buds. Orange chunks in every bite will give an extraordinary feel to your sweet tooth. Order this heavenly mousse now. ",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "b79c8a1b-7307-40a3-8a72-6c2e544a10e4",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -744,7 +742,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "97540dba-5324-41e0-ad25-7fe5966a3330",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -753,7 +751,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "7f599e23-0dc1-49b4-946f-61b64568cc64",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -762,7 +760,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "8e7f8f0a-2ea3-4230-b3dc-65e61b960480",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -773,7 +771,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "61127145-48fc-4ced-b8f5-6501bd9318ef",
     name: "Fruit Pastries",
     totalReviews: 4,
     originalPrice: null,
@@ -785,7 +783,7 @@ const pastries: CakesData[] = [
       "For the times when your celebration needs a refreshing kick-start, this fruit pastries is here to load your occasion with bliss. The freshly baked pastries topped with juicy fruits like pineapple, cherries, kiwi, orange and grapes would give a healthy twist to your celebrations.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "88033193-327b-4f41-8650-a3d8648f09da",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -794,7 +792,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "37b872f2-b1e8-4b7a-8bfd-bfee236a7eed",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -803,7 +801,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "0b9338d9-58a2-40a5-aa58-460d30fb698d",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -812,7 +810,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "6ef2503c-1a9b-4e7b-9bda-f63719ab234b",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -823,7 +821,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "c83bd614-2a3e-4f34-b286-182999c5458c",
     name: "Six Pineapple Chocolate and Red Velvet Anniversary Pastries",
     totalReviews: 4,
     originalPrice: null,
@@ -835,7 +833,7 @@ const pastries: CakesData[] = [
       "Melt your lover's hert into tears as you choose to commemorate your anniversary by gifting this delish assortment of annniversary pastries. There comes two each kinds of pineapple, red velvet and chocolate pastries to help you convey your heartfelt anniversary wishes sweetly.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "da538f31-40f7-4391-b40a-31a710f127f1",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -844,7 +842,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "2cbc6438-2553-44c5-8f3b-6a6d7ba560ef",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -853,7 +851,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "75fa8738-8216-467c-b6f5-22e58489f77b",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -862,7 +860,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "0b6d325a-6a54-4bd4-b93f-b62a0903e58e",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -873,7 +871,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "0af51a6c-6aef-4ddd-b5fe-cc6486dca701",
     name: "Sweet N Fresh Pineapple Pastry",
     totalReviews: 31,
     originalPrice: null,
@@ -885,7 +883,7 @@ const pastries: CakesData[] = [
       "Tempting sponge smothered with rich cream with an intense flavour of pineapple makes this pastry a drool worthy one!",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "9f512492-ec09-40a2-a621-b89210b3fcda",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -894,7 +892,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "20ba1149-cae9-431c-b2ce-f690b1daed54",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -903,7 +901,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "51f37503-53a3-4ec7-9dc9-85c23b51fcec",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -912,7 +910,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "95c39b03-4726-4532-937e-039d99b208e8",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -923,7 +921,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "c0698814-afb2-4e88-bfd2-4e83f0d1f6e5",
     name: "Spongy Fresh Nutella Pastry",
     originalPrice: null,
     currPrice: 229,
@@ -934,7 +932,7 @@ const pastries: CakesData[] = [
       "Creamy and yum! Bring home this signature delicious dessert, topped with a generous spread of creamy and tasty nutella. The rich creamy topping does absolute justice in adding a signature flavour to the spongy fresh pastry base. Surprise your dearest with this slice of yumminess.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "de2e332b-5b58-48eb-9344-24b1e8ed2748",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -943,7 +941,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "cfb3d8f7-50b0-48d3-a4dc-73cd8b947d79",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -952,7 +950,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "392f387f-0d06-421a-b2dc-28db8ea9f6ba",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -961,7 +959,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "b1733fa4-b4f5-4a6e-bdd0-032a83512fe3",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -972,7 +970,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "9d0f9634-ebf4-4566-a6b4-33ff30128a5d",
     name: "Drool Worthy Chocolate and Butterscotch Pastries",
     totalReviews: 11,
     originalPrice: null,
@@ -984,7 +982,7 @@ const pastries: CakesData[] = [
       "How about binge-eating fresh and delicious pastries in delightful flavours like Butterscotch and Chocolate Truffle? Sounds like a plan right? Place an order for this set of four pastries right away and enjoy the blissful taste. Give a sweet surprise to your loved ones as you send them these assorted pastries.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "4bf23e08-89cc-4614-a6ef-13d885c1cd93",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -993,7 +991,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "9416907e-ff1c-4c6b-8785-8b82e5a30b4d",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1002,7 +1000,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "767cbe9c-21af-427b-a4e2-6e2c61126eb7",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1011,7 +1009,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "a7144fe8-be90-4b64-8c12-d52e00fdf618",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1022,7 +1020,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "92595e20-70b5-49ad-97c8-179eca3604a5",
     name: "3 In 1 Pack Of Red Velvet Black And White Forest Pastries",
     totalReviews: 1,
     originalPrice: null,
@@ -1034,7 +1032,7 @@ const pastries: CakesData[] = [
       "If you are one of those who are always confused about which dessert to eat? We are here to solve the issue by giving everything in one! With Bakingo's tempting pastry pack, you don't have to choose as we give you two ravishing red velvet, two palatebale white-forest and two licious black forest pastries.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "43655e9b-8a9d-48f0-937e-883be3e5a2e5",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1043,7 +1041,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "14eb2956-3f71-495c-b8c9-d2e9958889e7",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1052,7 +1050,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "a967bba9-d0c9-47d6-b000-d586baebb371",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1061,7 +1059,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "27c662a8-9602-4076-9662-32abcb58a607",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1072,7 +1070,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "78e5eba2-7e2a-4140-adc8-6802cca677a0",
     name: "Anniversary Pastry Red Velvet",
     totalReviews: 9,
     originalPrice: null,
@@ -1084,7 +1082,7 @@ const pastries: CakesData[] = [
       "Make the best impressions and surprise your sweet tooth love birds with the lip-smacking anniversary pastry red velvet pastries. These scrumptious pastries have an enticing red velvet layer with creamy white fondant topped with red velvet sprinkles.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "6859cda8-c6dc-4c98-ad12-79e7b0f3742b",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1093,7 +1091,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "4410b41f-f7cc-4664-8950-8500a44e330e",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1102,7 +1100,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "4e63ec57-f838-4872-8722-562379c20554",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1111,7 +1109,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "c0ef07c4-1e7d-4e83-b239-3c90d3f1804c",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1122,7 +1120,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "b9525212-1460-46cb-8fae-bba6d8c9d5dc",
     name: "Crunch Topped Cheesecake Pastry",
     totalReviews: 2,
     originalPrice: null,
@@ -1134,7 +1132,7 @@ const pastries: CakesData[] = [
       "Dial up the fun filled celebrations with this dreamy and crumbly delicious sweet cheesecake today, add the mystique of enchantment in an instant! This cheesecake is whipped from scratch with fresh cream cheese and topped with healthy serving of crumble topping.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "4b1d0f00-b28a-4a1c-858a-48b2e0d080ca",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1143,7 +1141,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "2df2f58a-7fef-4121-9be6-255ad8e411c3",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1152,7 +1150,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "6c663b76-a0e7-4ec6-ba6a-593095490a8a",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1161,7 +1159,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "21230f75-e635-42c3-821c-55a9309244fa",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1172,7 +1170,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "09cc9114-6d37-41c3-a94d-b9dc255f7cfd",
     name: "Filter Coffee Mousse 100ml Each",
     totalReviews: 2,
     originalPrice: null,
@@ -1184,7 +1182,7 @@ const pastries: CakesData[] = [
       "Can't live without chocolate and coffee? Calm the beast in you and satiate your cravings on any occasion with the delightful rich choco coffee mousse. The mouse comes in a light and portable container to have your favourite treat on the go. Place your order now!",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "f582faf1-9568-4747-bbe3-4d3d2c50c046",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1193,7 +1191,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "ad377b5c-5fe5-49da-b906-90f66be88a72",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1202,7 +1200,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "277f7944-b2be-44c4-8311-8c0d5cd2b011",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1211,7 +1209,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "7d2fe371-3035-4320-ab4a-8e1f727423cf",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1222,7 +1220,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "55acdf59-4b32-4bba-b07f-f168270b3114",
     name: "Black Forest Pastry",
     totalReviews: 23,
     originalPrice: null,
@@ -1234,7 +1232,7 @@ const pastries: CakesData[] = [
       'Just have a single bite of this Black Forest pastry and it will all make a proper sense to you. The kick of cherry and rich chocolate of this super light, airy pastry will definitely make you feel "wow". The perfect combination of cherry cream and rich chocolate can provide the ultimate fulfillment to your dessert craving. ',
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "6673baed-10f9-47cb-b3e9-48334550f112",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1243,7 +1241,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "1b253039-1f03-45ea-b90b-6255041a6830",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1252,7 +1250,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "45d9e763-dff4-4e04-a9bd-676b68c9219a",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1261,7 +1259,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "764f9ebb-f979-4fec-b509-7b094eeac406",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1272,7 +1270,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "e71e7622-0660-42bf-abde-1023660b576a",
     name: "Blueberry Cheese Pastry",
     totalReviews: 52,
     originalPrice: null,
@@ -1284,7 +1282,7 @@ const pastries: CakesData[] = [
       "Cheese has found a quite popular place in the dessert menu of many people. To all the cheese lovers out there! We bring you a mouthwatering flavour of the cheese. A layer of blueberry syrup tops this light and creamy cheesecake to give your tastebuds a unique experience. Perfect for all occasions!",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "640fec74-b4d1-42b7-8bfd-aa8b2ea9dc53",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1293,7 +1291,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "88804e79-2f60-460d-a3c4-1a97b482cd08",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1302,7 +1300,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "aa9f3b8e-40a0-49ef-936e-1730779ad01d",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1311,7 +1309,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "3bb5e632-6dd4-4da3-985a-ba92e61a5628",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1322,7 +1320,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "609e91ec-db8c-41aa-bae2-29bf11ff9b62",
     name: "White Forest Pastries",
     totalReviews: 3,
     originalPrice: null,
@@ -1334,7 +1332,7 @@ const pastries: CakesData[] = [
       "Delve into sweet pleasures with this White Forest pastries that has everything to gratify your palates with a taste of luxury. The mushy base having bits of maraschino cherries with a topping of white chocolate shavings and juicy cherries is a perfect dessert to dig into whenever you are craving for a luxurious indulgence.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "045021be-fa30-42ad-abfa-206caef12da3",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1343,7 +1341,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "3b963950-6c97-4cb2-8154-8901b84ec38e",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1352,7 +1350,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "c06cd9dc-ecb9-4465-9d26-6c9e9a95bd06",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1361,7 +1359,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "47598ceb-e649-4a08-951e-01c5beaf2716",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1372,7 +1370,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "2f48625f-a3c3-4188-ae0f-0eaf801470f5",
     name: "Delectable Caramel Cheese Mousse 100ml",
     totalReviews: 6,
     originalPrice: null,
@@ -1384,7 +1382,7 @@ const pastries: CakesData[] = [
       "Surround and satisfy yourself with deliciousness in this decadent caramel cheese mousse. The dessert will surely please you as this creamy delight is made with smooth caramel, providing an indulgent experience that goes well with any meal. Order it right away.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "bd081dd0-39b3-4157-9bb4-32dc3d252c28",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1393,7 +1391,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "225eeb90-89ea-4929-be47-f1b692ed4805",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1402,7 +1400,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "884fa813-417c-4730-a025-2a1b1c7ab528",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1411,7 +1409,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "db8fa3c0-ac68-40e0-b98e-59e3b7fc2aa7",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1422,7 +1420,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "33215bbb-69bb-4076-9424-5f48243646fd",
     name: "Kit Kat Pastries",
     totalReviews: 15,
     originalPrice: null,
@@ -1434,7 +1432,7 @@ const pastries: CakesData[] = [
       "Bring out the kid in you with Kit Kat pastries and feed your inner child with the right kind of sweetness it had been missing for so long. With richly whipped cream swirled over the cake coming along with Kit Kat bar on the top shall give a pleasurable break from your mundane routine.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "1b3f278c-2d8e-4946-b664-4213a35741a4",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1443,7 +1441,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "8c46d72b-b396-47e9-8296-0adaccf639dd",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1452,7 +1450,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "bbffd9b7-8ca3-4917-aeb3-89e5435c2b1a",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1461,7 +1459,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "2604009a-4f0e-4acc-bc8d-9189faf737fa",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1472,7 +1470,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "07b86fa5-1113-4e2c-aa3e-b9c363b6210a",
     name: "Strawberry Cheese Pastry",
     totalReviews: 4,
     originalPrice: null,
@@ -1484,7 +1482,7 @@ const pastries: CakesData[] = [
       "An enticing dessert to drench your tastebuds in the dreamy, creamy taste in the first bite. Experiencexp sweetness of fresh strawberries with the melting drifts of cheese layer and a baked crust layer in the bottom. Strawberry bake cheese pastry is the perfect treat for the tastebuds at any time of the day.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "c492c630-6978-46de-9e9f-32d32cf523ed",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1493,7 +1491,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "67f73eda-33ac-48d6-978c-f31cae5bbc97",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1502,7 +1500,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "de3c8a1b-97ec-4040-be10-cf763806c526",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1511,7 +1509,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "cb6749c9-a704-4bad-9644-79d8b3a85663",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1522,7 +1520,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "2c3fd3ce-c61b-412b-b7bf-8ab3cd4fcfe1",
     name: "Assorted Velvet Pineapple Truffle Pastries",
     totalReviews: 8,
     originalPrice: null,
@@ -1534,7 +1532,7 @@ const pastries: CakesData[] = [
       "Three is always better than one. And this pastry trio seems like a great choice for sweet self indulgence as well as for gifting. It consists scrummy red velvet pastries, pineapple pastries and chocolate truffle pastries to leave your tastebuds tantalised to the core.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "97b864dd-c191-41c2-916a-58a38487ab84",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1543,7 +1541,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "67ae603c-94e9-4727-b306-52713feda68d",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1552,7 +1550,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "14b8722f-8ca7-46f1-aaf1-28addffd99b5",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1561,7 +1559,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "66877d84-a1c5-4b9f-a9f3-382046ebdd6b",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1572,7 +1570,7 @@ const pastries: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "b9b79d99-5cea-405f-a655-93ef93c6b4d0",
     name: "Ferreo Rocher-Chocolate Truffle pastry",
     totalReviews: 8,
     originalPrice: null,
@@ -1584,7 +1582,7 @@ const pastries: CakesData[] = [
       "The Ferrero Rocher chocolate truffle pastry is as decadent as the name implies. The luscious and delicate layers of rich chocolate, truffle ganache has been adoringly soaked with melting chocolate syrup.. The best part of this pastry is that it comes with the best delicious chocolate-Ferrero Rocher, on top of it.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "7f6d9879-4749-46b5-b04c-23f5ad986dec",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1593,7 +1591,7 @@ const pastries: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "925bff37-9d80-4724-aecb-36f22f1618e0",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1602,7 +1600,7 @@ const pastries: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "c9b63554-3c70-4db7-8b23-72b7c15a3aea",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1611,7 +1609,7 @@ const pastries: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "2519e1c3-4b5b-4aa5-81ca-1ca731fd40bc",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1622,5 +1620,4 @@ const pastries: CakesData[] = [
     ],
   },
 ];
-
 export default pastries;

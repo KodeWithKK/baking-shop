@@ -1,5 +1,3 @@
-import crypto from "crypto";
-
 type Reviews = {
   id: string;
   name: string;
@@ -24,7 +22,7 @@ type CakesData = {
 
 const designerCakes: CakesData[] = [
   {
-    id: crypto.randomUUID(),
+    id: "adb56932-f85d-4c9c-a331-1a99a5296011",
     name: "Enchanting Pink Rose Cake",
     totalReviews: 216,
     originalPrice: null,
@@ -36,7 +34,7 @@ const designerCakes: CakesData[] = [
       "Our Enchanting Pink Rose Cake isn't just a cake, it's a love letter to indulgence. It's a promise of whispered secrets, stolen moments, and hearts fluttering with delight. Take a bite and let your senses be swept away to a world of pure enchantment.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "afbff545-0320-4a2b-95ca-0e2cd9d756ac",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -45,7 +43,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "9f8f9e50-383c-4e08-8940-a90918dfc886",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -54,7 +52,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "c7fd7ab3-e58d-4b33-822d-a375cd99fd4d",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -63,7 +61,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "ed9393cb-00e7-48bc-bcfa-c6a9cfa2f7d5",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -74,7 +72,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "6bb7b462-4d21-4854-8f8e-ce359ff4b7b4",
     name: "Black Batman Theme Cake",
     totalReviews: 134,
     originalPrice: null,
@@ -86,7 +84,7 @@ const designerCakes: CakesData[] = [
       "Amaze your Batman Fans on their special day by sending a delectable Batman fondant themed cake. Perfectly matching the design and look of Batman, along with the logo in the middle, this cake is a stunner for your Batman fan. Order it online on their special day.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "29a9f36f-1062-4ba6-9c0d-9c44b2ac783c",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -95,7 +93,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "97495eb9-ad54-4ece-a9cf-52fc6f9a6640",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -104,7 +102,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "92271932-58e7-4d74-9e0e-7dbd1f7d7d17",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -113,7 +111,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "2aa5d084-7c62-42fd-8f98-e90bf0ebd99e",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -124,7 +122,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "44bad4e5-3170-49e6-8ba0-a3e98c52186c",
     name: "Fantastic Free Fire Fondant Theme Cake",
     totalReviews: 114,
     originalPrice: null,
@@ -136,7 +134,7 @@ const designerCakes: CakesData[] = [
       "One of the most popular mobile battle royale games in existence, free fire has become the talk of the town since lockdown happened. If you know someone who loves free fire then get him/her this theme cake. Decorated beautifully in free fite theme with guns and bomb, order online right away!",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "b5e329c7-b1ac-4f37-beb8-762cf7210923",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -145,7 +143,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "46f523ec-d48e-492d-861a-715292960ca8",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -154,7 +152,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "a87b2344-2dca-44b6-9d41-d3617173c58c",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -163,7 +161,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "cf83fb29-db6e-4cb9-9bfe-166e586e1adb",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -174,7 +172,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "7462453d-77bb-4c69-8418-ff4b9471dd01",
     name: "Starbucks Fondant Cake",
     totalReviews: 98,
     originalPrice: null,
@@ -186,7 +184,7 @@ const designerCakes: CakesData[] = [
       "Let your birthday begin with a cup of your favorite Starbuck coffee cake. We dedicate this one of its kind cake to all the Starbucks lovers. Designed flawlessly, this cake is delicious in taste. You can also gift this cool cake to your friends who love Starbucks. Get this cake in six flavors: chocolate, pineapple, butterscotch, strawberry, vanilla, and black forest.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "327fdd6f-73fb-4583-bfee-1fc3d4b04cd4",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -195,7 +193,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "1ecc5907-811a-4b13-b5f6-b6d600c1ecb9",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -204,7 +202,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "87cff867-b283-42fc-8f41-aa08493f8203",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -213,7 +211,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "1aebb249-f1ef-4db4-87e5-d121e1081c10",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -224,7 +222,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "ab71bcd8-7dad-4174-8baa-0e5d24221eaa",
     name: "Aqua Blue Cream Cake",
     totalReviews: 18,
     originalPrice: null,
@@ -236,7 +234,7 @@ const designerCakes: CakesData[] = [
       "Here's our new range of cream cakes that are highly exceptional in their taste and appeal. This eye-pleasing aqua blue n white cake adorned with a rose is what you need for your upcoming occasion. Baked with utmost perfection, creativity and freshness guaranteed, this cake is sure to add wonders to any celebration.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "89b1fbf0-e60c-4e03-9f9a-5ba8e7ca8429",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -245,7 +243,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "7a01f363-d227-47d2-a702-bf98303757cb",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -254,7 +252,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "b4d2bdc2-b5c4-4fc4-b692-fbc0adaed935",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -263,7 +261,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "5c9f06a7-0f89-406e-b916-dbb38b75d5f8",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -274,7 +272,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "6f4c8b38-c210-4907-8f8f-37a87e3c0619",
     name: "Peppa Pig Birthday Cream Cake",
     totalReviews: 26,
     originalPrice: null,
@@ -286,7 +284,7 @@ const designerCakes: CakesData[] = [
       "This lovely cake is a must-have for a peppa pig party! Our delicious Peppa Pig birthday cake is the perfect size to feed the whole class at your daughter's Peppa party. Our Peppa Pig birthday cake is the perfect cake for all Peppa Pig fans. It not only looks amazing but tastes delicious as well.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "b1f8caaa-9b9f-4613-9f1c-55e4304ab1e3",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -295,7 +293,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "85c3c67e-0ad7-45b8-a22f-4f7585213292",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -304,7 +302,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "e112626a-1df0-4be5-8417-4250995edbb6",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -313,7 +311,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "0de261e3-c26e-48f8-bf1c-4d108f0ad1d2",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -324,7 +322,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "b4dd3ee8-eac1-4b00-ba74-444c794d67a5",
     name: "Yummy And Adorable Cocomelon Cake",
     totalReviews: 17,
     originalPrice: null,
@@ -336,7 +334,7 @@ const designerCakes: CakesData[] = [
       "Satiate the sweet tooth cravings along with pleasing the eyes of your lovely kids. Bring home this flavourful and cute Cocomelon cake and amaze them to the core. Make the celebrations extra fun filled with this cutest cake in town. Order this scrumptious one now!",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "b1db8ca8-0b21-42b7-8c0c-424e9ede65f7",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -345,7 +343,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "b63ffa8b-dc20-4aa7-b56d-28a006149bb7",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -354,7 +352,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "6c90f676-cc15-4112-b24f-f9730cdc7c01",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -363,7 +361,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "8ca87a3d-0537-4e26-a0f5-1bac44cec7e0",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -374,7 +372,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "b669db39-1513-467e-a9fa-de3613bb8afc",
     name: "Baby Girl Boy Cream Cake",
     totalReviews: 16,
     originalPrice: null,
@@ -386,7 +384,7 @@ const designerCakes: CakesData[] = [
       "Baby girl or baby boy? Baby showers are real fun and so is this fresh, delicious, designer cake. Make the baby show of mother to be real fun and surprise her with this beautiful and elegant cake to make it special for her as she is going to bring a whole new life to this world.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "b57e6b20-13cd-46d7-8ca3-3e82100abfd4",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -395,7 +393,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "e8548732-e1bf-41f2-a2b6-0c1ce93eda94",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -404,7 +402,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "315e3e05-5174-4eb2-8e41-9d7169da205a",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -413,7 +411,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "fe4db0cf-5b28-4ea7-b425-e99eb8c017c4",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -424,7 +422,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "fa36a5c2-914e-4eeb-8532-675b5797985f",
     name: "Two Tier Edible Bloom Bunch Cream Cake",
     totalReviews: 12,
     originalPrice: null,
@@ -436,7 +434,7 @@ const designerCakes: CakesData[] = [
       "The ambrosial-like appeal of the two-tier cake is profound, like a certified therapist satisfying the sweet cravings and tickling the heart. Well-mixed layers of two light-coloured whipped cream and the bunch of flowers created through swirl-styling of cream designate the cake as a perfect fit for a party or a wedding.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "465d3438-c665-45ad-8b46-06b39a86c1d5",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -445,7 +443,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "c1357fd8-97c8-4106-ab52-72aa93253ed4",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -454,7 +452,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "81b7e971-385c-4f1e-a4eb-4fadfb5c9704",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -463,7 +461,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "c1287ad9-0984-4c9e-97b6-b87f0a474191",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -474,7 +472,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "e3932aef-da57-450b-a391-d9e9b1847099",
     name: "Fondant Theme Beer Mug Cake",
     totalReviews: 6,
     originalPrice: null,
@@ -486,7 +484,7 @@ const designerCakes: CakesData[] = [
       "Treat your beer or booze loving friend and enthusiast with this delectable theme cake, that can be customised to perfection. The perfect treat for any occasion spanning from birthdays, anniversaries, to promotions and more! Order this delish loaded fondant theme cake anyday!",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "bc69ed6d-bb87-4a16-962f-45e943b8b766",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -495,7 +493,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "c247f12a-ed84-4215-a255-f43c7d80eeed",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -504,7 +502,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "c5d1a3b7-3fe4-4490-a273-f4edd1d6c763",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -513,7 +511,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "a8dc1ae4-343f-43c1-ab89-98f831b0658d",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -524,7 +522,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "78042424-e325-4755-96a2-4cac55515a7a",
     name: "Love Filled Cream Cake",
     totalReviews: 12,
     originalPrice: null,
@@ -536,7 +534,7 @@ const designerCakes: CakesData[] = [
       "This beautiful romantic white cream cake is all you need to make your special one feel all the love and appreciation. With a wonderful layer of white chocolate and an irresistible combination of spongy softness, this cake is a delightful dessert.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "6f047367-9d06-4123-9369-7eb4e0fe5000",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -545,7 +543,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "16820eaa-996a-455b-89ec-3075511b821f",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -554,7 +552,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "487e0f99-4fe4-4589-8638-4e2ed9208326",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -563,7 +561,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "7a80ffa8-a829-4014-937b-e07df43efd13",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -574,7 +572,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "c303179c-bfe8-49ae-b83f-c0ac4db16a76",
     name: "Smacking Fondant Spiderman Cake",
     totalReviews: 12,
     originalPrice: null,
@@ -586,7 +584,7 @@ const designerCakes: CakesData[] = [
       "The spiderman cake will make your kid's birthday celebration extra special and memorable. With its dynamic look and taste, the cake is something that you cannot miss. Spiderman cake is surely a pleasure for your guest and the kids too. Order it from bakingo.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "3aa3b0dd-245c-4045-a0bc-c2719cee0f55",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -595,7 +593,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "624bf20a-5e4f-4c72-a80d-eca4e6f8b81e",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -604,7 +602,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "cdecc382-e79c-4501-a4b1-260a05803ca9",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -613,7 +611,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "87388491-22ba-4e03-97c8-da002279a755",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -624,7 +622,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "b425e3cc-bf5a-4814-a7c6-6bd0f3999984",
     name: "Cream Fantasy Barbie Cake",
     totalReviews: 39,
     originalPrice: null,
@@ -636,7 +634,7 @@ const designerCakes: CakesData[] = [
       "Spoil your little one with this gorgeous Barbie themed cake. Every little girl dreams of a fairytale Barbie birthday party. Moreover, if you are looking for a way to surprise a young lady in your life this year, offer her an unforgettable birthday cake that will keep her smiling for weeks after.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "f44f21c1-9eac-4cc9-91b2-ae9affa56ec8",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -645,7 +643,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "da469903-6597-4214-9890-60e05e504be4",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -654,7 +652,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "c1256c26-b47c-40a1-92f6-e455a0551875",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -663,7 +661,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "e6164c96-3a0b-4593-99bf-f0d538537e9c",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -674,7 +672,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "7279bd40-60df-4c08-b4a6-be9d23df5e37",
     name: "Whimsical Wheels Car Theme Cake",
     totalReviews: 18,
     originalPrice: null,
@@ -685,7 +683,7 @@ const designerCakes: CakesData[] = [
       "Immerse yourself in the thrilling world of automobiles with our Car Theme Cake. Crafted with precision using fondant and sugar sheet, this cake is the epitome of sturdy craftsmanship. Choose your desired flavour for the base and watch as a lifelike fondant car takes centre stage. Perfect for car theme cartoon enthusiasts, this cake promises to ignite their imagination and bring joy to their special day. The sponge is carefully selected to complement the chosen flavour, ensuring a moist and delicious treat. Indulge in the robust charm of this Car Theme Cake and embark on a delightful adventure of flavors.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "1ab05d6b-54a4-4282-a0d2-ff4a300e1198",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -694,7 +692,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "41764ee7-690a-4271-97d4-66fe76c7392c",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -703,7 +701,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "80ae7edd-3657-4db8-880c-1a76bd6ba63e",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -712,7 +710,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "73acf1aa-1a70-4eac-b3a9-a168a17b6e07",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -723,7 +721,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "bf8a3984-6fa0-4294-9ef6-89ea9466d569",
     name: "Round Rose Cream Cake",
     totalReviews: 18,
     originalPrice: null,
@@ -735,7 +733,7 @@ const designerCakes: CakesData[] = [
       "Here's is the most loved flavor to satitate your taste buds. The strawberry-flavoured cake is wrapped in whipped blue cream and decorated with floral swirls of pink and blue cream. Order it for your upcoming occasion be it birthday, anniversary, valentine, etc.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "2c50e19f-0b4d-4fa9-9389-d4326330aa9d",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -744,7 +742,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "1009fbf4-cd8b-4d5b-a5ca-e61d9babddc8",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -753,7 +751,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "7126fd75-6bc1-4903-879e-ab662ab02df4",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -762,7 +760,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "df22fae5-692a-4efa-b153-0d8e023b7847",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -773,7 +771,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "efedf81d-7418-4d36-8351-ca71fd57b118",
     name: "Character Fondant Cake",
     totalReviews: 14,
     originalPrice: null,
@@ -785,7 +783,7 @@ const designerCakes: CakesData[] = [
       "Let's all welcome the miracle from above, a boy so sweet, dancing on angel's feet with a Morphle elephant cake. With a Morphle elephant figurine and cute blue bow, the cake comes straight from Bakingo's oven to help you celebrate the joy with pomp and show.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "c945929a-e89a-43fe-8149-a2ca3710a92f",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -794,7 +792,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "f599f57c-363d-4b50-8142-cc1533c788bd",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -803,7 +801,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "802aa897-7837-4ce6-9332-b0e6ffb8d48e",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -812,7 +810,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "4359aaf8-f610-45a3-8f71-34b8d315028e",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -823,7 +821,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "3147a1a2-4cbc-452e-a365-4637118a6fa3",
     name: "Elegant Cream Cake with Roses",
     totalReviews: 3,
     originalPrice: null,
@@ -835,7 +833,7 @@ const designerCakes: CakesData[] = [
       "Cakes can symbolize a lot of things, as well. This incredibly designed beauty indicates peace with its eye-pleasing snowy white colour and love with the fondant roses on the top. It can make a perfect gift to add spark to any occasion. So git it to your loved ones and bring a smile on their faces.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "af6026fe-a067-4329-ba65-60e45f99eef6",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -844,7 +842,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "a0113ec5-403e-4511-a9aa-81a150eb8773",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -853,7 +851,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "92cea200-313d-46f4-825e-2e3586dadbf0",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -862,7 +860,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "c39c0e5d-615c-4b94-960a-857ebf5fbc90",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -873,7 +871,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "429dbda4-43f6-4247-ba80-3eec636349cc",
     name: "Unicorn Fondant Cake",
     totalReviews: 21,
     originalPrice: null,
@@ -885,7 +883,7 @@ const designerCakes: CakesData[] = [
       "Take the womb escape celebrations to the next level and surprise your near and dear ones with a unique, lively unicorn cake. This stunning white unicorn birthday cake is decorated with multi-coloured swirls along with a golden unicorn horn and ears. Place your order now and customise the flavours and more!",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "c7b4107b-c1e3-4218-a67a-d311851727ea",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -894,7 +892,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "fb7883bc-f0d2-48a3-bd95-8a142379f418",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -903,7 +901,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "403b0363-4987-4279-8329-9d44b987b850",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -912,7 +910,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "4a5c18d1-aca7-4ab4-9472-dfefcaf47f62",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -923,7 +921,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "8f776ff5-aaea-4977-9e77-e5f422938101",
     name: "Charming Brown Bear Theme Cake",
     totalReviews: 34,
     originalPrice: null,
@@ -934,7 +932,7 @@ const designerCakes: CakesData[] = [
       "Adorable bear-faced cake will transform any celebration into a magical wonderland! Delight your loved ones with this heartwarming masterpiece that symbolizes love, warmth, and affection. Picture the enchanting sight of a brown bear crafted with love and precision, frosted to perfection, and adorned with a charming fondant bow, ears, nose, and twinkling eyes. Its smiling mouth radiates happiness, spreading joy to all who behold it. This captivating cream cake is not just a treat for the taste buds; it's a work of art that will leave everyone in awe. Choose your favorite flavor, and let this symbolic creation become a sweet memory of togetherness.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "0d82e282-cabe-437c-8f34-11db5d0d41cd",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -943,7 +941,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "0be95585-f1f8-4737-b927-78bf4e97c354",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -952,7 +950,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "e8cf66c4-70d9-4da8-8457-08e5cf0642e9",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -961,7 +959,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "49509153-5365-4b11-806b-3dc09e815789",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -972,7 +970,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "25065d6f-2b70-4d4e-9aca-48f12383f908",
     name: "Round Shaped Mickey Mouse Fondant Cake",
     totalReviews: 11,
     originalPrice: null,
@@ -984,7 +982,7 @@ const designerCakes: CakesData[] = [
       "Mickey is here to say Hi to all, but where are you? Notch up your little one's birthday or any other special celebration, by gifting him/her this delectable yet appealing Mickey Mouse fondant cake. Make-believe him/her that happiness is this lovely cake! Cheers!",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "fae91397-f60c-4d3a-8a96-f955919ca446",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -993,7 +991,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "ec85f892-ef9a-4f04-affe-8a839d02a292",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1002,7 +1000,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "0dba0440-ec53-4910-b8b0-4ca4b0901905",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1011,7 +1009,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "81619c32-09c0-422f-acd4-be47cc2e8723",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1022,7 +1020,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "aea2dfc8-e468-44e7-9412-38719c39245c",
     name: "Gym Fondant Cake 2",
     totalReviews: 2,
     originalPrice: null,
@@ -1034,7 +1032,7 @@ const designerCakes: CakesData[] = [
       "Is gym like a temple for him? Does he love workout like anything? If yes, this super tasty and exotically designed fondant cake is ideally made for him. Each bite of this cake will transcend him to the sugary heaven of love. Giving this cake to him will really show how much you care about his passion for workout.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "e3560424-4d3f-45a0-9a23-9b3502c747bf",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1043,7 +1041,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "ba827c4e-a6cf-4ffd-9a79-f6690057d5a6",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1052,7 +1050,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "70b03167-94d9-473e-b813-4519305f9de6",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1061,7 +1059,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "e154bf43-abdf-4d87-afa6-f8df1cfcd4ca",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1072,7 +1070,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "a61dbaad-c550-4ace-b01a-01918b9efb64",
     name: "Two Tier Cream Cake",
     totalReviews: 5,
     originalPrice: null,
@@ -1083,7 +1081,7 @@ const designerCakes: CakesData[] = [
       "Order this tempting cake and indulge in the richness of this sweet course which is a sight to behold. Every bite of this heavenly cake will make you crave more. This two-tier cake decorated beautifully with natural flowers and sprinklers makes it perfect for every occasion. ",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "12ed2082-512b-49c3-8d18-ceea4726e320",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1092,7 +1090,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "ae49658e-4e76-44e6-801b-04f4182beef4",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1101,7 +1099,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "8f30f66d-16e4-4601-b7d9-fd1eeaa92950",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1110,7 +1108,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "4d95d6d7-5a02-4f15-a281-9ce5746c5fac",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1121,7 +1119,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "e308f89c-bf9c-46b0-9b83-b04dbc944b34",
     name: "Purple Fondant Cake",
     totalReviews: 6,
     originalPrice: null,
@@ -1133,7 +1131,7 @@ const designerCakes: CakesData[] = [
       "Decorated in hues of purple, this fondant birthday cake represents the optimum royalty and grandeur needed to uplift the spirit of a birthday celebration. Prepared of mushy layers of cake, this delicacy is adorned with a quote that wishes 'Happy birthday' in a regal way. This cake is available in six luscious flavors: chocolate, black forest, vanilla, pineapple, strawberry, and butterscotch.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "c094fcd5-559b-4242-ae11-eaa3acce599b",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1142,7 +1140,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "d49dfd73-436b-42f1-b9d0-d51fe2bb1a60",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1151,7 +1149,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "2f10ca72-d32b-4a54-a3aa-1d26c48ea86c",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1160,7 +1158,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "aaec3669-530f-4b12-8ed0-69df4015eac2",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1171,7 +1169,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "5f57dcdd-d580-45b3-882d-7e39ae13f6fc",
     name: "Surprise Baby Shower Fondant Cake",
     totalReviews: 3,
     originalPrice: null,
@@ -1182,7 +1180,7 @@ const designerCakes: CakesData[] = [
     description: "Surprise Baby Shower Fondant Cake",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "fc11f799-f392-4585-8371-059d080a9a64",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1191,7 +1189,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "56ed9e82-915f-4802-a4a9-e8a7f95a2fa7",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1200,7 +1198,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "28b2fb5a-b0d8-48b7-8cfb-08a7387ec333",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1209,7 +1207,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "8adf357e-f780-453f-aebd-b5028c8bbc64",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1220,7 +1218,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "78a24482-1331-4f66-bc0b-4fefac770d3a",
     name: "Rose Elephant Fondant Cake ",
     totalReviews: 6,
     originalPrice: 1799,
@@ -1232,7 +1230,7 @@ const designerCakes: CakesData[] = [
       "For the cute doll-like little girl, a cake covered in pink edible roses from the side with a pretty fondant elephant character wearing a pink girly bow tie on top is the best ever surprise. And we call it a 'Rosy Elephant Cake'. Something delightful and delicious!",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "7312d709-b7eb-440f-a9b4-cd1539dc0164",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1241,7 +1239,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "bf57ae5d-5c7b-45c8-9fce-14cd37a37d71",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1250,7 +1248,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "581c9986-9bc1-47fa-9b6c-6f7e2bb1dcb7",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1259,7 +1257,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "d9b8e8f8-1d1b-444e-a9c8-cc606d5f8cdc",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1270,7 +1268,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "98fc8672-264a-4d60-889b-06f0f110231d",
     name: "Cute Dinosaur Themed Cake",
     totalReviews: 6,
     originalPrice: null,
@@ -1281,7 +1279,7 @@ const designerCakes: CakesData[] = [
       "Surprise your little ones with this cute dinosaur-themed cake and get the most heartwarming smiles on their faces. This cutie cake will undoubtedly be the highlight of the occasion. Order this most delicious delight and make their celebrations fun and memorable.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "c12ec3f1-da79-4bd4-9fbb-305120d217ce",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1290,7 +1288,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "8e74417b-b2f1-4894-a6b4-9b8d7813fc3c",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1299,7 +1297,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "e568aece-0545-48cc-a925-a921b3c74320",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1308,7 +1306,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "c8b82b40-4a4e-4634-9d1c-56de53fd520a",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1319,7 +1317,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "9c19c02f-b8a3-4396-85ab-58c45d613895",
     name: "Barbie Doll Cream Cake",
     totalReviews: 19,
     originalPrice: null,
@@ -1331,7 +1329,7 @@ const designerCakes: CakesData[] = [
       "Show your unconditional love to your little princess on her birthday by surprising her with this astounding Princess Barbie Cake. This adorable cake is dressed in the blue cream, which will drivel the taste buds of all the party attendees and, most importantly of your little princess.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "7e9a05fb-b7bd-428c-af5e-096678c88fd0",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1340,7 +1338,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "39ea5aea-dfa1-4e7d-87ea-34058215a850",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1349,7 +1347,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "612632a9-6ba7-4790-9187-e6cd5bf1207a",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1358,7 +1356,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "2a528826-19f3-43a8-9978-291b46efd8ff",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1369,7 +1367,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "92fe4be5-a72a-4600-83b2-2b132d859fb7",
     name: "Gorgeous Lion Cream Cake",
     totalReviews: 18,
     originalPrice: null,
@@ -1381,7 +1379,7 @@ const designerCakes: CakesData[] = [
       "Ready To Bake Your Dream Cake? This Delicious Cake Was Made With Those Yellow, Toylike Lions In Mind. Its Jumpy, Cheery Lions Draw You In For A Closer Look. This Cake Is The Best Quality That You Can Get.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "96444e17-f245-4e52-9e08-9544199cb0c7",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1390,7 +1388,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "b2b2e113-494d-437a-abfe-a75d7cdad401",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1399,7 +1397,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "db207be6-0a33-4a37-8132-019a09702cd3",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1408,7 +1406,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "f64e03ce-59b1-42c4-b17c-95d49011d36d",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1419,7 +1417,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "12da2a2e-7de8-4808-8d2f-e5b8b86671ec",
     name: "Queen And King Fondant Cake",
     totalReviews: 2,
     originalPrice: null,
@@ -1431,7 +1429,7 @@ const designerCakes: CakesData[] = [
       "Make special days memorable with this beautifully hand-crafted Queen and king cake. This cake is as delicious as it is adorable. Sweep your loved ones off their feet by surprising them with this luscious beauty and win their heart with your thoughtfulness behind the sweet gesture.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "c5a5081f-8348-4133-a1c6-5d4cc9fe4156",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1440,7 +1438,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "4a636bbb-ca80-4e26-9118-b96d0866247d",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1449,7 +1447,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "345c2d47-9ae0-45a3-a2cc-9cf7ba585414",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1458,7 +1456,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "e7271612-faeb-443a-9343-59190fb3a43a",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1469,7 +1467,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "d0077764-adf5-4795-a546-53a7a70570ca",
     name: "Round Shape Layers Of Blue Cream Cake",
     totalReviews: 3,
     originalPrice: null,
@@ -1481,7 +1479,7 @@ const designerCakes: CakesData[] = [
       "A cake that melts in mouth in seconds is a sweet pleasure that every party reveller desires to experience. A fudgy cake richly covered in moist and beautiful rosettes with No. 1 as the cake topper is the indulgence you need to make people live their dream.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "b2de2376-0b32-4abd-b433-78ecb889db35",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1490,7 +1488,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "572ee372-b540-4838-a30e-26d875ece454",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1499,7 +1497,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "8a2fb3a7-33a7-4c2b-9850-6c6f21c5a5f6",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1508,7 +1506,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "254a8ded-0d6e-49ff-b608-558302879121",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1519,7 +1517,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "8a92bf72-c47c-4e69-8ead-e9d511272dc4",
     name: "Round Dino Park Theme Cake",
     totalReviews: 5,
     originalPrice: null,
@@ -1530,7 +1528,7 @@ const designerCakes: CakesData[] = [
       "A cake that can take you to the cute and funny dinosaurs is here. The delicious and decadent cake is decorated with clouds, mountains, trees, and dinosaurs made using edible fondant, and the light blue colour base of the cake creates a sense of a scene from dino land.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "8ad5a348-218b-4b77-938c-459b7e4c7e23",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1539,7 +1537,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "093a2946-1178-44f9-856a-1746119e03eb",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1548,7 +1546,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "941e325d-b213-4c3a-821e-ddc7df467ef1",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1557,7 +1555,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "66406d27-de5c-4247-b26c-579524c2cb71",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1568,7 +1566,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "a6264c8d-4f11-47b1-baab-0a94962ac001",
     name: "Decadent Creamy Kit Kat Gems Cake",
     totalReviews: 12,
     originalPrice: null,
@@ -1580,7 +1578,7 @@ const designerCakes: CakesData[] = [
       "Here is an ultimate treat for all the chocolate lovers in town. You can't get over this delicious cake with a single bite. So, order this sweet treat on every special occasion to heighten the joy of your celebration. This moist, fluffy, and delicious chocolate cake is embellished with kitkat bars on the sides and topped with luscious gems.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "c75e9507-b9a8-4bb6-af60-5c8ef926c8a7",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1589,7 +1587,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "baa36db8-0ce9-4b3e-ba4f-a89fd633c9eb",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1598,7 +1596,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "3be6a891-9603-42d9-ac47-26d689ac6d40",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1607,7 +1605,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "192b3d71-797d-4d5f-a48c-9f284cc0b5f5",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
@@ -1618,7 +1616,7 @@ const designerCakes: CakesData[] = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "c3ffba23-9654-45a2-aec1-4b680dedc54c",
     name: "Thirty Not Out Cricket Fondant Cake",
     totalReviews: 3,
     originalPrice: null,
@@ -1629,7 +1627,7 @@ const designerCakes: CakesData[] = [
       "If you say you aren't too much of a cricket fan, we know you would just be kidding! This special fondant cake is for all those who BREATHE cricket. Available in varied flavors like Chocolate, Vanilla, Strawberry, Butterscotch, Black Forest, Pineapple, this impeccably designed cake has a lot to offer than just a visual treat! Pic Courtesy : cakesbykirstyleeds.",
     reviews: [
       {
-        id: crypto.randomUUID(),
+        id: "a07963e6-fed3-41a6-ae9c-b70b06ac80a4",
         name: "Surbhi Gupta",
         rating: 5,
         postedOn: "05/01/2024",
@@ -1638,7 +1636,7 @@ const designerCakes: CakesData[] = [
         message: "Very awesome. Cake Is so tasty.",
       },
       {
-        id: crypto.randomUUID(),
+        id: "ed904e1d-38d1-43f5-89aa-aab2fea6f9f1",
         name: "Omjee Rajput",
         rating: 5,
         postedOn: "03/01/2024",
@@ -1647,7 +1645,7 @@ const designerCakes: CakesData[] = [
         message: "Everything was perfect",
       },
       {
-        id: crypto.randomUUID(),
+        id: "63ffdab4-15f1-4e86-8d30-70524ec3674b",
         name: "Ravi Kumar",
         rating: 4,
         postedOn: "01/01/2024",
@@ -1656,7 +1654,7 @@ const designerCakes: CakesData[] = [
         message: "Too cute and special",
       },
       {
-        id: crypto.randomUUID(),
+        id: "97a2f87b-e803-4599-9c57-208325ec6bef",
         name: "Richa Garg",
         rating: 5,
         postedOn: "01/01/2024",
