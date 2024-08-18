@@ -139,19 +139,24 @@ function ProductDisplay({ data }: { data: CakesData }) {
           </div>
 
           <div>
-            <div className="border-b border-gray-400 py-2.5 first:border-t">
-              <p>
-                <span className="text-[15px] font-bold">Surbhi Gupta</span>
-                <span className="ml-2 rounded bg-[#1C9550]/10 px-1 py-0.5 text-sm text-[#1C9550]">
-                  5 ★
-                </span>
-              </p>
-              <p className="text-[12px] text-gray-700">
-                <span>Posted on 05/01/2024 • </span>
-                <span>Greater Noida</span>
-              </p>
-              <p className="text-[15px]">Very awesome. Cake Is so tasty.</p>
-            </div>
+            {data.reviews.map((review) => (
+              <div
+                key={review.id}
+                className="border-b border-gray-400 py-2.5 first:border-t"
+              >
+                <p>
+                  <span className="text-[15px] font-bold">{review.name}</span>
+                  <span className="ml-2 rounded bg-[#1C9550]/10 px-1 py-0.5 text-sm text-[#1C9550]">
+                    {review.rating} ★
+                  </span>
+                </p>
+                <p className="text-[12px] text-gray-700">
+                  <span>Posted on {review.postedOn} • </span>
+                  <span>{review.location}</span>
+                </p>
+                <p className="text-[15px]">{review.message}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
