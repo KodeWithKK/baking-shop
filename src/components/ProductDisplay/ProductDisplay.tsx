@@ -1,3 +1,6 @@
+import ProductAction from "./ProductAction";
+import { findDiscount, findOrgPrice, cakeWeights } from "./utils";
+
 type Reviews = {
   id: string;
   name: string;
@@ -20,22 +23,26 @@ type CakesData = {
   reviews: Reviews[];
 };
 
-function ProductDisplay({ data }: { data: CakesData }) {
+type Category = "best-seller" | "designer-cakes" | "pastries";
+
+type Props = {
+  readonly data: CakesData;
+  readonly category: Category;
+};
+
+function ProductDisplay({ data, category }: Props) {
   return (
-    <section className="flex h-[calc(100vh-71px)] gap-6 overflow-y-hidden px-[100px] py-[20px]">
-      <div className="h-[calc(100vh-70px-53px-70px)] basis-[71%]">
+    <section className="relative flex gap-6 px-[100px] py-[20px]">
+      <div className="sticky left-0 top-[91px] h-[calc(100vh-70px-53px-70px)] w-[71%]">
         <img
           src={data.imgSrc}
           alt="cake-image"
           className="h-full w-full rounded-lg object-cover"
         />
-        <div className="mt-3 flex gap-3">
-          <AddToCart />
-          <BuyNowButton />
-        </div>
+        <ProductAction productId={data.id} category={category} />
       </div>
 
-      <div className="hide-scrollbar w-full overflow-y-scroll">
+      <div className="hide-scrollbar w-full">
         <div>
           <h3 className="font-semibold">{data.name}</h3>
           <p className="mt-1">
@@ -65,14 +72,14 @@ function ProductDisplay({ data }: { data: CakesData }) {
         </div>
 
         <div className="mb-6">
-          <p className="text-[15px] font-medium">Select Quantity</p>
+          <p className="text-[15px] font-medium">Select Weight</p>
           <div className="mt-[10px] flex gap-3">
-            {[...Array(5)].map((_, idx) => (
+            {cakeWeights.map((qty) => (
               <button
-                key={idx}
-                className="inline-block w-[75px] rounded-lg border border-gray-500 py-[10px] text-center"
+                key={qty.id}
+                className="inline-block w-[75px] rounded-lg border border-gray-500 py-[10px] text-center text-[15px] font-medium"
               >
-                {idx + 1}
+                {qty.value} Kg
               </button>
             ))}
           </div>
@@ -119,7 +126,7 @@ function ProductDisplay({ data }: { data: CakesData }) {
           >
             Product Description
           </label>
-          <p>{data.description}</p>
+          <p className="text-[15px]">{data.description}</p>
         </div>
 
         <img
@@ -163,38 +170,4 @@ function ProductDisplay({ data }: { data: CakesData }) {
     </section>
   );
 }
-
-function AddToCart() {
-  return (
-    <button
-      type="button"
-      className="w-full rounded-lg border border-orange-600 py-4 text-orange-600"
-    >
-      Add To Card
-    </button>
-  );
-}
-
-function BuyNowButton() {
-  return (
-    <button
-      type="button"
-      className="w-full rounded-lg bg-orange-600 py-4 text-white"
-    >
-      Buy Now
-    </button>
-  );
-}
-
-function findOrgPrice(currPrice: number): number {
-  const price = Math.trunc(currPrice * 1.11);
-  const remaining = 9 - (price % 10);
-  return price + remaining;
-}
-
-function findDiscount(currPrice: number, orgPrice: number | null): number {
-  const ogPrice = orgPrice ?? findOrgPrice(currPrice);
-  return Math.trunc(((ogPrice - currPrice) / ogPrice) * 100);
-}
-
 export default ProductDisplay;

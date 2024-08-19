@@ -1,26 +1,6 @@
-type Reviews = {
-  id: string;
-  name: string;
-  rating: number;
-  postedOn: string;
-  location: string;
-  ocassion: string;
-  message: string;
-};
+import { CakesDataType } from "@/types/global";
 
-type CakesData = {
-  id: string;
-  name: string;
-  totalReviews: number;
-  originalPrice: number | null;
-  currPrice: number;
-  imgSrc: string;
-  rating: number;
-  description: string;
-  reviews: Reviews[];
-};
-
-const bestsellerCakes: CakesData[] = [
+const bestsellerCakes: CakesDataType[] = [
   {
     id: "1423bbbb-255f-4a4c-a981-34c090006baf",
     name: "Round Chocolate Truffle Cake",

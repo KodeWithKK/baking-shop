@@ -1,4 +1,4 @@
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/components/ProductCard/ProductCard";
 import designerCakes from "@/data/designerCakes";
 
 export default function DesinerCakesPage() {

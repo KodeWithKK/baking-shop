@@ -1,26 +1,6 @@
-type Reviews = {
-  id: string;
-  name: string;
-  rating: number;
-  postedOn: string;
-  location: string;
-  ocassion: string;
-  message: string;
-};
+import { CakesDataType } from "@/types/global";
 
-type CakesData = {
-  id: string;
-  name: string;
-  totalReviews?: number;
-  originalPrice: number | null;
-  currPrice: number;
-  imgSrc: string;
-  rating: number | null;
-  description: string;
-  reviews: Reviews[];
-};
-
-const pastries: CakesData[] = [
+const pastries: CakesDataType[] = [
   {
     id: "bfcc6ab9-bd5e-441c-8ffc-eda74bcc2fb6",
     name: "Fruit Pastries",

@@ -1,6 +1,6 @@
-import Link from "next/link";
+import AppProvider from "@/context/AppProvider/AppProvider";
+import Navbar from "@/components/Navbar/Navbar";
 import type { Metadata } from "next";
-import { CartOutlineIcon, HeartOutlineIcon } from "@/Icons/Icons";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,54 +18,18 @@ export default function RootLayout({
       <head>
         <link
           rel="shortcut icon"
-          href="https://i.imgur.com/7RQ1P1G.png"
+          href="https://blogger.googleusercontent.com/img/a/AVvXsEjiJsyFdqTbr-zK8IeKUJcdiFOTpoN7QNyUkELPbSKOafFNiH3szSqIG7HVqIAqde7k3jBthnwkoueXU3fF0HjH9Nfg-QSNJtw7b_tKsNyZ74zjz105lurwxV5AAillsKMZSGNRxfWnEdNOeyyzbR0Xw2Fo8TISK4ecNdvOxr0faEkDgwPaGKqR3NPHES4"
           type="image/x-icon"
         />
       </head>
       <body>
-        <Navbar />
-        <div className="min-h-screen bg-[#f7f7f7] pt-[71px] text-gray-975">
-          {children}
-        </div>
+        <AppProvider>
+          <Navbar />
+          <div className="min-h-screen bg-[#f7f7f7] pt-[71px] text-gray-975">
+            {children}
+          </div>
+        </AppProvider>
       </body>
     </html>
-  );
-}
-
-function Navbar() {
-  return (
-    <nav className="fixed left-0 top-0 flex w-full items-center justify-between rounded-b-[10px] bg-white py-[10px] pl-[14px] pr-5 text-orange-600 shadow-sm">
-      <div className="justify-content flex items-center">
-        <img
-          src="https://i.imgur.com/7RQ1P1G.png"
-          className="-mt-[5px] mr-2 h-[56px] w-[56px]"
-          alt=""
-        />
-        <Link href="/">
-          <h2 className="ml-2.5 text-[26px] font-bold">Bakings Shop</h2>
-        </Link>
-      </div>
-
-      <div className="flex items-center">
-        <NavButton Icon={HeartOutlineIcon}>Wishlisht</NavButton>
-        <NavButton Icon={CartOutlineIcon}>Cart</NavButton>
-      </div>
-    </nav>
-  );
-}
-
-type NavButtonProps = {
-  Icon: React.ComponentType<{ className: string }>;
-  children: React.ReactNode;
-};
-
-function NavButton({ Icon, children }: Readonly<NavButtonProps>) {
-  return (
-    <button
-      type="button"
-      className="flex items-center gap-[5px] rounded-lg px-[10px] py-[7px] hover:bg-orange-600/[.15]"
-    >
-      <Icon className="h-[24px]" /> {children}
-    </button>
   );
 }

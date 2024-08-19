@@ -1,4 +1,4 @@
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/components/ProductCard/ProductCard";
 import bestsellerCakes from "@/data/bestSeller";
 import designerCakes from "@/data/designerCakes";
 import pastries from "@/data/pastries";
