@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
 
@@ -12,33 +13,42 @@ type CakesData = {
   description: string;
 };
 
-function ProductCard({ data, href }: { data: CakesData; href: string }) {
+type Props = {
+  data: CakesData;
+  href: string;
+};
+
+function ProductCard({ data, href }: Readonly<Props>) {
   return (
     <Link
       href={href}
       className="rounded-[15px] border border-gray-200 bg-white p-[10px]"
     >
       <img src={data.imgSrc} alt="data-img" className="rounded-[10px]" />
-      <p className="text-[15px] font-semibold">{data.name}</p>
-      <p className="">
-        <span className="mr-[10px] text-[16px] font-semibold">
-          ₹ {data.currPrice}
-        </span>
-        <span className="text-[13px] line-through">
-          ₹ {data.originalPrice ?? findOrgPrice(data.currPrice)}
-        </span>
-        <span className="ml-2 text-[13px] font-medium text-[#1c9550]">
-          ({findDiscount(data.currPrice, data.originalPrice)}% OFF)
-        </span>
-      </p>
-      <p className="">
-        <span className="rounded-md bg-[#1c9550]/10 p-1 font-medium text-[#1c9550]">
-          {data.rating ?? "NEW"} ★
-        </span>
-        {data.totalReviews && (
-          <span className="ml-2 text-[15px]">{data.totalReviews} Reviews</span>
-        )}
-      </p>
+      <div className="space-y-px">
+        <p className="text-[15px] font-semibold">{data.name}</p>
+        <p className="">
+          <span className="mr-[10px] text-[16px] font-semibold">
+            ₹ {data.currPrice}
+          </span>
+          <span className="text-[13px] line-through">
+            ₹ {data.originalPrice ?? findOrgPrice(data.currPrice)}
+          </span>
+          <span className="ml-2 text-[13px] font-medium text-[#1c9550]">
+            ({findDiscount(data.currPrice, data.originalPrice)}% OFF)
+          </span>
+        </p>
+        <p className="">
+          <span className="rounded-md bg-[#1c9550]/10 p-1 text-[14px] font-medium text-[#1c9550]">
+            {data.rating ?? "NEW"} ★
+          </span>
+          {data.totalReviews && (
+            <span className="ml-2 text-[15px]">
+              {data.totalReviews} Reviews
+            </span>
+          )}
+        </p>
+      </div>
     </Link>
   );
 }

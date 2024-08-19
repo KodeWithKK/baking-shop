@@ -12,7 +12,7 @@ export default function Home() {
         <ViewAllBtn href="/best-seller" />
       </div>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(310px,1fr))] gap-4">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(265px,1fr))] gap-4">
         {bestsellerCakes.slice(0, 4).map((cakeData) => (
           <ProductCard
             key={cakeData.id}
@@ -27,7 +27,7 @@ export default function Home() {
         <ViewAllBtn href="/designer-cakes" />
       </div>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(310px,1fr))] gap-4">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(265px,1fr))] gap-4">
         {designerCakes.slice(0, 4).map((cakeData) => (
           <ProductCard
             key={cakeData.id}
@@ -42,7 +42,7 @@ export default function Home() {
         <ViewAllBtn href="/pastries" />
       </div>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(310px,1fr))] gap-4">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(265px,1fr))] gap-4">
         {pastries.slice(0, 4).map((cakeData) => (
           <ProductCard
             key={cakeData.id}
@@ -55,7 +55,7 @@ export default function Home() {
   );
 }
 
-function ViewAllBtn({ href }: { href: string }) {
+function ViewAllBtn({ href }: Readonly<{ href: string }>) {
   return (
     <Link
       type="button"
