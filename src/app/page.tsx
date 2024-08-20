@@ -6,13 +6,13 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="space-y-4 px-[100px] py-[30px]">
+    <div className="mx-auto w-[85%] space-y-4 py-[30px]">
       <div className="flex items-center justify-between">
         <h2 className="">Best Sellers</h2>
         <ViewAllBtn href="/best-seller" />
       </div>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(265px,1fr))] gap-4">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4">
         {bestsellerCakes.slice(0, 4).map((cakeData) => (
           <ProductCard
             key={cakeData.id}
@@ -27,7 +27,7 @@ export default function Home() {
         <ViewAllBtn href="/designer-cakes" />
       </div>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(265px,1fr))] gap-4">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4">
         {designerCakes.slice(0, 4).map((cakeData) => (
           <ProductCard
             key={cakeData.id}
@@ -42,7 +42,7 @@ export default function Home() {
         <ViewAllBtn href="/pastries" />
       </div>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(265px,1fr))] gap-4">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4">
         {pastries.slice(0, 4).map((cakeData) => (
           <ProductCard
             key={cakeData.id}

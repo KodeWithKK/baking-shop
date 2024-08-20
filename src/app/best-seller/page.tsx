@@ -3,10 +3,10 @@ import bestsellerCakes from "@/data/bestSeller";
 
 export default function BestSellerPage() {
   return (
-    <div className="space-y-4 px-[100px] py-[30px]">
+    <div className="mx-auto w-[85%] space-y-4 py-[30px]">
       <h2 className="">Best Sellers</h2>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(265px,1fr))] gap-4">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4">
         {bestsellerCakes.map((cakeData) => (
           <ProductCard
             key={cakeData.id}

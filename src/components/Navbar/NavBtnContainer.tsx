@@ -45,7 +45,8 @@ function NavButton({ Icon, children }: Readonly<NavButtonProps>) {
       type="button"
       className="flex items-center gap-[5px] rounded-lg px-[10px] py-[7px] hover:bg-orange-600/[.15]"
     >
-      <Icon className="h-[24px]" /> {children}
+      <Icon className="h-[24px] max-md:h-[28px]" />{" "}
+      <div className="max-md:hidden">{children}</div>
     </button>
   );
 }

@@ -9,6 +9,13 @@ const config: Config = {
   mode: "jit",
   theme: {
     extend: {
+      screens: {
+        sm: "480px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+      },
       colors: {
         gray: {
           "50": "#f4f3f6",
