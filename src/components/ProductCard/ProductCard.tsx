@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import cn from "@/utils/cn";
 
 type CakesData = {
   id: string;
@@ -15,13 +16,17 @@ type CakesData = {
 type Props = {
   data: CakesData;
   href: string;
+  className?: string;
 };
 
-function ProductCard({ data, href }: Readonly<Props>) {
+function ProductCard({ data, href, className }: Readonly<Props>) {
   return (
     <Link
       href={href}
-      className="rounded-[15px] border border-gray-200 bg-white p-[10px]"
+      className={cn(
+        "rounded-[15px] border border-gray-200 bg-white p-[10px]",
+        className,
+      )}
     >
       <img src={data.imgSrc} alt="data-img" className="rounded-[10px]" />
       <div className="space-y-px">
