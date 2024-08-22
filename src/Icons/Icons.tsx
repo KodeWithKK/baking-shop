@@ -56,4 +56,19 @@ function CartOutlineIcon(props: Readonly<Props>) {
   );
 }
 
-export { HeartOutlineIcon, CartOutlineIcon };
+function RightArrowIcon(props: Readonly<Props>) {
+  return (
+    <svg viewBox="0 0 24 24" {...props}>
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M10 17l5-5-5-5"
+      />
+    </svg>
+  );
+}
+
+export { HeartOutlineIcon, CartOutlineIcon, RightArrowIcon };
