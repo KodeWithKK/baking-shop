@@ -1,9 +1,9 @@
 "use client";
 
-import FullPageLoader from "@/components/Loaders/FullPageLoader";
+import FullPageLoader from "@/components/base/Loaders/FullPageLoader";
 import useIsTouchDevice from "@/hooks/useIsTouchDevice";
-import ProductsDeck from "@/components/ProductsDeck/ProductsDeck";
-import ProductCard from "@/components/ProductCard/ProductCard";
+import ProductsDeck from "@/components/features/ProductsDeck/ProductsDeck";
+import ProductCard from "@/components/features/ProductCard/ProductCard";
 import bestsellerCakes from "@/data/bestSeller";
 import designerCakes from "@/data/designerCakes";
 import pastries from "@/data/pastries";

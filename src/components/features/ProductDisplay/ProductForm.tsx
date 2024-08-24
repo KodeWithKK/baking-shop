@@ -1,27 +1,41 @@
 "use client";
 
 import { useState } from "react";
-import { cakeWeights } from "./utils";
+import { cakeWeights, cakeQuantities } from "./utils";
 import cn from "@/utils/cn";
 
-function ProductForm() {
-  const [selectedWeight, setSelectedWeight] = useState(0.5);
+import { CakeCategories } from "@/types/global";
+import pastries from "@/data/pastries";
+
+const buttonsDataMap = {
+  "best-seller": cakeWeights,
+  "designer-cakes": cakeWeights,
+  pastries: cakeQuantities,
+};
+
+function ProductForm({ category }: Readonly<{ category: CakeCategories }>) {
+  const [selectedWeight, setSelectedWeight] = useState(
+    category === "pastries" ? 1 : 0.5,
+  );
 
   return (
     <>
       <div className="mb-6">
-        <p className="text-[15px] font-medium">Select Weight</p>
+        <p className="text-[15px] font-medium">
+          Select {category === "pastries" ? "Quantity" : "Weights"}
+        </p>
         <div className="mt-[10px] flex gap-3">
-          {cakeWeights.map((qty) => (
+          {buttonsDataMap[category].map((qty) => (
             <button
               key={qty.id}
               className={cn(
                 "inline-block w-[75px] rounded-lg border border-gray-500 py-[10px] text-center text-[15px] font-medium",
                 selectedWeight == qty.value && "border-orange-600",
+                category === "pastries" && "w-[70px]",
               )}
               onClick={() => setSelectedWeight(qty.value)}
             >
-              {qty.value} Kg
+              {qty.value} {category !== "pastries" && "Kg"}
             </button>
           ))}
         </div>

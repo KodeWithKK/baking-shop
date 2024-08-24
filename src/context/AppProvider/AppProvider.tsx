@@ -8,7 +8,6 @@ import {
   useState,
 } from "react";
 import { produce } from "immer";
-
 import { findCake } from "./utils";
 import { CakeCategories } from "@/types/global";
 
@@ -28,14 +27,15 @@ const defaultValues = {
   addToWishlist: (id: string, category: CakeCategories) => {},
   removeFromWishlist: (id: string, category: CakeCategories) => {},
 };
+
 const AppContext = createContext(defaultValues);
 export const useAppContext = () => useContext(AppContext);
 
 type Props = {
-  readonly children: React.ReactNode;
+  children: React.ReactNode;
 };
 
-function AppProvider({ children }: Props) {
+function AppProvider({ children }: Readonly<Props>) {
   const [wishlistItems, setWishlistItems] = useState<ListItem[]>([]);
   const [cartItems, setCartItems] = useState<ListItem[]>([]);
 

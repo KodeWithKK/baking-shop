@@ -35,7 +35,7 @@ export const cakeWeights = [
   },
 ];
 
-export const cakeQuantity = [
+export const cakeQuantities = [
   {
     id: 101,
     value: 1,

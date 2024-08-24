@@ -2,6 +2,8 @@ import ProductAction from "./ProductAction";
 import ProductForm from "./ProductForm";
 import { findDiscount, findOrgPrice } from "./utils";
 
+import { CakeCategories } from "@/types/global";
+
 type Reviews = {
   id: string;
   name: string;
@@ -24,11 +26,9 @@ type CakesData = {
   reviews: Reviews[];
 };
 
-type Category = "best-seller" | "designer-cakes" | "pastries";
-
 type Props = {
   readonly data: CakesData;
-  readonly category: Category;
+  readonly category: CakeCategories;
 };
 
 function ProductDisplay({ data, category }: Props) {
@@ -72,7 +72,7 @@ function ProductDisplay({ data, category }: Props) {
           </span>
         </div>
 
-        <ProductForm />
+        <ProductForm category={category} />
 
         <hr className="border-gray-400" />
 

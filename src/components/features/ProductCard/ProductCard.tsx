@@ -27,7 +27,11 @@ function ProductCard({ data, href, className }: Readonly<Props>) {
         className,
       )}
     >
-      <img src={data.imgSrc} alt="data-img" className="rounded-[10px]" />
+      <img
+        src={`${data.imgSrc}?tr=w-320,h-320,q-90`}
+        alt="data-img"
+        className="rounded-[10px]"
+      />
 
       <div className="space-y-px">
         <p className="overflow-hidden text-ellipsis text-nowrap text-[15px] font-semibold">
