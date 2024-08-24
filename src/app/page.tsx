@@ -1,11 +1,10 @@
+import ProductsDeck from "@/components/ProductsDeck/ProductsDeck";
 import ProductCard from "@/components/ProductCard/ProductCard";
 import bestsellerCakes from "@/data/bestSeller";
 import designerCakes from "@/data/designerCakes";
 import pastries from "@/data/pastries";
-import { CakesDataType } from "@/types/global";
+import { CakeDataType } from "@/types/global";
 import Link from "next/link";
-
-import { RightArrowIcon } from "@/Icons/Icons";
 
 export default function Home() {
   return (
@@ -34,7 +33,7 @@ export default function Home() {
 type CategoryDisplayType = {
   readonly name: string;
   readonly allCakesHref: string;
-  readonly cakesData: CakesDataType[];
+  readonly cakesData: CakeDataType[];
 };
 
 function CategoryDisplay({
@@ -56,30 +55,16 @@ function CategoryDisplay({
         </div>
       </div>
 
-      <div
-        className={
-          "grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 max-sm:flex max-sm:gap-2.5 max-sm:overflow-x-auto"
-        }
-      >
-        {cakesData.slice(0, 4).map((cakeData) => (
+      <ProductsDeck totalCardsInDeck={16} cardWidth={200}>
+        {cakesData.slice(0, 16).map((cakeData) => (
           <ProductCard
             key={cakeData.id}
             href={`${allCakesHref}/${cakeData.id}`}
             data={cakeData}
-            className="max-sm:w-[200px] max-sm:flex-shrink-0"
+            className="w-[200px] flex-shrink-0"
           />
         ))}
-
-        <Link
-          className="flex w-[150px] flex-shrink-0 items-center justify-center rounded-[15px] border border-orange-600 bg-orange-600/10 px-6 text-center font-medium leading-[1.5] text-orange-600 sm:hidden"
-          href={allCakesHref}
-        >
-          <div className="grid place-items-center">
-            <RightArrowIcon className="h-10 w-10" />
-            <span className="text-lg">View All {name}</span>
-          </div>
-        </Link>
-      </div>
+      </ProductsDeck>
     </>
   );
 }

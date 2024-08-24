@@ -1,10 +1,10 @@
 import bestsellerCakes from "@/data/bestSeller";
 import designerCakes from "@/data/designerCakes";
 import pastries from "@/data/pastries";
-import { CakesDataType, CakeCategories } from "@/types/global";
+import { CakeDataType, CakeCategories } from "@/types/global";
 
 export function findCake(id: string, category: CakeCategories) {
-  let cake: CakesDataType | undefined;
+  let cake: CakeDataType | undefined;
 
   if (category === "best-seller") {
     cake = bestsellerCakes.find((item) => item.id === id);

@@ -1,6 +1,6 @@
-import { CakesDataType } from "@/types/global";
+import { CakeDataType } from "@/types/global";
 
-const designerCakes: CakesDataType[] = [
+const designerCakes: CakeDataType[] = [
   {
     id: "adb56932-f85d-4c9c-a331-1a99a5296011",
     name: "Enchanting Pink Rose Cake",

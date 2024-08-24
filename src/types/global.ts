@@ -8,7 +8,7 @@ type Reviews = {
   message: string;
 };
 
-export type CakesDataType = {
+export type CakeDataType = {
   id: string;
   name: string;
   totalReviews?: number;
