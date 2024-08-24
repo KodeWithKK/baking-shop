@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
-import useIsTouchDevice from "@/hooks/useIsTouchDevice";
 import cn from "@/utils/cn";
 
 import { RightArrowIcon } from "@/Icons/Icons";
@@ -10,17 +9,17 @@ function ProductsDeck({
   children,
   totalCardsInDeck,
   cardWidth,
+  isTouchDevice,
 }: Readonly<{
   children: React.ReactNode;
   totalCardsInDeck: number;
   cardWidth: number;
+  isTouchDevice: boolean | null;
 }>) {
   const [totalCardFitsInView, setTotalCardFitsInView] = useState<number>(0);
   const [startPos, setStartPos] = useState<number>(0);
   const [deckXTranslate, setDeckXTranslate] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
-
-  const isTouchDevice = useIsTouchDevice();
 
   useEffect(() => {
     const handleResize = () => {
@@ -48,20 +47,18 @@ function ProductsDeck({
 
   const handleLeftShift = useCallback(() => {
     const extendedCardWidth = cardWidth + 8; // width + gap
-    let nextStartPos = startPos - totalCardFitsInView;
-    if (nextStartPos < 0) nextStartPos = 0;
-    const nextTranslate = -1 * nextStartPos * extendedCardWidth;
-    setDeckXTranslate(nextTranslate);
+    let nextStartPos = Math.max(0, startPos - totalCardFitsInView);
+    setDeckXTranslate(-1 * nextStartPos * extendedCardWidth);
     setStartPos(nextStartPos);
   }, [startPos, totalCardFitsInView, cardWidth]);
 
   const handleRightShift = useCallback(() => {
     const extendedCardWidth = cardWidth + 8; // width + gap
-    let nextStartPos = startPos + totalCardFitsInView;
-    if (nextStartPos > totalCardsInDeck - 1)
-      nextStartPos = totalCardsInDeck - 1;
-    const nextTranslate = -1 * nextStartPos * extendedCardWidth;
-    setDeckXTranslate(nextTranslate);
+    let nextStartPos = Math.min(
+      totalCardsInDeck - totalCardFitsInView,
+      startPos + totalCardFitsInView,
+    );
+    setDeckXTranslate(-1 * nextStartPos * extendedCardWidth);
     setStartPos(nextStartPos);
   }, [startPos, totalCardFitsInView, totalCardsInDeck, cardWidth]);
 
@@ -86,7 +83,7 @@ function ProductsDeck({
         )}
       >
         <div
-          className="flex gap-2 transition-all duration-[400]"
+          className="flex gap-2 transition-all duration-700 ease-in-out"
           style={{ transform: `translateX(${deckXTranslate}px)` }}
         >
           {children}

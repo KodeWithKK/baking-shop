@@ -45,6 +45,16 @@ const config: Config = {
           "950": "#4a0b05",
         },
       },
+      keyframes: {
+        spin: {
+          to: {
+            transform: "rotate(1turn)",
+          },
+        },
+      },
+      animation: {
+        spin: "spin 1s linear infinite",
+      },
     },
   },
   plugins: [],

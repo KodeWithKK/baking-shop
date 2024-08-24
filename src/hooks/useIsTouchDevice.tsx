@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 
 function useIsTouchDevice() {
-  const [isTouchDevice, setIsTouchDevice] = useState<boolean>(false);
+  const [isTouchDevice, setIsTouchDevice] = useState<boolean | null>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const mediaQuery = window.matchMedia("(pointer: coarse)");
 
     const updateTouchDevice = (event: MediaQueryListEvent) => {
