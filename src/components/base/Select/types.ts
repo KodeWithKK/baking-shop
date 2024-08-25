@@ -1,7 +1,8 @@
 export type SelectProps = {
   variant?: "primary" | "secondary";
   placeholder?: string;
-  value?: string;
+  defaultValue?: string;
+  onChange?: (value: string) => void;
   children: React.ReactNode;
 };
 

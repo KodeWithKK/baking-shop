@@ -2,9 +2,9 @@
 
 import {
   useState,
-  createContext,
   useMemo,
   useCallback,
+  createContext,
   useContext,
 } from "react";
 import cn from "@/utils/cn";
@@ -16,9 +16,8 @@ import { RightArrowIcon } from "@/Icons/Icons";
 
 const defaultContextValue = {
   variant: "secondary" as string,
-  addDataMap: (key: string, value: string) => {},
-  setSelectedKey: (value: string) => {},
-  setIsOptionsCollapsed: (value: boolean) => {},
+  addDataMap: (value: string, text: string) => {},
+  handleOptionClick: (value: string) => {},
 };
 
 const SelectContext = createContext(defaultContextValue);
@@ -27,27 +26,33 @@ export const useSelectContext = () => useContext(SelectContext);
 function Select({
   variant = "secondary",
   placeholder = "Select Value",
-  value = "",
+  onChange,
+  defaultValue = "",
   children,
 }: Readonly<SelectProps>) {
-  const [selectedKey, setSelectedKey] = useState<string>(value);
+  const [selectedValue, setSelectedValue] = useState<string>(defaultValue);
   const [isOptionsCollapsed, setIsOptionsCollapsed] = useState<boolean>(true);
-  const [dataMap, setDataMap] = useState<DataMap>({});
+  const [dataMap, setDataMap] = useState<DataMap>({}); // value-text map
 
-  const addDataMap = useCallback((key: string, value: string) => {
+  const addDataMap = useCallback((value: string, text: string) => {
     setDataMap(
       produce((draft) => {
-        draft[key] = value;
+        draft[value] = text;
       }),
     );
+  }, []);
+
+  const handleOptionClick = useCallback((key: string) => {
+    setSelectedValue(key);
+    setIsOptionsCollapsed(true);
+    onChange?.(key);
   }, []);
 
   const contextValue = useMemo(
     () => ({
       variant,
       addDataMap,
-      setSelectedKey,
-      setIsOptionsCollapsed,
+      handleOptionClick,
     }),
     [variant, addDataMap],
   );
@@ -62,12 +67,14 @@ function Select({
             variant === "secondary" && "w-[175px]",
             variant === "secondary" && "bg-[#cdccd1]",
           )}
-          onClick={() => setIsOptionsCollapsed((prev) => !prev)}
+          onClick={() => {
+            setIsOptionsCollapsed((prev) => !prev);
+          }}
         >
           <span className="flex justify-between gap-3 text-[15px]">
-            {selectedKey === "" && <span>{placeholder ?? "Select Value"}</span>}
-            {selectedKey !== "" && (
-              <span>{dataMap[selectedKey] ?? selectedKey}</span>
+            {selectedValue === "" && <span>{placeholder}</span>}
+            {selectedValue !== "" && (
+              <span>{dataMap[selectedValue] ?? selectedValue}</span>
             )}
             <RightArrowIcon
               className={cn(

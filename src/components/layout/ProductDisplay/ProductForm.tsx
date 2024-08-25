@@ -5,7 +5,6 @@ import { cakeWeights, cakeQuantities } from "./utils";
 import cn from "@/utils/cn";
 
 import { CakeCategories } from "@/types/global";
-import pastries from "@/data/pastries";
 
 const buttonsDataMap = {
   "best-seller": cakeWeights,

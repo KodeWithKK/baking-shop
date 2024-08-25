@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import ProductDisplay from "@/components/features/ProductDisplay/ProductDisplay";
+import ProductDisplay from "@/components/layout/ProductDisplay/ProductDisplay";
 import getCakesData from "@/utils/getCakesData";
 
 type Props = {

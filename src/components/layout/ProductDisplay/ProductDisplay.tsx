@@ -37,7 +37,7 @@ function ProductDisplay({ data, category }: Props) {
       <div className="sticky left-0 top-[91px] h-[calc(100vh-70px-53px-70px)] w-[71%]">
         <img
           src={data.imgSrc}
-          alt="cake-image"
+          alt="cake_image"
           className="h-full w-full rounded-lg object-cover"
         />
         <ProductAction productId={data.id} category={category} />

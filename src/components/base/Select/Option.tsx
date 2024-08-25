@@ -8,8 +8,7 @@ import { OptionProps } from "./types";
 
 function Option({ value, text = value }: Readonly<OptionProps>) {
   const [isDataAdded, setIsDataAdded] = useState<boolean>(false);
-  const { variant, addDataMap, setSelectedKey, setIsOptionsCollapsed } =
-    useSelectContext();
+  const { variant, addDataMap, handleOptionClick } = useSelectContext();
 
   useEffect(() => {
     if (!isDataAdded) {
@@ -26,8 +25,7 @@ function Option({ value, text = value }: Readonly<OptionProps>) {
         variant === "secondary" && "hover:bg-orange-600/30",
       )}
       onClick={() => {
-        setSelectedKey(value);
-        setIsOptionsCollapsed(true);
+        handleOptionClick(value);
       }}
     >
       {text}
