@@ -4,11 +4,12 @@ import { CartOutlineIcon, HeartOutlineIcon } from "@/Icons/Icons";
 import { useAppContext } from "@/context/AppProvider/AppProvider";
 
 function NavBtnContainer() {
-  const { wishlistItems, cartItems } = useAppContext();
+  const { wishlistItems, cartItems, toggleWhishlistModal, toggleCartModal } =
+    useAppContext();
 
   return (
     <div className="flex items-center">
-      <NavButton Icon={HeartOutlineIcon}>
+      <NavButton Icon={HeartOutlineIcon} onClick={toggleWhishlistModal}>
         {wishlistItems.length === 0 && "Wishlist"}
         {wishlistItems.length > 0 && (
           <div className="flex flex-col text-sm font-medium leading-tight">
@@ -19,7 +20,7 @@ function NavBtnContainer() {
           </div>
         )}
       </NavButton>
-      <NavButton Icon={CartOutlineIcon}>
+      <NavButton Icon={CartOutlineIcon} onClick={toggleCartModal}>
         {cartItems.length === 0 && "Cart"}
         {cartItems.length > 0 && (
           <div className="flex flex-col text-sm font-medium leading-tight">
@@ -39,13 +40,15 @@ function NavBtnContainer() {
 type NavButtonProps = {
   Icon: React.ComponentType<{ className: string }>;
   children: React.ReactNode;
+  onClick: () => void;
 };
 
-function NavButton({ Icon, children }: Readonly<NavButtonProps>) {
+function NavButton({ Icon, onClick, children }: Readonly<NavButtonProps>) {
   return (
     <button
       type="button"
       className="flex items-center gap-[5px] rounded-lg px-[10px] py-[7px] hover:bg-orange-600/[.15]"
+      onClick={onClick}
     >
       <Icon className="h-[24px] max-md:h-[28px]" />{" "}
       <div className="max-md:hidden">{children}</div>

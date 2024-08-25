@@ -22,10 +22,14 @@ type ListItem = {
 const defaultValues = {
   wishlistItems: [] as ListItem[],
   cartItems: [] as ListItem[],
+  isCartModalOpen: false as boolean,
+  isWishlistModalOpen: false as boolean,
   addToCart: (id: string, category: CakeCategories) => {},
   removeFromCart: (id: string, category: CakeCategories) => {},
   addToWishlist: (id: string, category: CakeCategories) => {},
   removeFromWishlist: (id: string, category: CakeCategories) => {},
+  toggleCartModal: () => {},
+  toggleWhishlistModal: () => {},
 };
 
 const AppContext = createContext(defaultValues);
@@ -38,6 +42,9 @@ type Props = {
 function AppProvider({ children }: Readonly<Props>) {
   const [wishlistItems, setWishlistItems] = useState<ListItem[]>([]);
   const [cartItems, setCartItems] = useState<ListItem[]>([]);
+  const [isCartModalOpen, setIsCartModalOpen] = useState<boolean>(false);
+  const [isWishlistModalOpen, setIsWishlistModalOpen] =
+    useState<boolean>(false);
 
   const addToCart = useCallback((id: string, category: CakeCategories) => {
     let cake = findCake(id, category);
@@ -89,22 +96,38 @@ function AppProvider({ children }: Readonly<Props>) {
     [],
   );
 
+  const toggleCartModal = useCallback(() => {
+    setIsCartModalOpen((prev) => !prev);
+  }, []);
+
+  const toggleWhishlistModal = useCallback(() => {
+    setIsWishlistModalOpen((prev) => !prev);
+  }, []);
+
   const value = useMemo(
     () => ({
       wishlistItems,
       cartItems,
+      isCartModalOpen,
+      isWishlistModalOpen,
       addToCart,
       removeFromCart,
       addToWishlist,
       removeFromWishlist,
+      toggleCartModal,
+      toggleWhishlistModal,
     }),
     [
       wishlistItems,
       cartItems,
+      isCartModalOpen,
+      isWishlistModalOpen,
       addToCart,
       removeFromCart,
       addToWishlist,
       removeFromWishlist,
+      toggleCartModal,
+      toggleWhishlistModal,
     ],
   );
 

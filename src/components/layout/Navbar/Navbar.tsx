@@ -3,7 +3,7 @@ import NavBtnContainer from "./NavBtnContainer";
 
 export default function Navbar() {
   return (
-    <nav className="fixed left-0 top-0 z-[1000] flex w-full items-center justify-between rounded-b-[10px] bg-white px-5 py-[10px] text-orange-600 shadow-sm max-sm:px-[4%]">
+    <nav className="fixed left-0 top-0 z-[100] flex w-full items-center justify-between rounded-b-[10px] bg-white px-5 py-[10px] text-orange-600 shadow-sm max-sm:px-[4%]">
       <Link href="/">
         <div className="justify-content flex items-center">
           <img

@@ -6,7 +6,7 @@ import ProductContent from "./ProductContent";
 import { ProductPageProps } from "./types";
 
 function ProductDisplay({ data, category }: Readonly<ProductPageProps>) {
-  const { addToCart, cartItems } = useAppContext();
+  const { addToCart, removeFromCart, cartItems } = useAppContext();
 
   const isAlreadyInCart = useMemo((): boolean => {
     return !!cartItems.find((item) => item.id === data.id);
@@ -28,10 +28,12 @@ function ProductDisplay({ data, category }: Readonly<ProductPageProps>) {
             onClick={() => {
               if (!isAlreadyInCart) {
                 addToCart(data.id, category);
+              } else {
+                removeFromCart(data.id, category);
               }
             }}
           >
-            {isAlreadyInCart ? "Go to Cart" : "Add To Cart"}
+            {isAlreadyInCart ? "Remove From Cart" : "Add To Cart"}
           </button>
 
           <button
