@@ -1,6 +1,6 @@
 import { CakeCategories, CakeDataType } from "@/types/global";
 
-export type ProductDisplayProps = {
+export type ProductPageProps = {
   data: CakeDataType;
   category: CakeCategories;
 };

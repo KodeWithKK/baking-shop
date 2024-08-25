@@ -18,7 +18,7 @@ function WrappedText({
   const wrappedText = useMemo((): string => {
     const words = children.split(" ");
     if (words.length > wrapLength) {
-      return words.slice(0, wrapLength).join(" ") + "...";
+      return words.slice(0, wrapLength).join(" ") + "... ";
     } else return children;
   }, [children, wrapLength]);
 
@@ -47,7 +47,7 @@ function ReadMoreBtn({ onClick }: Readonly<ReadMoreBtnType>) {
   return (
     <button
       type="button"
-      className="text-[#43a1f0] underline underline-offset-4"
+      className="text-[#468fce] underline underline-offset-4"
       onClick={onClick}
     >
       Read More

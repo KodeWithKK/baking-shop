@@ -12,9 +12,9 @@ function NavBtnContainer() {
         {wishlistItems.length === 0 && "Wishlist"}
         {wishlistItems.length > 0 && (
           <div className="flex flex-col text-sm font-medium leading-tight">
-            <span>{wishlistItems.length} Items</span>
             <span>
-              ₹ {wishlistItems.reduce((acc, curr) => acc + curr.currPrice, 0)}
+              {wishlistItems.length}{" "}
+              {wishlistItems.length > 1 ? "Items" : "Item"}
             </span>
           </div>
         )}
@@ -23,7 +23,9 @@ function NavBtnContainer() {
         {cartItems.length === 0 && "Cart"}
         {cartItems.length > 0 && (
           <div className="flex flex-col text-sm font-medium leading-tight">
-            <span>{cartItems.length} Items</span>
+            <span>
+              {cartItems.length} {cartItems.length > 1 ? "Items" : "Item"}
+            </span>
             <span>
               ₹ {cartItems.reduce((acc, curr) => acc + curr.currPrice, 0)}
             </span>
