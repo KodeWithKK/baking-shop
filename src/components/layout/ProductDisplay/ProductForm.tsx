@@ -13,9 +13,10 @@ const buttonsDataMap = {
 };
 
 function ProductForm({ category }: Readonly<{ category: CakeCategories }>) {
-  const [selectedWeight, setSelectedWeight] = useState(
+  const [selectedWeight, setSelectedWeight] = useState<number>(
     category === "pastries" ? 1 : 0.5,
   );
+  const [cakeMessage, setCakeMessage] = useState<string>("");
 
   return (
     <>
@@ -48,15 +49,22 @@ function ProductForm({ category }: Readonly<{ category: CakeCategories }>) {
           >
             Cake Message
           </label>
-          <span className="text-sm">0/25</span>
+          <span className="text-sm">{cakeMessage.length}/25</span>
         </div>
         <input
           type="text"
           name="cake-message"
           id="cake-message"
+          value={cakeMessage}
+          onChange={(e) => setCakeMessage(e.target.value)}
           placeholder="Enter message on cake"
           className="w-full rounded-lg border border-gray-500 p-[10px] placeholder:text-gray-800"
         />
+        {cakeMessage.length > 25 && (
+          <p className="mt-1 text-[15px] text-orange-600">
+            Cake message is too long!
+          </p>
+        )}
       </div>
 
       <div className="mb-7">
