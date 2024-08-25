@@ -41,12 +41,15 @@ function ProductForm({ category }: Readonly<{ category: CakeCategories }>) {
       </div>
 
       <div className="mb-6">
-        <label
-          className="mb-1 block text-[15px] font-medium"
-          htmlFor="cake-message"
-        >
-          Cake Message
-        </label>
+        <div className="flex justify-between">
+          <label
+            className="mb-1 block text-[15px] font-medium"
+            htmlFor="cake-message"
+          >
+            Cake Message
+          </label>
+          <span className="text-sm">0/25</span>
+        </div>
         <input
           type="text"
           name="cake-message"

@@ -1,49 +1,25 @@
+"use client";
+
 import ProductAction from "./ProductAction";
 import ProductForm from "./ProductForm";
+import WrappedText from "@/components/features/WrappedText/WrappedText";
 import { findDiscount, findOrgPrice } from "./utils";
 
-import { CakeCategories } from "@/types/global";
+import { ProductDisplayProps } from "./types";
 
-type Reviews = {
-  id: string;
-  name: string;
-  rating: number;
-  postedOn: string;
-  location: string;
-  ocassion: string;
-  message: string;
-};
-
-type CakesData = {
-  id: string;
-  name: string;
-  totalReviews?: number;
-  originalPrice: number | null;
-  currPrice: number;
-  imgSrc: string;
-  rating: number | null;
-  description: string;
-  reviews: Reviews[];
-};
-
-type Props = {
-  readonly data: CakesData;
-  readonly category: CakeCategories;
-};
-
-function ProductDisplay({ data, category }: Props) {
+function ProductDisplay({ data, category }: Readonly<ProductDisplayProps>) {
   return (
-    <section className="relative flex gap-6 px-[100px] py-[20px]">
-      <div className="sticky left-0 top-[91px] h-[calc(100vh-70px-53px-70px)] w-[71%]">
+    <div className="relative flex gap-6 px-[100px] py-[20px]">
+      <section className="sticky left-0 top-[91px] h-[calc(100vh-70px-53px-70px)] w-[71%]">
         <img
           src={data.imgSrc}
           alt="cake_image"
           className="h-full w-full rounded-lg object-cover"
         />
         <ProductAction productId={data.id} category={category} />
-      </div>
+      </section>
 
-      <div className="hide-scrollbar w-full">
+      <section className="hide-scrollbar w-full">
         <div>
           <h3 className="font-semibold">{data.name}</h3>
           <p className="mt-1">
@@ -77,13 +53,10 @@ function ProductDisplay({ data, category }: Props) {
         <hr className="border-gray-400" />
 
         <div className="mb-6 mt-5">
-          <label
-            className="mb-1 block text-[15px] font-medium"
-            htmlFor="cake-message"
-          >
+          <div className="mb-1 block text-[15px] font-medium">
             Product Description
-          </label>
-          <p className="text-[15px]">{data.description}</p>
+          </div>
+          <WrappedText className="text-[15px]">{data.description}</WrappedText>
         </div>
 
         <img
@@ -123,8 +96,8 @@ function ProductDisplay({ data, category }: Props) {
             ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 export default ProductDisplay;

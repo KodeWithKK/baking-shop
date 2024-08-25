@@ -51,8 +51,6 @@ function AppProvider({ children }: Readonly<Props>) {
   }, []);
 
   const removeFromCart = useCallback((id: string, category: CakeCategories) => {
-    let cakePrice = 0;
-
     setCartItems(
       produce((draft) => {
         const index = draft.findIndex((item) => {
