@@ -30,11 +30,11 @@ function CategoryPage({ title, category, cakesData }: Readonly<Props>) {
   }, [sortBy]);
 
   return (
-    <div className="mx-auto w-[85%] space-y-4 py-[30px] max-sm:w-[95%] max-sm:pt-5">
-      <div className="flex justify-between">
-        <h2 className="text-[26px] max-sm:text-[24px]">{title}</h2>
-        <div>
-          <span className="text-[15px]">Sort by: </span>
+    <div className="mx-auto w-[85%] py-[30px] max-sm:w-[95%] max-sm:pt-5">
+      <div className="mb-4 flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-4">
+        <h2 className="text-[26px] leading-none max-sm:text-[24px]">{title}</h2>
+        <div className="max-md:mb-2 max-md:flex max-md:flex-col max-md:gap-1">
+          <span className="text-[15px] max-md:font-medium">Sort by: </span>
           <Select defaultValue={sortBy} onChange={setSortBy}>
             <Option value="Popularity" />
             <Option value="Price Ascending" />
