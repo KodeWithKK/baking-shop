@@ -6,9 +6,9 @@ import { CloseIcon } from "@/Icons/Icons";
 function WishlistModal() {
   const { isWishlistModalOpen, toggleWhishlistModal } = useAppContext();
 
-  // if (!isWishlistModalOpen) {
-  //   return null;
-  // }
+  if (!isWishlistModalOpen) {
+    return null;
+  }
 
   return (
     <div
