@@ -1,5 +1,6 @@
 import AppProvider from "@/context/AppProvider/AppProvider";
 import Navbar from "@/components/layout/Navbar/Navbar";
+import CartModal from "@/components/layout/CartModal/CartModal";
 import WishlistModal from "@/components/layout/WishlistModal/WishlistModal";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body>
         <AppProvider>
           <Navbar />
+          <CartModal />
           <WishlistModal />
 
           <div className="min-h-screen bg-[#f7f7f7] pt-[71px] text-gray-975">

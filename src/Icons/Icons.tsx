@@ -93,10 +93,38 @@ function CloseIcon(props: Readonly<Props>) {
   );
 }
 
+function ItemsListIcon(props: Readonly<Props>) {
+  return (
+    <svg height="1em" viewBox="0 0 256 256" {...props}>
+      <path
+        fill="currentColor"
+        d="M208 32H48a16 16 0 00-16 16v160a16 16 0 0016 16h160a16 16 0 0016-16V48a16 16 0 00-16-16m-16 152H64a8 8 0 010-16h128a8 8 0 010 16m0-48H64a8 8 0 010-16h128a8 8 0 010 16m0-48H64a8 8 0 010-16h128a8 8 0 010 16"
+      />
+    </svg>
+  );
+}
+
+function DeliveryIcon(props: Readonly<Props>) {
+  return (
+    <svg viewBox="0 0 24 24" {...props}>
+      <path
+        fill="currentColor"
+        d="M19 7c0-1.1-.9-2-2-2h-3v2h3v2.65L13.52 14H10V9H6c-2.21 0-4 1.79-4 4v3h2c0 1.66 1.34 3 3 3s3-1.34 3-3h4.48L19 10.35zM7 17c-.55 0-1-.45-1-1h2c0 .55-.45 1-1 1"
+      />
+      <path
+        fill="currentColor"
+        d="M5 6h5v2H5zm14 7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3m0 4c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"
+      />
+    </svg>
+  );
+}
+
 export {
   HeartOutlineIcon,
   HeartSolidIcon,
   CartOutlineIcon,
   RightArrowIcon,
   CloseIcon,
+  ItemsListIcon,
+  DeliveryIcon,
 };
