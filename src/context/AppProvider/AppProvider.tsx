@@ -29,7 +29,7 @@ const defaultValues = {
   addToWishlist: (id: string, category: CakeCategories) => {},
   removeFromWishlist: (id: string, category: CakeCategories) => {},
   toggleCartModal: () => {},
-  toggleWhishlistModal: () => {},
+  toggleWishlistModal: () => {},
 };
 
 const AppContext = createContext(defaultValues);
@@ -100,7 +100,7 @@ function AppProvider({ children }: Readonly<Props>) {
     setIsCartModalOpen((prev) => !prev);
   }, []);
 
-  const toggleWhishlistModal = useCallback(() => {
+  const toggleWishlistModal = useCallback(() => {
     setIsWishlistModalOpen((prev) => !prev);
   }, []);
 
@@ -115,7 +115,7 @@ function AppProvider({ children }: Readonly<Props>) {
       addToWishlist,
       removeFromWishlist,
       toggleCartModal,
-      toggleWhishlistModal,
+      toggleWishlistModal,
     }),
     [
       wishlistItems,
@@ -127,7 +127,7 @@ function AppProvider({ children }: Readonly<Props>) {
       addToWishlist,
       removeFromWishlist,
       toggleCartModal,
-      toggleWhishlistModal,
+      toggleWishlistModal,
     ],
   );
 

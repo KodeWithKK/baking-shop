@@ -44,5 +44,5 @@ body {
   font-size: 16px;
   line-height: 25.6px;
   font-weight: 400;
-  @apply bg-gray-950 text-gray-100;
+  -webkit-overflow-scrolling: touch;
 }

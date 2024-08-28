@@ -1,8 +1,8 @@
 "use client";
 
 import { useAppContext } from "@/context/AppProvider/AppProvider";
+import { RemoveScroll } from "react-remove-scroll";
 import { CloseIcon, ItemsListIcon, DeliveryIcon } from "@/Icons/Icons";
-import Link from "next/link";
 
 function CartModal() {
   const { isCartModalOpen, toggleCartModal } = useAppContext();
@@ -12,42 +12,64 @@ function CartModal() {
   }
 
   return (
-    <div
-      className="fixed left-0 top-0 z-[1000] h-screen w-full bg-black/90 text-gray-975"
-      onClick={toggleCartModal}
-    >
+    <RemoveScroll>
       <div
-        className="absolute right-0 top-0 h-full w-[480px] overflow-hidden rounded-l-md bg-gray-200"
-        onClick={(e) => e.stopPropagation()}
+        className="fixed left-0 top-0 z-[1000] h-screen w-full bg-black/90 text-gray-975"
+        onClick={toggleCartModal}
       >
-        <div className="flex justify-between bg-white px-5 py-4">
-          <h2 className="text-center text-[28px]">My Cart</h2>
-          <button
-            className="grid h-10 w-10 place-items-center rounded-md hover:text-orange-600"
-            onClick={toggleCartModal}
-          >
-            <CloseIcon className="h-8 w-8" />
-          </button>
-        </div>
+        <div
+          className="absolute right-0 top-0 h-full overflow-y-auto rounded-l-md bg-gray-200"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="sticky right-0 top-0 flex w-[480px] justify-between bg-white px-5 py-4 shadow-md">
+            <h2 className="text-center text-[28px]">My Cart</h2>
+            <button
+              className="grid h-10 w-10 place-items-center rounded-md hover:text-orange-600"
+              onClick={toggleCartModal}
+            >
+              <CloseIcon className="z h-8 w-8" />
+            </button>
+          </div>
 
-        <div className="mx-5 mt-4 overflow-hidden rounded-md bg-white">
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-        </div>
+          <div className="mx-5 mt-3 space-y-5 rounded-md bg-white p-2">
+            <CartItem />
+            <CartItem />
+            <CartItem />
+            <CartItem />
+            <CartItem />
+            <CartItem />
+            <CartItem />
+            <CartItem />
+            <CartItem />
+          </div>
 
-        <div className="mx-5 mt-4 rounded-md bg-white p-2">
-          <BillDetails />
+          <div className="mx-5 my-3 rounded-md bg-white p-2">
+            <BillDetails />
+          </div>
+
+          <div className="sticky bottom-0 right-0 w-[480px] rotate-180 rounded-md bg-white px-3 py-5 shadow-md">
+            <button
+              className="flex w-full rotate-180 items-center justify-between rounded-md bg-orange-600 px-3 py-4 text-white"
+              onClick={toggleCartModal}
+            >
+              <div className="flex flex-col leading-snug">
+                <span className="text-[15px] font-semibold">₹ 1499</span>
+                <span className="text-[13px] tracking-wide text-orange-200">
+                  TOTAL
+                </span>
+              </div>
+              <span className="text-[18px]">Login to Proceed {">"}</span>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </RemoveScroll>
   );
 }
 
 function CartItem() {
   return (
-    <Link href="/" className="flex items-start gap-2 p-2">
+    <div className="group flex w-full items-center gap-2 rounded-md">
       <img
         src="https://bkmedia.bakingo.com/sq-butterscotch-cake0003butt-AAA_0.jpg?tr=w-320,h-320,q-70"
         alt="cake_image"
@@ -76,7 +98,7 @@ function CartItem() {
           </button>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
 
