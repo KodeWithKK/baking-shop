@@ -1,7 +1,8 @@
 import ProductHeading from "./ProductHeading";
 import ProductForm from "./ProductForm";
 import WrappedText from "@/components/features/WrappedText/WrappedText";
-import { findDiscount, findOrgPrice } from "./utils";
+import findOrgPrice from "@/utils/findOrgPrice";
+import { findDiscount } from "./utils";
 import { ProductPageProps } from "./types";
 import { CakeDataType } from "@/types/global";
 

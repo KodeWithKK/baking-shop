@@ -1,5 +1,6 @@
 import Link from "next/link";
 import cn from "@/utils/cn";
+import findOrgPrice from "@/utils/findOrgPrice";
 
 type CakesData = {
   id: string;
@@ -23,17 +24,13 @@ function ProductCard({ data, href, className }: Readonly<Props>) {
     <Link
       href={href}
       className={cn(
-        "rounded-[15px] border border-gray-200 bg-white p-[10px]",
+        "overflow-hidden rounded-[15px] border border-gray-200 bg-white",
         className,
       )}
     >
-      <img
-        src={`${data.imgSrc}?tr=w-320,h-320,q-90`}
-        alt="data-img"
-        className="rounded-[10px]"
-      />
+      <img src={`${data.imgSrc}?tr=w-320,h-320,q-90`} alt="data-img" />
 
-      <div className="space-y-px">
+      <div className="space-y-px p-2 pt-0">
         <p className="overflow-hidden text-ellipsis text-nowrap text-[15px] font-semibold">
           {data.name}
         </p>
@@ -61,12 +58,6 @@ function ProductCard({ data, href, className }: Readonly<Props>) {
       </div>
     </Link>
   );
-}
-
-function findOrgPrice(currPrice: number): number {
-  const price = Math.trunc(currPrice * 1.11);
-  const remaining = 9 - (price % 10);
-  return price + remaining;
 }
 
 function findDiscount(currPrice: number, orgPrice: number | null): number {

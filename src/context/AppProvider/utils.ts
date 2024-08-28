@@ -19,6 +19,8 @@ export function findCake(id: string, category: CakeCategories) {
   return {
     id,
     category,
+    name: cake.name,
+    imgSrc: cake.imgSrc,
     currPrice: cake.currPrice,
     originalPrice: cake.originalPrice,
     rating: cake.rating,

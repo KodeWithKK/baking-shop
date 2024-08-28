@@ -3,9 +3,11 @@
 import { useAppContext } from "@/context/AppProvider/AppProvider";
 import { RemoveScroll } from "react-remove-scroll";
 import { CloseIcon, ItemsListIcon, DeliveryIcon } from "@/Icons/Icons";
+import { CakeCategories } from "@/types/global";
+import findOrgPrice from "@/utils/findOrgPrice";
 
 function CartModal() {
-  const { isCartModalOpen, toggleCartModal } = useAppContext();
+  const { isCartModalOpen, cartItems, toggleCartModal } = useAppContext();
 
   if (!isCartModalOpen) {
     return null;
@@ -31,60 +33,65 @@ function CartModal() {
             </button>
           </div>
 
-          <div className="mx-5 mt-3 space-y-5 rounded-md bg-white p-2">
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
+          <div
+            className="min-h-[calc(100vh-174.5px)] space-y-3 px-5 py-3"
+            style={{ minHeight: "calc(100dvh - 174.5px)" }}
+          >
+            {cartItems.length > 0 && (
+              <>
+                <div className="space-y-5 rounded-md bg-white p-2">
+                  {cartItems.map((item) => (
+                    <CartItem data={item} key={item.id} />
+                  ))}
+                </div>
+
+                <div className="rounded-md bg-white p-2">
+                  <BillDetails />
+                </div>
+              </>
+            )}
+            {cartItems.length === 0 && (
+              <p className="text-center">No items in cart found!</p>
+            )}
           </div>
 
-          <div className="mx-5 my-3 rounded-md bg-white p-2">
-            <BillDetails />
-          </div>
-
-          <div className="sticky bottom-0 right-0 w-[480px] rotate-180 rounded-md bg-white px-3 py-5 shadow-md">
-            <button
-              className="flex w-full rotate-180 items-center justify-between rounded-md bg-orange-600 px-3 py-4 text-white"
-              onClick={toggleCartModal}
-            >
-              <div className="flex flex-col leading-snug">
-                <span className="text-[15px] font-semibold">₹ 1499</span>
-                <span className="text-[13px] tracking-wide text-orange-200">
-                  TOTAL
-                </span>
-              </div>
-              <span className="text-[18px]">Login to Proceed {">"}</span>
-            </button>
-          </div>
+          <CartFooter />
         </div>
       </div>
     </RemoveScroll>
   );
 }
 
-function CartItem() {
+type CartItemData = {
+  id: string;
+  name: string;
+  imgSrc: string;
+  category: CakeCategories;
+  currPrice: number;
+  originalPrice: number | null;
+  rating: number | null;
+};
+
+function CartItem({ data }: Readonly<{ data: CartItemData }>) {
   return (
     <div className="group flex w-full items-center gap-2 rounded-md">
       <img
-        src="https://bkmedia.bakingo.com/sq-butterscotch-cake0003butt-AAA_0.jpg?tr=w-320,h-320,q-70"
+        src={`${data.imgSrc}?tr=w-320,h-320,q-70`}
         alt="cake_image"
         className="h-[52px] rounded-md"
       />
 
       <div className="w-full">
-        <p className="font-medium">Round Shape Butterscotch Cake</p>
-        <span className="mr-2 font-semibold">₹ 499</span>
+        <p className="font-medium">{data.name}</p>
+        <span className="mr-2 font-semibold">₹ {data.currPrice}</span>
         <span className="mr-2 text-[15px] text-gray-800 line-through">
-          ₹ 549
+          ₹ {data?.originalPrice ?? findOrgPrice(data.currPrice)}
         </span>
-        <span className="rounded bg-[#1c9550]/10 px-0.5 py-0.5 text-sm font-medium text-[#1c9550]">
-          4.9 ★
-        </span>
+        {data?.rating && (
+          <span className="rounded bg-[#1c9550]/10 px-0.5 py-0.5 text-sm font-medium text-[#1c9550]">
+            {data.rating} ★
+          </span>
+        )}
       </div>
 
       <div className="w-fit">
@@ -102,7 +109,7 @@ function CartItem() {
   );
 }
 
-function BillDetails() {
+function BillDetails({ data }: Readonly<{ data: CartItemData }>) {
   return (
     <>
       <h4 className="mb-2 font-semibold">Bill Details</h4>
@@ -134,6 +141,25 @@ function BillDetails() {
         <span className="text-sm font-semibold">₹ 499</span>
       </div>
     </>
+  );
+}
+
+function CartFooter() {
+  return (
+    <div className="sticky bottom-0 right-0 w-[480px] rotate-180 rounded-md bg-white px-3 py-5 shadow-md">
+      <button
+        type="button"
+        className="flex w-full rotate-180 items-center justify-between rounded-md bg-orange-600 px-3 py-3 text-white"
+      >
+        <div className="flex flex-col leading-snug">
+          <span className="text-[15px] font-semibold">₹ 1499</span>
+          <span className="text-[13px] tracking-wide text-orange-200">
+            TOTAL
+          </span>
+        </div>
+        <span className="text-[18px]">Login to Proceed {">"}</span>
+      </button>
+    </div>
   );
 }
 

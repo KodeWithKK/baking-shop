@@ -13,6 +13,8 @@ import { CakeCategories } from "@/types/global";
 
 type ListItem = {
   id: string;
+  name: string;
+  imgSrc: string;
   category: CakeCategories;
   currPrice: number;
   originalPrice: number | null;
