@@ -27,7 +27,7 @@ function CategoryPage({ title, category, cakesData }: Readonly<Props>) {
         cakesData.toSorted((cake1, cake2) => cake2.currPrice - cake1.currPrice),
       );
     }
-  }, [sortBy]);
+  }, [cakesData, sortBy]);
 
   return (
     <div className="mx-auto w-[85%] py-[30px] max-sm:w-[95%] max-sm:pt-5">

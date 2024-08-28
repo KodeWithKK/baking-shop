@@ -42,11 +42,14 @@ function Select({
     );
   }, []);
 
-  const handleOptionClick = useCallback((key: string) => {
-    setSelectedValue(key);
-    setIsOptionsCollapsed(true);
-    onChange?.(key);
-  }, []);
+  const handleOptionClick = useCallback(
+    (key: string) => {
+      setSelectedValue(key);
+      setIsOptionsCollapsed(true);
+      onChange?.(key);
+    },
+    [onChange],
+  );
 
   const contextValue = useMemo(
     () => ({
