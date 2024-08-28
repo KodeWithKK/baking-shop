@@ -57,7 +57,7 @@ function Select({
       addDataMap,
       handleOptionClick,
     }),
-    [variant, addDataMap],
+    [variant, addDataMap, handleOptionClick],
   );
 
   return (
@@ -68,7 +68,7 @@ function Select({
           className={cn(
             "w-full rounded-md px-2 py-1",
             variant === "secondary" && "w-[175px]",
-            variant === "secondary" && "bg-[#cdccd1]",
+            variant === "secondary" && "bg-[#cdccd1] max-md:bg-[#d8d7db]",
           )}
           onClick={() => {
             setIsOptionsCollapsed((prev) => !prev);
@@ -91,7 +91,8 @@ function Select({
         <div
           className={cn(
             "absolute left-0 top-[36px] overflow-hidden rounded-md",
-            variant === "secondary" && "border border-gray-400 bg-[#cdccd1]",
+            variant === "secondary" &&
+              "border border-gray-400 bg-[#cdccd1] max-md:bg-[#d8d7db]",
           )}
         >
           {!isOptionsCollapsed && children}

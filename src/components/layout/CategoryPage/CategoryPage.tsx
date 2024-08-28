@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import ProductCard from "@/components/features/ProductCard/ProductCard";
 import { Select, Option } from "@/components/base/Select/Select";
 import { CakeCategories, CakeDataType } from "@/types/global";
+import cn from "@/utils/cn";
 
 type Props = {
   title: string;
@@ -30,11 +31,14 @@ function CategoryPage({ title, category, cakesData }: Readonly<Props>) {
   }, [cakesData, sortBy]);
 
   return (
-    <div className="mx-auto w-[85%] py-[30px] max-sm:w-[95%] max-sm:pt-5">
-      <div className="mb-4 flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-4">
+    <div className="mx-auto w-[85%] py-[30px] max-sm:w-[98%] max-sm:pt-5">
+      <div className="mb-4 flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-4 max-md:px-1">
         <h2 className="text-[26px] leading-none max-sm:text-[24px]">{title}</h2>
+
         <div className="max-md:mb-2 max-md:flex max-md:flex-col max-md:gap-1">
-          <span className="text-[15px] max-md:font-medium">Sort by: </span>
+          <span className="text-[15px] max-md:text-sm max-md:font-medium">
+            Sort by:{" "}
+          </span>
           <Select defaultValue={sortBy} onChange={setSortBy}>
             <Option value="Popularity" />
             <Option value="Price Ascending" />
@@ -43,7 +47,11 @@ function CategoryPage({ title, category, cakesData }: Readonly<Props>) {
         </div>
       </div>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(190px,1fr))] gap-[10px] max-lg:grid-cols-[repeat(auto-fit,minmax(180px,1fr))] max-md:gap-[5px] max-sm:grid-cols-[repeat(2,minmax(0,1fr))] max-sm:gap-1">
+      <div
+        className={cn(
+          "grid grid-cols-[repeat(auto-fit,minmax(190px,1fr))] gap-[10px] max-lg:grid-cols-[repeat(auto-fit,minmax(180px,1fr))] max-md:gap-[5px] max-sm:grid-cols-[repeat(2,minmax(0,1fr))] max-sm:gap-1",
+        )}
+      >
         {sortedCakes.map((cakeData) => (
           <ProductCard
             key={cakeData.id}

@@ -24,7 +24,7 @@ function ProductCard({ data, href, className }: Readonly<Props>) {
     <Link
       href={href}
       className={cn(
-        "overflow-hidden rounded-[15px] border border-gray-200 bg-white",
+        "overflow-hidden rounded-lg border border-gray-200 bg-white",
         className,
       )}
     >
