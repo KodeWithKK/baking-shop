@@ -4,12 +4,11 @@ import { CartOutlineIcon, HeartOutlineIcon } from "@/Icons/Icons";
 import { useAppContext } from "@/context/AppProvider/AppProvider";
 
 function NavBtnContainer() {
-  const { wishlistItems, cartItems, toggleWhishlistModal, toggleCartModal } =
-    useAppContext();
+  const { wishlistItems, cartItems, toggleCartModal } = useAppContext();
 
   return (
     <div className="flex items-center">
-      <NavButton Icon={HeartOutlineIcon} onClick={toggleWhishlistModal}>
+      <NavButton Icon={HeartOutlineIcon}>
         {wishlistItems.length === 0 && "Wishlist"}
         {wishlistItems.length > 0 && (
           <div className="flex flex-col text-sm font-medium leading-tight">
@@ -40,7 +39,7 @@ function NavBtnContainer() {
 type NavButtonProps = {
   Icon: React.ComponentType<{ className: string }>;
   children: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 function NavButton({ Icon, onClick, children }: Readonly<NavButtonProps>) {
