@@ -37,10 +37,10 @@ function CartModal() {
         onClick={toggleCartModal}
       >
         <div
-          className="absolute right-0 top-0 h-full w-[480px] overflow-y-auto rounded-l-md bg-gray-200"
+          className="absolute right-0 top-0 h-full w-full overflow-y-auto bg-gray-100 md:w-[480px] md:rounded-l-md md:bg-gray-200"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="sticky right-0 top-0 flex w-full justify-between bg-white px-5 py-4 shadow-md">
+          <div className="sticky right-0 top-0 flex w-full justify-between bg-white px-5 py-4 shadow-md max-md:rounded-b-md">
             <h2 className="text-center text-[28px]">My Cart</h2>
             <button
               className="grid h-10 w-10 place-items-center rounded-md hover:text-orange-600"

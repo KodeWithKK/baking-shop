@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 import { useAppContext } from "@/context/AppProvider/AppProvider";
 import ProductContent from "./ProductContent";
 import { ProductPageProps } from "./types";
@@ -12,33 +12,33 @@ function ProductDisplay({ data, category }: Readonly<ProductPageProps>) {
     return !!cartItems.find((item) => item.id === data.id);
   }, [data.id, cartItems]);
 
+  const handleAddToCart = useCallback(() => {
+    if (!isAlreadyInCart) {
+      addToCart(data.id, category);
+    } else toggleCartModal();
+  }, [isAlreadyInCart, category, data.id, addToCart, toggleCartModal]);
+
   return (
-    <div className="relative flex gap-6 px-[100px] py-[20px]">
-      <section className="sticky left-0 top-[91px] h-[calc(100vh-70px-53px-70px)] w-[71%]">
+    <div className="relative mx-auto flex gap-6 max-lg:flex-col max-lg:pb-[84px] max-lg:pt-4 max-md:pb-[75px] max-sm:w-[93%] sm:w-[91%] md:w-[75%] md:py-[20px] lg:w-[90%] xl:w-[85%]">
+      <section className="lg:sticky lg:left-0 lg:top-[91px] lg:h-[calc(100vh-20vw)] lg:flex-shrink-0 xl:h-[calc(100vh-70px-53px-70px)]">
         <img
           src={data.imgSrc}
           alt="cake_image"
-          className="h-full w-full rounded-lg object-cover"
+          className="aspect-square h-full rounded-lg object-cover"
         />
 
-        <div className="mt-3 flex gap-3">
+        <div className="fixed bottom-0 left-0 mt-3 flex w-full gap-1.5 bg-white px-[2.25%] max-lg:rounded-t-md max-lg:py-3 max-lg:shadow-[0_-1px_2px_#0000000d] sm:px-[3%] md:gap-3 md:px-[10%] lg:static lg:bg-inherit lg:px-0">
           <button
             type="button"
-            className="w-full rounded-lg border border-orange-600 py-4 text-orange-600 hover:bg-orange-600/[.15]"
-            onClick={() => {
-              if (!isAlreadyInCart) {
-                addToCart(data.id, category);
-              } else {
-                toggleCartModal();
-              }
-            }}
+            className="w-full rounded-lg border border-orange-600 py-3 text-orange-600 hover:bg-orange-600/[.15] md:py-4"
+            onClick={handleAddToCart}
           >
             {isAlreadyInCart ? "Go To Cart" : "Add To Cart"}
           </button>
 
           <button
             type="button"
-            className="w-full rounded-lg bg-orange-600 py-4 text-white"
+            className="w-full rounded-lg bg-orange-600 py-3 text-white md:py-4"
           >
             Buy Now
           </button>
