@@ -58,6 +58,8 @@ function ProductsDeck({
       totalCardsInDeck - totalCardFitsInView,
       startPos + totalCardFitsInView,
     );
+    console.log(totalCardFitsInView);
+
     setDeckXTranslate(-1 * nextStartPos * extendedCardWidth);
     setStartPos(nextStartPos);
   }, [startPos, totalCardFitsInView, totalCardsInDeck, cardWidth]);

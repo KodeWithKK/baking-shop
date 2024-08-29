@@ -67,11 +67,11 @@ function CategoryDisplay({
       </div>
 
       <ProductsDeck
-        totalCardsInDeck={16}
+        totalCardsInDeck={12}
         cardWidth={200}
         isTouchDevice={isTouchDevice}
       >
-        {cakesData.slice(0, 16).map((cakeData) => (
+        {cakesData.slice(0, 12).map((cakeData) => (
           <ProductCard
             key={cakeData.id}
             href={`${allCakesHref}/${cakeData.id}`}

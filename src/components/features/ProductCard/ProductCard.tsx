@@ -36,23 +36,21 @@ function ProductCard({ data, href, className }: Readonly<Props>) {
         </p>
 
         <p className="">
-          <span className="mr-[10px] text-[15px] font-semibold">
-            ₹ {data.currPrice}
-          </span>
-          <span className="text-[13px] line-through">
+          <span className="text-[15px] font-semibold">₹ {data.currPrice}</span>
+          <span className="mx-1.5 text-[13px] line-through">
             ₹ {data.originalPrice ?? findOrgPrice(data.currPrice)}
           </span>
-          <span className="ml-2 text-[13px] font-medium text-[#1c9550]">
+          <span className="text-[13px] font-medium text-[#1c9550]">
             ({findDiscount(data.currPrice, data.originalPrice)}% OFF)
           </span>
         </p>
 
         <p className="">
-          <span className="rounded bg-[#1c9550]/10 px-1 py-0.5 text-sm font-medium text-[#1c9550]">
+          <span className="rounded bg-[#1c9550]/10 px-1 py-0.5 text-[13px] font-medium text-[#1c9550]">
             {data.rating ?? "NEW"} ★
           </span>
           {data.totalReviews && (
-            <span className="ml-2 text-sm">{data.totalReviews} Reviews</span>
+            <span className="ml-1 text-xs">({data.totalReviews})</span>
           )}
         </p>
       </div>
