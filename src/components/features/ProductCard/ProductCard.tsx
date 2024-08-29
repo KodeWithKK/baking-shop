@@ -49,8 +49,10 @@ function ProductCard({ data, href, className }: Readonly<Props>) {
           <span className="rounded bg-[#1c9550]/10 px-1 py-0.5 text-[13px] font-medium text-[#1c9550]">
             {data.rating ?? "NEW"} ★
           </span>
-          {data.totalReviews && (
-            <span className="ml-1 text-xs">({data.totalReviews})</span>
+          {data.rating && data.totalReviews && (
+            <span className="ml-1.5 text-[13px]">
+              {data.totalReviews} Review{data.totalReviews > 1 && "s"}
+            </span>
           )}
         </p>
       </div>
