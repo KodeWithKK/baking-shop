@@ -16,7 +16,7 @@ function BillDetails({
         <div>
           <span className="mr-2 text-sm font-medium">₹ {totalBuyPrice}</span>
           <span className="text-sm text-gray-800 line-through">
-            ₹ ${totalCostPrice}
+            ₹ {totalCostPrice}
           </span>
         </div>
       </div>
