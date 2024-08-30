@@ -41,7 +41,9 @@ function BillDetails({
 
       <div className="mt-2 flex items-center justify-between">
         <h4 className="text-[15px] font-semibold">Grand total</h4>
-        <span className="text-sm font-semibold">₹ 499</span>
+        <span className="text-sm font-semibold">
+          ₹ {totalBuyPrice + (totalBuyPrice < 500 ? 25 : 0)}
+        </span>
       </div>
     </>
   );
