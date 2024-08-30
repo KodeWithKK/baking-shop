@@ -27,10 +27,10 @@ function ProductDisplay({ data, category }: Readonly<ProductPageProps>) {
           className="aspect-square h-full rounded-lg object-cover"
         />
 
-        <div className="fixed bottom-0 left-0 mt-3 flex w-full gap-1.5 bg-white px-[2.25%] max-lg:rounded-t-md max-lg:py-3 max-lg:shadow-[0_-1px_2px_#0000000d] sm:px-[3%] md:gap-3 md:px-[10%] lg:static lg:bg-inherit lg:px-0">
+        <div className="fixed bottom-0 left-0 mt-3 flex w-full bg-white px-[0] max-lg:rounded-t-md max-lg:py-0 max-lg:shadow-[0_-1px_2px_#0000000d] md:gap-3 md:px-[10%] lg:static lg:bg-inherit lg:px-0">
           <button
             type="button"
-            className="w-full rounded-lg border border-orange-600 py-3 text-orange-600 hover:bg-orange-600/[.15] md:py-4"
+            className="w-full border border-orange-600 text-orange-600 hover:bg-orange-600/[.15] max-md:rounded-tl-md max-md:border-l-0 md:rounded-lg"
             onClick={handleAddToCart}
           >
             {isAlreadyInCart ? "Go To Cart" : "Add To Cart"}
@@ -38,7 +38,7 @@ function ProductDisplay({ data, category }: Readonly<ProductPageProps>) {
 
           <button
             type="button"
-            className="w-full rounded-lg bg-orange-600 py-3 text-white md:py-4"
+            className="w-full bg-orange-600 py-4 text-white max-md:rounded-tr-md md:rounded-lg"
           >
             Buy Now
           </button>

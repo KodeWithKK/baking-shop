@@ -69,7 +69,7 @@ function ProductReviews({ data }: Readonly<{ data: CakeDataType }>) {
         >
           <p>
             <span className="text-[15px] font-bold">{review.name}</span>
-            <span className="ml-2 rounded bg-[#1C9550]/10 px-1 py-0.5 text-sm text-[#1C9550]">
+            <span className="ml-2 rounded bg-[#1C9550]/10 px-1 py-0.5 text-[13px] font-medium text-[#1C9550]">
               {review.rating} ★
             </span>
           </p>
