@@ -7,12 +7,12 @@ import {
   createContext,
   useContext,
 } from "react";
-import cn from "@/utils/cn";
+import { cn } from "@/lib/utils";
 import { produce } from "immer";
-import Option from "./Option";
+import Option from "./option";
 
 import { SelectProps, DataMap } from "./types";
-import { RightArrowIcon } from "@/Icons/Icons";
+import { RightArrowIcon } from "@/lib/icons/global";
 
 const defaultContextValue = {
   variant: "secondary" as string,

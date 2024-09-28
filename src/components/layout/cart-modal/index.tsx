@@ -1,12 +1,12 @@
 "use client";
 
 import { useMemo } from "react";
-import { useAppContext } from "@/context/AppProvider/AppProvider";
+import { useAppContext } from "@/context/app-provider";
 import { RemoveScroll } from "react-remove-scroll";
-import CartItem from "./CartItem";
-import BillDetails from "./BillDetails";
-import CartFooter from "./CartFooter";
-import { CloseIcon } from "@/Icons/Icons";
+import CartItem from "./cart-item";
+import BillDetails from "./bill-details";
+import CartFooter from "./cart-footer";
+import { CloseIcon } from "@/lib/icons/global";
 import findOrgPrice from "@/utils/findOrgPrice";
 
 function CartModal() {

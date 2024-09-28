@@ -1,4 +1,4 @@
-import { ItemsListIcon, DeliveryIcon } from "@/Icons/Icons";
+import { ItemsListIcon, DeliveryIcon } from "@/lib/icons/global";
 
 function BillDetails({
   totalBuyPrice,

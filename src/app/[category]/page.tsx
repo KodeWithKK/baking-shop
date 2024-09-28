@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import CategoryPage from "@/components/layout/CategoryPage/CategoryPage";
-import getCakesData from "@/utils/getCakesData";
+import CategoryPage from "@/components/layout/category-page";
+import getCakesData from "@/utils/getCakesDetail";
 import { CakeCategories } from "@/types/global";
 
 type Props = {

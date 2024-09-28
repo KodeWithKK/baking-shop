@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import ProductDisplay from "@/components/layout/ProductPage/ProductPage";
-import getCakesData from "@/utils/getCakesData";
+import ProductDisplay from "@/components/layout/product-page";
+import getCakesData from "@/utils/getCakesDetail";
 
 type Props = {
   params: {

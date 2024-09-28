@@ -1,5 +1,5 @@
 import Link from "next/link";
-import NavBtnContainer from "./NavBtnContainer";
+import NavBtnContainer from "./navbtn-container";
 
 export default function Navbar() {
   return (

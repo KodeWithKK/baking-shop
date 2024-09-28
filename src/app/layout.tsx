@@ -1,6 +1,6 @@
-import AppProvider from "@/context/AppProvider/AppProvider";
-import Navbar from "@/components/layout/Navbar/Navbar";
-import CartModal from "@/components/layout/CartModal/CartModal";
+import AppProvider from "@/context/app-provider";
+import Navbar from "@/components/layout/navbar";
+import CartModal from "@/components/layout/cart-modal";
 import type { Metadata } from "next";
 import "./globals.css";
 

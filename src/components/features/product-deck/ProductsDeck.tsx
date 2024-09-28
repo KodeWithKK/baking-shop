@@ -1,9 +1,9 @@
 "use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
-import cn from "@/utils/cn";
+import { cn } from "@/lib/utils";
 
-import { RightArrowIcon } from "@/Icons/Icons";
+import { RightArrowIcon } from "@/lib/icons/global";
 
 function ProductsDeck({
   children,
@@ -58,7 +58,6 @@ function ProductsDeck({
       totalCardsInDeck - totalCardFitsInView,
       startPos + totalCardFitsInView,
     );
-    console.log(totalCardFitsInView);
 
     setDeckXTranslate(-1 * nextStartPos * extendedCardWidth);
     setStartPos(nextStartPos);
@@ -68,13 +67,13 @@ function ProductsDeck({
     <div className="relative">
       <button
         className={cn(
-          "absolute -left-[20px] top-[50%] z-[10] grid h-12 w-12 translate-y-[-50%] place-items-center rounded-full bg-white shadow-md",
+          "absolute -left-[20px] top-[50%] z-[10] grid h-12 w-12 translate-y-[-50%] place-items-center rounded-full bg-gray-975 shadow-sm",
           startPos === 0 && "hidden",
           isTouchDevice && "hidden",
         )}
         onClick={handleLeftShift}
       >
-        <RightArrowIcon className="h-10 w-10 rotate-180 text-gray-900" />
+        <RightArrowIcon className="h-10 w-10 rotate-180 text-gray-400" />
       </button>
 
       <div
@@ -94,13 +93,13 @@ function ProductsDeck({
 
       <button
         className={cn(
-          "absolute -right-[20px] top-[50%] z-[10] grid h-12 w-12 translate-y-[-50%] place-items-center rounded-full bg-white shadow-md",
+          "absolute -right-[20px] top-[50%] z-[10] grid h-12 w-12 translate-y-[-50%] place-items-center rounded-full bg-gray-975 shadow-sm",
           startPos + totalCardFitsInView > totalCardsInDeck - 1 && "hidden",
           isTouchDevice && "hidden",
         )}
         onClick={handleRightShift}
       >
-        <RightArrowIcon className="h-10 w-10 text-gray-900" />
+        <RightArrowIcon className="h-10 w-10 text-gray-400" />
       </button>
     </div>
   );

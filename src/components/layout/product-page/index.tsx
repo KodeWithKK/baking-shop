@@ -1,8 +1,8 @@
 "use client";
 
 import { useCallback, useMemo } from "react";
-import { useAppContext } from "@/context/AppProvider/AppProvider";
-import ProductContent from "./ProductContent";
+import { useAppContext } from "@/context/app-provider";
+import ProductContent from "./product-content";
 import { ProductPageProps } from "./types";
 
 function ProductDisplay({ data, category }: Readonly<ProductPageProps>) {

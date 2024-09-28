@@ -1,10 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSelectContext } from "./Select";
-import cn from "@/utils/cn";
-
-import { OptionProps } from "./types";
+import { useSelectContext } from "../select";
+import { OptionProps } from "../select/types";
+import { cn } from "@/lib/utils";
 
 function Option({ value, text = value }: Readonly<OptionProps>) {
   const [isDataAdded, setIsDataAdded] = useState<boolean>(false);

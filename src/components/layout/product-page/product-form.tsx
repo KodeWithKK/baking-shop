@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { cakeWeights, cakeQuantities } from "./utils";
-import cn from "@/utils/cn";
+import { cn } from "@/lib/utils";
 
 import { CakeCategories } from "@/types/global";
 

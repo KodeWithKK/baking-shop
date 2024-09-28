@@ -1,4 +1,4 @@
-import { LoaderIcon2 } from "@/Icons/Loader";
+import { LoaderIcon2 } from "@/lib/icons/Loader";
 
 export default function FullPageLoader() {
   return (

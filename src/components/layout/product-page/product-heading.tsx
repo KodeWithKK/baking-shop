@@ -1,10 +1,10 @@
 "use client";
 
 import { useMemo } from "react";
-import { useAppContext } from "@/context/AppProvider/AppProvider";
-import cn from "@/utils/cn";
+import { useAppContext } from "@/context/app-provider";
+import { cn } from "@/lib/utils";
 import { ProductPageProps } from "./types";
-import { HeartSolidIcon } from "@/Icons/Icons";
+import { HeartSolidIcon } from "@/lib/icons/global";
 
 function ProductHeading({ data, category }: Readonly<ProductPageProps>) {
   const { addToWishlist, removeFromWishlist, wishlistItems } = useAppContext();

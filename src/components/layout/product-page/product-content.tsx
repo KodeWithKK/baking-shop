@@ -1,6 +1,6 @@
-import ProductHeading from "./ProductHeading";
-import ProductForm from "./ProductForm";
-import WrappedText from "@/components/features/WrappedText/WrappedText";
+import ProductHeading from "./product-heading";
+import ProductForm from "./product-form";
+import WrappedText from "@/components/features/wrapped-text";
 import findOrgPrice from "@/utils/findOrgPrice";
 import { findDiscount } from "./utils";
 import { ProductPageProps } from "./types";

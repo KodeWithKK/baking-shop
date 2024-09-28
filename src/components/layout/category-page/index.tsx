@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import ProductCard from "@/components/features/ProductCard/ProductCard";
-import { Select, Option } from "@/components/base/Select/Select";
+import ProductCard from "@/components/features/product-card";
+import { Select, Option } from "@/components/base/select";
 import { CakeCategories, CakeDataType } from "@/types/global";
-import cn from "@/utils/cn";
+import { cn } from "@/lib/utils";
 
 type Props = {
   title: string;
