@@ -1,44 +1,44 @@
 "use client";
 
-import {
-  CartOutlineIcon,
-  HeartOutlineIcon,
-  DividerIcon,
-  UserOutlineIcon,
-} from "@/lib/icons/global";
+import { CartOutlineIcon, HeartOutlineIcon } from "@/lib/icons/global";
 import { useAppContext } from "@/context/app-provider";
+import Button from "@/components/base/button";
 
 function NavBtnContainer() {
   const { wishlistItems, cartItems, toggleCartModal } = useAppContext();
 
   return (
-    <div className="flex items-center text-[15px] font-medium">
+    <div className="flex items-center text-[15px] font-medium text-orange-600">
       {/* Wishlist */}
       <NavButton Icon={HeartOutlineIcon}>
         {wishlistItems.length === 0 && "Wishlist"}
         {wishlistItems.length > 0 && (
-          <span>
-            {wishlistItems.length} {wishlistItems.length > 1 ? "Items" : "Item"}
-          </span>
+          <div className="flex flex-col text-sm font-medium leading-tight">
+            <span>
+              {wishlistItems.length}{" "}
+              {wishlistItems.length > 1 ? "Items" : "Item"}
+            </span>
+          </div>
         )}
       </NavButton>
-
-      <DividerIcon className="h-5 text-orange-100" />
 
       {/* Cart */}
       <NavButton Icon={CartOutlineIcon} onClick={toggleCartModal}>
         {cartItems.length === 0 && "Cart"}
         {cartItems.length > 0 && (
-          <span>
-            {cartItems.length} {cartItems.length > 1 ? "Items" : "Item"}
-          </span>
+          <div className="flex flex-col text-sm font-medium leading-tight">
+            <span>
+              {cartItems.length} {cartItems.length > 1 ? "Items" : "Item"}
+            </span>
+            <span>
+              ₹ {cartItems.reduce((acc, curr) => acc + curr.currPrice, 0)}
+            </span>
+          </div>
         )}
       </NavButton>
 
-      <DividerIcon className="h-5 text-orange-100" />
-
       {/* Login */}
-      <NavButton Icon={UserOutlineIcon}>Login</NavButton>
+      <Button className="ml-2">Sign In</Button>
     </div>
   );
 }
@@ -53,7 +53,7 @@ function NavButton({ Icon, onClick, children }: Readonly<NavButtonProps>) {
   return (
     <button
       type="button"
-      className="group flex items-center gap-[5px] rounded-lg px-[10px] py-[7px]"
+      className="flex items-center gap-[5px] rounded-lg px-[10px] py-[7px] hover:bg-orange-100"
       onClick={onClick}
     >
       <Icon className="h-[24px] max-md:h-[28px]" />{" "}

@@ -15,23 +15,16 @@ const button = cva("rounded-md", {
         "border-gray-400",
         "hover:bg-gray-300",
       ],
-      text: [
-        "font-medium",
-        "text-orange-600",
-        "underline",
-        "underline-offset-4",
-        "max-sm:text-[15px]",
-      ],
     },
     size: {
       default: [""],
       small: ["text-sm", "py-1", "px-2"],
-      medium: ["text-base", "py-2", "px-4"],
+      medium: ["text-[15px]", "py-2", "px-4"],
       full: ["w-full", "py-2.5", "px-4"],
     },
   },
   compoundVariants: [
-    { intent: "primary", size: "medium", class: "uppercase text-sm" },
+    { intent: "primary", size: "medium", class: "font-normal " },
   ],
   defaultVariants: {
     intent: "primary",
@@ -40,7 +33,7 @@ const button = cva("rounded-md", {
 });
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends React.ComponentProps<"button">,
     VariantProps<typeof button> {}
 
 function Button({

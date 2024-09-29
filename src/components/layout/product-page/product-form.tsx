@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { cakeWeights, cakeQuantities } from "./utils";
 import { cn } from "@/lib/utils";
 
@@ -19,7 +19,7 @@ function ProductForm({ category }: Readonly<{ category: CakeCategories }>) {
   const [cakeMessage, setCakeMessage] = useState<string>("");
 
   return (
-    <>
+    <Fragment>
       <div className="mb-6">
         <p className="text-[15px] font-medium">
           Select {category === "pastries" ? "Quantity" : "Weights"}
@@ -82,7 +82,7 @@ function ProductForm({ category }: Readonly<{ category: CakeCategories }>) {
           className="w-full rounded-lg border border-gray-500 p-[10px] placeholder:text-gray-800"
         />
       </div>
-    </>
+    </Fragment>
   );
 }
 

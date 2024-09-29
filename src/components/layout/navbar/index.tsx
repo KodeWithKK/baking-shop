@@ -1,5 +1,6 @@
 import Link from "next/link";
 import NavBtnContainer from "./navbtn-container";
+import SearchBar from "./search-bar";
 
 export default function Navbar() {
   return (
@@ -17,7 +18,10 @@ export default function Navbar() {
         </div>
       </Link>
 
-      <NavBtnContainer />
+      <div className="flex items-center gap-2">
+        <SearchBar />
+        <NavBtnContainer />
+      </div>
     </nav>
   );
 }

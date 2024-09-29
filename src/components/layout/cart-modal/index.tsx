@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { Fragment, useMemo } from "react";
 import { useAppContext } from "@/context/app-provider";
 import { RemoveScroll } from "react-remove-scroll";
 import CartItem from "./cart-item";
@@ -37,7 +37,7 @@ function CartModal() {
         onClick={toggleCartModal}
       >
         <div
-          className="absolute right-0 top-0 h-full w-full overflow-y-auto bg-gray-100 md:w-[480px] md:rounded-l-md md:bg-gray-200"
+          className="absolute right-0 top-0 h-full w-full overflow-y-auto bg-gray-100 md:w-[440px] md:rounded-l-md md:bg-gray-200"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="sticky right-0 top-0 flex w-full justify-between bg-white px-5 py-4 shadow-md max-md:rounded-b-md">
@@ -55,7 +55,7 @@ function CartModal() {
             style={{ minHeight: "calc(100dvh - 174.5px)" }}
           >
             {cartItems.length > 0 && (
-              <>
+              <Fragment>
                 <div className="space-y-5 rounded-md bg-white p-2">
                   {cartItems.map((item) => (
                     <CartItem data={item} key={item.id} />
@@ -67,7 +67,7 @@ function CartModal() {
                     totalCostPrice={totalCostPrice}
                   />
                 </div>
-              </>
+              </Fragment>
             )}
             {cartItems.length === 0 && (
               <p className="text-center">No items in cart found!</p>
