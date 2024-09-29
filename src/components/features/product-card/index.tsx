@@ -31,12 +31,12 @@ function ProductCard({ data, href, className }: Readonly<Props>) {
       <img src={`${data.imgSrc}?tr=w-320,h-320,q-90`} alt="data-img" />
 
       <div className="space-y-px p-2 pt-0">
-        <p className="overflow-hidden text-ellipsis text-nowrap text-[15px] font-semibold">
+        <p className="overflow-hidden text-ellipsis text-nowrap text-[15px] font-medium">
           {data.name}
         </p>
 
         <p className="">
-          <span className="text-[15px] font-semibold">₹ {data.currPrice}</span>
+          <span className="text-[15px] font-medium">₹ {data.currPrice}</span>
           <span className="mx-1.5 text-[13px] line-through">
             ₹ {data.originalPrice ?? findOrgPrice(data.currPrice)}
           </span>

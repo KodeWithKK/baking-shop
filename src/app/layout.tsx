@@ -2,7 +2,14 @@ import AppProvider from "@/context/app-provider";
 import Navbar from "@/components/layout/navbar";
 import CartModal from "@/components/layout/cart-modal";
 import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
+
 import "./globals.css";
+
+const font = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Bakings Shop",
@@ -23,7 +30,7 @@ export default function RootLayout({
           type="image/x-icon"
         />
       </head>
-      <body>
+      <body className={font.className}>
         <AppProvider>
           <Navbar />
           <CartModal />

@@ -1,0 +1,55 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// learn more about prisma with mongodb
+// https://www.codifytools.com/blog/auth-prisma-mongo-nextjs
+// https://chukwudinweze.hashnode.dev/prisma-orm-with-mongodb-in-nextjs-clokoexr3000c09l6dmvv0lm0
+
+// run: npx prisma generate
+// push: npx prisma db push
+// studio: npx prisma studio
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mongodb"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+enum CakeCategory {
+  BEST_SELLER
+  DESIGNER_CAKES
+  PASTRIES
+}
+
+model Cake {
+  id              String       @id @default(auto()) @map("_id") @db.ObjectId
+  name            String
+  discountedPrice Int?
+  listPrice       Int
+  totalReviews    Int
+  imgSrc          String
+  rating          Float
+  description     String
+  reviews         Review[]
+  category        CakeCategory
+  createdAt       DateTime     @default(now())
+
+  @@map("cakes")
+}
+
+model Review {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  cakeId   String   @db.ObjectId
+  rating   Int
+  ocassion String
+  message  String?
+  postedOn DateTime @default(now())
+
+  Cake Cake @relation(fields: [cakeId], references: [id])
+
+  @@map("reviews")
+}
