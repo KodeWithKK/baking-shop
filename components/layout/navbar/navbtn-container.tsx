@@ -2,10 +2,14 @@
 
 import { CartOutlineIcon, HeartOutlineIcon } from "@/lib/icons/global";
 import { useAppContext } from "@/context/app-provider";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import Button from "@/components/base/button";
+import NavButton from "./nav-btn";
 
 function NavBtnContainer() {
   const { wishlistItems, cartItems, toggleCartModal } = useAppContext();
+  const pathname = usePathname();
 
   return (
     <div className="flex items-center text-[15px] font-medium text-orange-600">
@@ -38,29 +42,12 @@ function NavBtnContainer() {
       </NavButton>
 
       {/* Login */}
-      <Button className="ml-2">Sign In</Button>
+      {!pathname.startsWith("/auth") && (
+        <Link href="/auth/login">
+          <Button className="ml-2 text-sm">Sign In</Button>
+        </Link>
+      )}
     </div>
-  );
-}
-
-type NavButtonProps = {
-  Icon: React.ComponentType<{ className: string }>;
-  children: React.ReactNode;
-  onClick?: () => void;
-};
-
-function NavButton({ Icon, onClick, children }: Readonly<NavButtonProps>) {
-  return (
-    <button
-      type="button"
-      className="flex items-center gap-[5px] rounded-lg px-[10px] py-[7px] hover:bg-orange-100"
-      onClick={onClick}
-    >
-      <Icon className="h-[24px] max-md:h-[28px]" />{" "}
-      <div className="decoration-dashed underline-offset-4 group-hover:underline max-md:hidden">
-        {children}
-      </div>
-    </button>
   );
 }
 

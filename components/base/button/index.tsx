@@ -1,6 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
 
-const button = cva("rounded-md", {
+const button = cva("rounded-md inline-flex justify-center", {
   variants: {
     intent: {
       primary: [
@@ -15,12 +16,26 @@ const button = cva("rounded-md", {
         "border-gray-400",
         "hover:bg-gray-300",
       ],
+      outline: [
+        "border",
+        "border-gray-200",
+        "text-gray-800",
+        "text-center",
+        "hover:bg-orange-100",
+        "hover:border-orange-100",
+      ],
+      text: [
+        "text-orange-600",
+        "hover:text-orange-700",
+        "hover:underline",
+        "underline-offset-[2px]",
+      ],
     },
     size: {
-      default: [""],
+      default: ["text-[15px]"],
       small: ["text-sm", "py-1", "px-2"],
       medium: ["text-[15px]", "py-2", "px-4"],
-      full: ["w-full", "py-2.5", "px-4"],
+      full: ["text-[15px]", "w-full", "py-2", "px-4"],
     },
   },
   compoundVariants: [
@@ -46,7 +61,7 @@ function Button({
   return (
     <button
       type={type}
-      className={button({ intent, size, className })}
+      className={cn(button({ intent, size }), className)}
       {...props}
     />
   );

@@ -1,55 +1,66 @@
-import { forwardRef, useId } from "react";
+import { ForwardedRef, forwardRef, useId } from "react";
 import { cn } from "@/lib/utils";
+import { CheckIcon } from "@/lib/icons/global";
 
 interface InputProps extends React.ComponentPropsWithoutRef<"input"> {
-  intent?: "navbar" | "form";
   label?: string;
-  className?: string;
   Icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
+const Input = forwardRef(
   (
-    { type = "text", intent = "form", label, className, Icon, ...restProps },
-    ref,
+    { label, type = "text", Icon, ...props }: Readonly<InputProps>,
+    ref: ForwardedRef<HTMLInputElement>,
   ) => {
     const inputId = useId();
 
     return (
-      <div className={cn(className, "w-fit text-gray-975")}>
+      <div
+        className={cn(
+          type === "checkbox" &&
+            "relative inline-flex flex-row-reverse items-center gap-2",
+        )}
+      >
         {label && (
           <label
-            className="mb-1 block text-[15px] font-medium"
             htmlFor={inputId}
+            className="inline-block flex-shrink-0 text-[15px]"
           >
             {label}
           </label>
         )}
 
-        <div className="relative w-fit">
+        <div className="relative">
           <input
-            {...restProps}
             ref={ref}
             type={type}
             id={inputId}
             className={cn(
-              "peer w-full rounded-lg border border-gray-500 p-[8px] placeholder:text-[15px] placeholder:text-gray-800",
-              intent === "form" && "w-full",
-              intent === "navbar" && [
-                "w-[240px] rounded border-gray-200 bg-orange-50 p-[8px] focus:border-orange-600 focus:outline-orange-600",
-              ],
-              Icon && "pl-10",
+              "peer block rounded border border-gray-200 p-1.5 placeholder:text-[15px] placeholder:text-gray-800 focus:border-orange-600/[.75] focus:outline-orange-600/[.75]",
+              Icon && "pl-[40px]",
+              type !== "checkbox" && "w-full",
+              type === "checkbox" &&
+                "peer h-[13px] w-[13px] appearance-none checked:border-transparent checked:bg-orange-600 focus:outline-none",
             )}
+            {...props}
           />
-          {Icon && (
+          {Icon && type !== "checkbox" && (
             <Icon
-              className={cn(
-                "absolute left-2.5 top-2.5 h-6 w-6",
-                "text-gray-950 peer-focus:text-orange-600",
-              )}
+              className={
+                "absolute left-[10px] top-[8px] h-6 peer-focus:text-orange-600"
+              }
             />
           )}
         </div>
+
+        {type === "checkbox" && (
+          <label
+            htmlFor={inputId}
+            className="absolute left-0 top-[4px] hidden h-[13px] w-[13px] peer-checked:block"
+          >
+            <CheckIcon className="text-white peer-checked:block" />
+          </label>
+        )}
       </div>
     );
   },
