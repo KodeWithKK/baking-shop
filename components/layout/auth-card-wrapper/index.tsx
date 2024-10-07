@@ -30,7 +30,7 @@ function AuthCardWrapper({
       <div className="w-[398px] rounded-md bg-white p-[20px] shadow">
         <div className="mb-[20px] text-center">
           <h2 className="mb-1 text-[28px]">{title}</h2>
-          <p className="text-[15px] text-gray-800">{description}</p>
+          <p className="text-pretty text-[15px] text-gray-800">{description}</p>
         </div>
 
         {children}

@@ -30,7 +30,7 @@ export default function RootLayout({
           type="image/x-icon"
         />
       </head>
-      <body className={font.className}>
+      <body className={font.className} suppressHydrationWarning>
         <AppProvider>
           <Navbar />
           <CartModal />

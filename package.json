@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.5.3",
+    "@hookform/resolvers": "^3.9.0",
     "@prisma/client": "^5.20.0",
     "bcryptjs": "^2.4.3",
     "class-variance-authority": "^0.7.0",
@@ -21,6 +22,7 @@
     "next-auth": "^5.0.0-beta.22",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.53.0",
     "react-remove-scroll": "^2.5.10",
     "server-only": "^0.0.1",
     "tailwind-merge": "^2.5.2",

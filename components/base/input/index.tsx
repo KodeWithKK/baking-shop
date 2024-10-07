@@ -1,18 +1,28 @@
-import { ForwardedRef, forwardRef, useId } from "react";
+import { useId, useState, ForwardedRef, forwardRef, useCallback } from "react";
 import { cn } from "@/lib/utils";
-import { CheckIcon } from "@/lib/icons/global";
+import { CheckIcon, OpenEyeIcon, ClosedEyeIcon } from "@/lib/icons/global";
 
 interface InputProps extends React.ComponentPropsWithoutRef<"input"> {
   label?: string;
+  error?: string;
   Icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
 const Input = forwardRef(
   (
-    { label, type = "text", Icon, ...props }: Readonly<InputProps>,
+    { label, error, Icon, type = "text", ...props }: Readonly<InputProps>,
     ref: ForwardedRef<HTMLInputElement>,
   ) => {
+    const [selectedType, setSelectedType] = useState<string>(type);
     const inputId = useId();
+
+    const togglePasswordInputType = useCallback(() => {
+      setSelectedType((prev) => {
+        if (prev === "password") {
+          return "text";
+        } else return "password";
+      });
+    }, []);
 
     return (
       <div
@@ -24,7 +34,10 @@ const Input = forwardRef(
         {label && (
           <label
             htmlFor={inputId}
-            className="inline-block flex-shrink-0 text-[15px]"
+            className={cn(
+              "inline-block flex-shrink-0 text-[15px]",
+              error && "text-orange-600",
+            )}
           >
             {label}
           </label>
@@ -33,10 +46,11 @@ const Input = forwardRef(
         <div className="relative">
           <input
             ref={ref}
-            type={type}
+            type={selectedType}
             id={inputId}
             className={cn(
               "peer block rounded border border-gray-200 p-1.5 placeholder:text-[15px] placeholder:text-gray-800 focus:border-orange-600/[.75] focus:outline-orange-600/[.75]",
+              error && "border-orange-600",
               Icon && "pl-[40px]",
               type !== "checkbox" && "w-full",
               type === "checkbox" &&
@@ -44,6 +58,24 @@ const Input = forwardRef(
             )}
             {...props}
           />
+
+          {error && <p className="text-orange-600">{error}</p>}
+
+          {type === "password" && (
+            <button
+              type="button"
+              className="absolute right-[5px] top-[5px] rounded-full p-1 text-gray-800 hover:bg-gray-800/[.15]"
+              onClick={togglePasswordInputType}
+            >
+              {selectedType === "password" && (
+                <OpenEyeIcon className={"h-[22px]"} />
+              )}
+              {selectedType === "text" && (
+                <ClosedEyeIcon className={"h-[22px]"} />
+              )}
+            </button>
+          )}
+
           {Icon && type !== "checkbox" && (
             <Icon
               className={

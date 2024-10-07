@@ -1,6 +1,55 @@
 import { SVGProps } from "react";
 type IconProps = Readonly<SVGProps<SVGSVGElement>>;
 
+export function OpenEyeIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" {...props}>
+      <g
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+      >
+        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0" />
+        <path d="M2 12c1.6-4.097 5.336-7 10-7s8.4 2.903 10 7c-1.6 4.097-5.336 7-10 7s-8.4-2.903-10-7" />
+      </g>
+    </svg>
+  );
+}
+
+export function ClosedEyeIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" {...props}>
+      <g
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth={1.5}
+      >
+        <path
+          strokeLinejoin="round"
+          d="M10.73 5.073A11 11 0 0112 5c4.664 0 8.4 2.903 10 7a11.6 11.6 0 01-1.555 2.788M6.52 6.519C4.48 7.764 2.9 9.693 2 12c1.6 4.097 5.336 7 10 7a10.44 10.44 0 005.48-1.52m-7.6-7.6a3 3 0 104.243 4.243"
+        />
+        <path d="M4 4l16 16" />
+      </g>
+    </svg>
+  );
+}
+
+export function CheckIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" {...props}>
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M20.207 6.793a1 1 0 0 1 0 1.414l-9.5 9.5a1 1 0 0 1-1.414 0l-4.5-4.5a1 1 0 0 1 1.414-1.414L10 15.586l8.793-8.793a1 1 0 0 1 1.414 0"
+        clipRule="evenodd"
+      ></path>
+    </svg>
+  );
+}
+
 export function SearchIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
@@ -149,19 +198,6 @@ export function DeliveryIcon(props: IconProps) {
         fill="currentColor"
         d="M5 6h5v2H5zm14 7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3m0 4c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"
       />
-    </svg>
-  );
-}
-
-export function CheckIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" {...props}>
-      <path
-        fill="currentColor"
-        fillRule="evenodd"
-        d="M20.207 6.793a1 1 0 0 1 0 1.414l-9.5 9.5a1 1 0 0 1-1.414 0l-4.5-4.5a1 1 0 0 1 1.414-1.414L10 15.586l8.793-8.793a1 1 0 0 1 1.414 0"
-        clipRule="evenodd"
-      ></path>
     </svg>
   );
 }

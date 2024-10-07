@@ -25,9 +25,9 @@ const button = cva("rounded-md inline-flex justify-center", {
         "hover:border-orange-100",
       ],
       text: [
-        "text-orange-600",
-        "hover:text-orange-700",
-        "hover:underline",
+        "text-gray-800",
+        "underline",
+        "hover:text-gray-975",
         "underline-offset-[2px]",
       ],
     },
