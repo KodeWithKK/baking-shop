@@ -1,3 +1,5 @@
+"use client";
+
 import { useId, useState, ForwardedRef, forwardRef, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import { CheckIcon, OpenEyeIcon, ClosedEyeIcon } from "@/lib/icons/global";
@@ -50,11 +52,11 @@ const Input = forwardRef(
             id={inputId}
             className={cn(
               "peer block rounded border border-gray-200 p-1.5 placeholder:text-[15px] placeholder:text-gray-800 focus:border-orange-600/[.75] focus:outline-orange-600/[.75]",
-              error && "border-orange-600",
-              Icon && "pl-[40px]",
               type !== "checkbox" && "w-full",
               type === "checkbox" &&
                 "peer h-[13px] w-[13px] appearance-none checked:border-transparent checked:bg-orange-600 focus:outline-none",
+              error && "border-orange-600",
+              Icon && "pl-[40px]",
             )}
             {...props}
           />
@@ -68,10 +70,14 @@ const Input = forwardRef(
               onClick={togglePasswordInputType}
             >
               {selectedType === "password" && (
-                <OpenEyeIcon className={"h-[22px]"} />
+                <OpenEyeIcon
+                  className={cn("h-[22px]", error && "text-orange-600")}
+                />
               )}
               {selectedType === "text" && (
-                <ClosedEyeIcon className={"h-[22px]"} />
+                <ClosedEyeIcon
+                  className={cn("h-[22px]", error && "text-orange-600")}
+                />
               )}
             </button>
           )}

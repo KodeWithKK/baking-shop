@@ -1,14 +1,17 @@
 "use client";
 
-import { CartOutlineIcon, HeartOutlineIcon } from "@/lib/icons/global";
 import { useAppContext } from "@/context/app-provider";
+import { useCurrentUser } from "@/hooks/use-current-user";
 import { usePathname } from "next/navigation";
+
 import Link from "next/link";
 import Button from "@/components/base/button";
 import NavButton from "./nav-btn";
+import { CartOutlineIcon, HeartOutlineIcon } from "@/lib/icons/global";
 
 function NavBtnContainer() {
   const { wishlistItems, cartItems, toggleCartModal } = useAppContext();
+  const user = useCurrentUser();
   const pathname = usePathname();
 
   return (
@@ -42,7 +45,7 @@ function NavBtnContainer() {
       </NavButton>
 
       {/* Login */}
-      {!pathname.startsWith("/auth") && (
+      {!user && !pathname.startsWith("/auth") && (
         <Link href="/auth/login">
           <Button className="ml-2 text-sm">Sign In</Button>
         </Link>

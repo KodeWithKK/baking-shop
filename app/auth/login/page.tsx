@@ -1,25 +1,22 @@
 "use client";
 
-import { useForm, SubmitHandler } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { LoginSchema } from "@/schemas";
-import * as z from "zod";
-
 import AuthCardWrapper from "@/components/layout/auth-card-wrapper";
+import FormMessage from "@/components/layout/form-message";
 import Input from "@/components/base/input";
 import Button from "@/components/base/button";
 import Link from "next/link";
 
-type Inputs = z.infer<typeof LoginSchema>;
+import useLoginPageHooks from "./useHooks";
 
 function LoginForm() {
   const {
+    errorMessage,
+    successMessage,
+    isPending,
+    errors,
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm<Inputs>({ resolver: zodResolver(LoginSchema) });
-
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  } = useLoginPageHooks();
 
   return (
     <AuthCardWrapper
@@ -30,7 +27,7 @@ function LoginForm() {
       backButtonLabel="Signup"
       backButtonHref="/auth/register"
     >
-      <form className="space-y-[15px]" onSubmit={handleSubmit(onSubmit)}>
+      <form className="space-y-[15px]" onSubmit={handleSubmit}>
         <Input
           type="email"
           label="Email"
@@ -38,6 +35,7 @@ function LoginForm() {
           error={errors?.email?.message}
           {...register("email")}
         />
+
         <Input
           type="password"
           label="Password"
@@ -45,12 +43,23 @@ function LoginForm() {
           error={errors?.password?.message}
           {...register("password")}
         />
+
         <Link href={"/auth/reset"} className="inline-block">
           <Button intent={"text"} size={"default"} className="text-sm">
             Forget Password
           </Button>
         </Link>
-        <Button type="submit" size="full" intent="primary" className="py-1.5">
+
+        <FormMessage type="success" message={successMessage} />
+        <FormMessage type="error" message={errorMessage} />
+
+        <Button
+          type="submit"
+          size="full"
+          intent="primary"
+          className="py-1.5"
+          disabled={isPending}
+        >
           Login
         </Button>
       </form>
