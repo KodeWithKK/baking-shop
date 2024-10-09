@@ -1,5 +1,6 @@
 "use client";
 
+import { useCallback, useState } from "react";
 import { useAppContext } from "@/context/app-provider";
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { usePathname } from "next/navigation";
@@ -7,15 +8,26 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Button from "@/components/base/button";
 import NavButton from "./nav-btn";
-import { CartOutlineIcon, HeartOutlineIcon } from "@/lib/icons/global";
+import UserOptions from "./user-options";
+
+import {
+  CartOutlineIcon,
+  HeartOutlineIcon,
+  UserCircledIcon,
+} from "@/lib/icons/global";
 
 function NavBtnContainer() {
+  const [showOptions, setShowOptions] = useState<boolean>(false);
   const { wishlistItems, cartItems, toggleCartModal } = useAppContext();
   const user = useCurrentUser();
   const pathname = usePathname();
 
+  const handleCloseOptions = useCallback(() => {
+    setShowOptions(false);
+  }, []);
+
   return (
-    <div className="flex items-center text-[15px] font-medium text-orange-600">
+    <div className="relative flex items-center text-[15px] font-medium text-orange-600">
       {/* Wishlist */}
       <NavButton Icon={HeartOutlineIcon}>
         {wishlistItems.length === 0 && "Wishlist"}
@@ -50,6 +62,18 @@ function NavBtnContainer() {
           <Button className="ml-2 text-sm">Sign In</Button>
         </Link>
       )}
+
+      {user && (
+        <button
+          type="button"
+          className="ml-2"
+          onClick={() => setShowOptions((prev) => !prev)}
+        >
+          <UserCircledIcon className="h-[32px]" />
+        </button>
+      )}
+
+      {user && showOptions && <UserOptions handleClose={handleCloseOptions} />}
     </div>
   );
 }

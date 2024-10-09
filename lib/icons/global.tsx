@@ -1,5 +1,4 @@
-import { SVGProps } from "react";
-type IconProps = Readonly<SVGProps<SVGSVGElement>>;
+type IconProps = Readonly<React.SVGProps<SVGSVGElement>>;
 
 export function OpenEyeIcon(props: IconProps) {
   return (
@@ -248,6 +247,56 @@ export function TwitterIcon(props: IconProps) {
       <path
         fill="#020817"
         d="M18.205 2.25h3.308l-7.227 8.26 8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231zm-1.161 17.52h1.833L7.045 4.126H5.078z"
+      />
+    </svg>
+  );
+}
+
+export function UserCircledIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" {...props}>
+      <path fill="none" d="M0 0H24V24H0z" />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12zm10-6a4 4 0 100 8 4 4 0 000-8zm5.111 9.997c.758.488.721 1.552.031 2.132A7.968 7.968 0 0112 20a7.967 7.967 0 01-5.114-1.848c-.697-.58-.734-1.649.028-2.14.236-.153.494-.287.774-.402C8.815 15.145 10.254 15 12 15c1.755 0 3.202.136 4.331.595.283.115.542.25.78.402z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+export function UserIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" {...props}>
+      <g
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+      >
+        <circle cx={12} cy={8} r={5} />
+        <path d="M20 21a8 8 0 10-16 0m16 0a8 8 0 10-16 0" />
+      </g>
+    </svg>
+  );
+}
+
+export function ExitIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" {...props}>
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M15.99 7.823a.75.75 0 011.061.021l3.49 3.637a.75.75 0 010 1.038l-3.49 3.637a.75.75 0 01-1.082-1.039l2.271-2.367h-6.967a.75.75 0 010-1.5h6.968l-2.272-2.367a.75.75 0 01.022-1.06z"
+        fill="currentColor"
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M3.25 4A.75.75 0 014 3.25h9.454a.75.75 0 01.75.75v3a.75.75 0 11-1.5 0V4.75H4.75v14.5h7.954V17a.75.75 0 011.5 0v3a.75.75 0 01-.75.75H4a.75.75 0 01-.75-.75V4z"
+        fill="currentColor"
       />
     </svg>
   );

@@ -13,7 +13,6 @@ import {
   generateVerificationToken,
   generateTwoFactorToken,
 } from "@/lib/tokens";
-import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
 import { db } from "@/lib/db";
 import { getTwoFactorConfirmationByUserId } from "@/data/two-factor-confirmation";
 
@@ -103,17 +102,16 @@ export const login = async (
     await signIn("credentials", {
       email,
       password,
-      redirectTo: callbackUrl || DEFAULT_LOGIN_REDIRECT,
+      redirect: false,
     });
 
-    // return { success: "Login Sucess!" };
+    return { isAuthenticated: true };
   } catch (error) {
     if (error instanceof AuthError) {
-      switch (error.type) {
-        case "CredentialsSignin":
-          return { error: "Invalid credentials!" };
-        default:
-          return { error: "Something went wrong!" };
+      if (error.type === "CredentialsSignin") {
+        return { error: "Invalid credentials!" };
+      } else {
+        return { error: "Something went wrong!" };
       }
     }
 

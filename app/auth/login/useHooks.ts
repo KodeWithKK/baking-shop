@@ -1,16 +1,19 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginSchema } from "@/schemas";
 import { login } from "@/actions/login";
+import { getSession } from "next-auth/react";
 import * as z from "zod";
 
 type Inputs = z.infer<typeof LoginSchema>;
 
 function useLoginPageHooks() {
+  const router = useRouter();
+
   const [showTwoFactor, setShowTwoFactor] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | undefined>("");
   const [successMessage, setSuccessMessage] = useState<string | undefined>("");
@@ -31,14 +34,12 @@ function useLoginPageHooks() {
   } = useForm<Inputs>({ resolver: zodResolver(LoginSchema) });
 
   const onSubmit: SubmitHandler<Inputs> = (values: Inputs) => {
-    console.log("hello");
-
     setErrorMessage("");
     setSuccessMessage("");
 
     startTransition(() => {
-      login(values, callbackUrl)
-        .then((data) => {
+      login(values)
+        .then(async (data) => {
           if (data?.error) {
             reset();
             setErrorMessage(data?.error);
@@ -49,6 +50,10 @@ function useLoginPageHooks() {
             setSuccessMessage(data?.success);
           }
 
+          if (data?.isAuthenticated) {
+            await getSession();
+            router.replace(callbackUrl || "/");
+          }
           if (data?.twoFactor) {
             setShowTwoFactor(true);
           }
