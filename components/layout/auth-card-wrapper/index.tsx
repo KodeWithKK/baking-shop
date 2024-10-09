@@ -1,7 +1,6 @@
-import React from "react";
 import Link from "next/link";
 import Button from "@/components/base/button";
-import { GoogleIcon, FacebookIcon, TwitterIcon } from "@/lib/icons/global";
+import SocalForm from "./social-form";
 import { cn } from "@/lib/utils";
 
 interface AuthCardWrapperProps {
@@ -47,15 +46,7 @@ function AuthCardWrapper({
             </div>
 
             <div className="flex w-full items-center gap-x-2">
-              <Button intent="outline" size="full">
-                <GoogleIcon className="h-5 w-5" />
-              </Button>
-              <Button intent="outline" size="full">
-                <FacebookIcon className="h-5 w-5" />
-              </Button>
-              <Button intent="outline" size="full">
-                <TwitterIcon className="h-5 w-5" />
-              </Button>
+              <SocalForm />
             </div>
           </>
         )}

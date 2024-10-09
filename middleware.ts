@@ -23,6 +23,7 @@ export default auth((req) => {
 
   if (isApiAuthRoute) return null;
 
+  // Redirect if you are already logged in and goes to auth route
   if (isAuthRoute) {
     if (isLoggedIn) {
       return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
@@ -30,6 +31,7 @@ export default auth((req) => {
     return null;
   }
 
+  // Redirect to login page if you are not authenticated and try to access Protected Route
   if (!isLoggedIn && !isPublicRoute) {
     let callbackUrl = nextUrl.pathname;
     if (nextUrl.search) {

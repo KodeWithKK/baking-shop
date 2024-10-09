@@ -9,6 +9,8 @@ import { login } from "@/actions/login";
 import { getSession } from "next-auth/react";
 import * as z from "zod";
 
+import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
+
 type Inputs = z.infer<typeof LoginSchema>;
 
 function useLoginPageHooks() {
@@ -52,7 +54,7 @@ function useLoginPageHooks() {
 
           if (data?.isAuthenticated) {
             await getSession();
-            router.replace(callbackUrl || "/");
+            router.replace(callbackUrl || DEFAULT_LOGIN_REDIRECT);
           }
           if (data?.twoFactor) {
             setShowTwoFactor(true);
