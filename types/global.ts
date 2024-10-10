@@ -1,23 +1,11 @@
-type Reviews = {
-  id: string;
-  name: string;
-  rating: number;
-  postedOn: string;
-  location: string;
-  ocassion: string;
-  message: string;
-};
-
-export type CakeDataType = {
-  id: string;
+export type ApiCakeDataType = {
   name: string;
   totalReviews?: number;
-  originalPrice: number | null;
-  currPrice: number;
+  listPrice: number;
+  discountedPrice?: number;
   imgSrc: string;
-  rating: number | null;
+  rating?: number;
   description: string;
-  reviews: Reviews[];
 };
 
-export type CakeCategories = "best-seller" | "designer-cakes" | "pastries";
+export type URLCakeCategory = "best-seller" | "designer-cakes" | "pastries";

@@ -6,12 +6,12 @@ import bcrypt from "bcryptjs";
 import { db } from "@/lib/db";
 import { SettingsSchema } from "@/schemas";
 import { getUserByEmail, getUserById } from "@/data/user";
-import { currentUser } from "@/lib/auth";
+import { getCurrentUser } from "@/lib/auth";
 import { generateVerificationToken } from "@/lib/tokens";
 import { sendVerificationEmail } from "@/lib/mail";
 
 export const settings = async (values: z.infer<typeof SettingsSchema>) => {
-  const user = await currentUser();
+  const user = await getCurrentUser();
 
   if (!user) {
     return { error: "Unauthorized!" };
@@ -40,7 +40,7 @@ export const settings = async (values: z.infer<typeof SettingsSchema>) => {
     const verificationToken = await generateVerificationToken(values.email);
     await sendVerificationEmail(
       verificationToken.email,
-      verificationToken.token
+      verificationToken.token,
     );
 
     return { success: "Verification email sent!" };
@@ -49,7 +49,7 @@ export const settings = async (values: z.infer<typeof SettingsSchema>) => {
   if (values.password && values.newPassword && dbUser.password) {
     const passwordsMatch = await bcrypt.compare(
       values.password,
-      dbUser.password
+      dbUser.password,
     );
 
     if (!passwordsMatch) {

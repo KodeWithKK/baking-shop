@@ -1,80 +1,80 @@
 "use client";
 
 import FullPageLoader from "@/components/base/loaders/fullpage-loader";
-import useIsTouchDevice from "@/hooks/useIsTouchDevice";
-import ProductsDeck from "@/components/features/product-deck/ProductsDeck";
+import useIsTouchDevice from "@/hooks/use-is-touch-device";
+import ProductsDeck from "@/components/features/product-deck";
 import ProductCard from "@/components/features/product-card";
-import bestsellerCakes from "@/data/bestSeller";
-import designerCakes from "@/data/designerCakes";
-import pastries from "@/data/pastries";
-import { CakeDataType } from "@/types/global";
 import Link from "next/link";
+import { useQueries } from "@tanstack/react-query";
+import { Cake, CakeCategory } from "@prisma/client";
+import { getCakes } from "@/data/cake";
+import { getCakeCategoryURL } from "@/lib/pricing";
 
 export default function Home() {
   const isTouchDevice = useIsTouchDevice();
+  const categories = Object.values(CakeCategory);
 
-  if (isTouchDevice === null) return <FullPageLoader />;
+  const results = useQueries({
+    queries: categories.map((category) => ({
+      queryKey: ["home-cakes", category],
+      queryFn: () => getCakes(category, 0, 16),
+    })),
+  });
+
+  if (isTouchDevice === null || results.some((data) => data.isFetching)) {
+    return <FullPageLoader />;
+  }
 
   return (
     <div className="mx-auto w-[85%] space-y-8 py-[30px] max-sm:w-[90%] max-sm:pt-5">
       <CategoryDisplay
         name="Best Sellers"
-        allCakesHref="/best-seller"
-        cakesData={bestsellerCakes}
+        cakesData={results[0].data!}
         isTouchDevice={isTouchDevice}
       />
 
       <CategoryDisplay
         name="Designer Cakes"
-        allCakesHref="/designer-cakes"
-        cakesData={designerCakes}
+        cakesData={results[1].data!}
         isTouchDevice={isTouchDevice}
       />
 
       <CategoryDisplay
         name="Pastry Cakes"
-        allCakesHref="/pastries"
-        cakesData={pastries}
+        cakesData={results[2].data!}
         isTouchDevice={isTouchDevice}
       />
     </div>
   );
 }
 
-type CategoryDisplayType = {
-  readonly name: string;
-  readonly allCakesHref: string;
-  readonly cakesData: CakeDataType[];
-  readonly isTouchDevice: boolean | null;
-};
+interface CategoryDisplayType {
+  name: string;
+  cakesData: Cake[];
+  isTouchDevice: boolean | null;
+}
 
 function CategoryDisplay({
   name,
-  allCakesHref,
   cakesData,
   isTouchDevice,
-}: CategoryDisplayType) {
+}: Readonly<CategoryDisplayType>) {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <h2 className="text-[26px] leading-none max-sm:text-[24px]">{name}</h2>
         <Link
           className="font-medium text-orange-600 underline underline-offset-4 max-sm:text-[15px]"
-          href={allCakesHref}
+          href={getCakeCategoryURL(cakesData[0].category)}
         >
           View All
         </Link>
       </div>
 
-      <ProductsDeck
-        totalCardsInDeck={12}
-        cardWidth={200}
-        isTouchDevice={isTouchDevice}
-      >
+      <ProductsDeck isTouchDevice={isTouchDevice}>
         {cakesData.slice(0, 12).map((cakeData) => (
           <ProductCard
             key={cakeData.id}
-            href={`${allCakesHref}/${cakeData.id}`}
             data={cakeData}
             className="w-[200px] flex-shrink-0"
           />

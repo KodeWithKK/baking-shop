@@ -1,5 +1,4 @@
 // This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 // learn more about prisma with mongodb
 // https://www.codifytools.com/blog/auth-prisma-mongo-nextjs
@@ -25,20 +24,24 @@ enum UserRole {
 }
 
 model User {
-  id                      String                 @id @default(auto()) @map("_id") @db.ObjectId
+  id                      String    @id @default(auto()) @map("_id") @db.ObjectId
   name                    String?
-  email                   String?                @unique
+  email                   String?   @unique
   emailVerified           DateTime?
   image                   String?
   password                String?
-  role                    UserRole               @default(USER)
-  isTwoFactorEnabled      Boolean                @default(false)
-  twoFactorConfirmation   TwoFactorConfirmation?
-  twoFactorConfirmationId String?                @db.ObjectId
+  role                    UserRole  @default(USER)
+  isTwoFactorEnabled      Boolean   @default(false)
+  twoFactorConfirmationId String?   @db.ObjectId
+  createdAt               DateTime  @default(now())
+  updatedAt               DateTime  @updatedAt
   location                String?
 
-  accounts Account[]
-  Review   Review[]
+  twoFactorConfirmation TwoFactorConfirmation?
+  accounts              Account[]
+  Review                Review[]
+  CartItem              CartItem[]
+  WishlistItem          WishlistItem[]
 }
 
 model Account {
@@ -88,10 +91,10 @@ model TwoFactorToken {
 }
 
 model TwoFactorConfirmation {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
   userId String @db.ObjectId
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId])
 }
@@ -103,28 +106,63 @@ enum CakeCategory {
 }
 
 model Cake {
-  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  id              String       @id @default(auto()) @map("_id") @db.ObjectId
   name            String
-  discountedPrice Int?
-  listPrice       Int
-  totalReviews    Int
   imgSrc          String
-  rating          Float
   description     String
-  createdAt       DateTime @default(now())
+  category        CakeCategory
+  listPrice       Int
+  discountedPrice Int?
+  rating          Float        @default(0)
+  totalReviews    Int          @default(0)
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
 
-  reviews  Review[]
-  category CakeCategory
+  reviews      Review[]
+  CartItem     CartItem[]
+  WishlistItem WishlistItem[]
+}
+
+model CartItem {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  cakeId     String @db.ObjectId
+  quantity   Int    @default(1)
+  cakeWeight Float?
+  userId     String @db.ObjectId
+
+  user User @relation(fields: [userId], references: [id])
+  cake Cake @relation(fields: [cakeId], references: [id])
+}
+
+model WishlistItem {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  cakeId String @db.ObjectId
+  userId String @db.ObjectId
+
+  user User @relation(fields: [userId], references: [id])
+  cake Cake @relation(fields: [cakeId], references: [id])
+}
+
+enum Occasion {
+  BIRTHDAY
+  ANNIVERSARY
+  WEDDING
+  GRADUATION
+  VALENTINE
+  CHRISTMAS
+  NEW_YEAR
+  OTHER
 }
 
 model Review {
-  id       String   @id @default(auto()) @map("_id") @db.ObjectId
-  userId   String   @db.ObjectId
-  cakeId   String   @db.ObjectId
-  rating   Int
-  ocassion String
-  message  String?
-  postedOn DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  cakeId    String   @db.ObjectId
+  rating    Int
+  ocassion  Occasion @default(BIRTHDAY)
+  message   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   cake Cake @relation(fields: [cakeId], references: [id])
   user User @relation(fields: [userId], references: [id])

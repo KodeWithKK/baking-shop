@@ -1,6 +1,6 @@
-import bestsellerCakes from "@/data/bestSeller";
-import designerCakes from "@/data/designerCakes";
-import pastries from "@/data/pastries";
+import bestsellerCakes from "@/data/bakingo-dataset/bestSeller";
+import designerCakes from "@/data/bakingo-dataset/designerCakes";
+import pastries from "@/data/bakingo-dataset/pastries";
 import { CakeDataType, CakeCategories } from "@/types/global";
 
 export function findCake(id: string, category: CakeCategories) {

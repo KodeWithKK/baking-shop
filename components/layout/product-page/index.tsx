@@ -1,28 +1,53 @@
 "use client";
 
-import { useCallback, useMemo } from "react";
-import { useAppContext } from "@/context/app-provider";
+import { useCallback } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { notFound } from "next/navigation";
+import { getCake } from "@/data/cake";
+import { addToCart } from "@/data/cart-item";
+
 import ProductContent from "./product-content";
-import { ProductPageProps } from "./types";
+import FullPageLoader from "@/components/base/loaders/fullpage-loader";
 
-function ProductDisplay({ data, category }: Readonly<ProductPageProps>) {
-  const { addToCart, cartItems, toggleCartModal } = useAppContext();
+interface ProductPageProps {
+  productId: string;
+}
 
-  const isAlreadyInCart = useMemo((): boolean => {
-    return !!cartItems.find((item) => item.id === data.id);
-  }, [data.id, cartItems]);
+function ProductPage({ productId }: Readonly<ProductPageProps>) {
+  const isAlreadyInCart = false;
 
-  const handleAddToCart = useCallback(() => {
-    if (!isAlreadyInCart) {
-      addToCart(data.id, category);
-    } else toggleCartModal();
-  }, [isAlreadyInCart, category, data.id, addToCart, toggleCartModal]);
+  const {
+    data: cakeData,
+    isFetching,
+    isError,
+  } = useQuery({
+    queryFn: () => getCake(productId),
+    queryKey: ["cake", productId],
+  });
+
+  const handleAddToCart = useCallback(async () => {
+    if (cakeData) {
+      if (cakeData.category !== "PASTRIES") {
+        await addToCart(cakeData.id, 0.5);
+      } else {
+        await addToCart(cakeData.id);
+      }
+    }
+  }, [cakeData]);
+
+  if (isFetching) {
+    return <FullPageLoader />;
+  }
+
+  if (isError) {
+    return notFound();
+  }
 
   return (
     <div className="relative mx-auto flex gap-6 max-lg:flex-col max-lg:pb-[84px] max-lg:pt-4 max-md:pb-[75px] max-sm:w-[93%] sm:w-[91%] md:w-[75%] md:py-[20px] lg:w-[90%] xl:w-[85%]">
       <section className="lg:sticky lg:left-0 lg:top-[91px] lg:h-[calc(100vh-20vw)] lg:flex-shrink-0 xl:h-[calc(100vh-70px-53px-70px)]">
         <img
-          src={data.imgSrc}
+          src={cakeData!.imgSrc}
           alt="cake_image"
           className="aspect-square h-full rounded-lg object-cover"
         />
@@ -45,8 +70,8 @@ function ProductDisplay({ data, category }: Readonly<ProductPageProps>) {
         </div>
       </section>
 
-      <ProductContent data={data} category={category} />
+      <ProductContent cakeData={cakeData!} />
     </div>
   );
 }
-export default ProductDisplay;
+export default ProductPage;

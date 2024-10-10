@@ -1,5 +1,6 @@
 import { SessionProvider } from "next-auth/react";
 import AppProvider from "@/context/app-provider";
+import TanstackProvider from "@/context/tanstack-provider";
 import { auth } from "@/auth";
 import { Poppins } from "next/font/google";
 import type { Metadata } from "next";
@@ -36,14 +37,16 @@ export default async function RootLayout({
           />
         </head>
         <body className={font.className} suppressHydrationWarning>
-          <AppProvider>
-            <Navbar />
-            <CartModal />
+          <TanstackProvider>
+            <AppProvider>
+              <Navbar />
+              <CartModal />
 
-            <div className="min-h-screen bg-[#f7f7f7] pt-[71px] text-gray-975">
-              {children}
-            </div>
-          </AppProvider>
+              <div className="min-h-screen bg-[#f7f7f7] pt-[71px] text-gray-975">
+                {children}
+              </div>
+            </AppProvider>
+          </TanstackProvider>
         </body>
       </html>
     </SessionProvider>

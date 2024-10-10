@@ -1,17 +1,23 @@
+"use server";
+
+import { cache } from "react";
+import { auth } from "@/auth";
+
 /*
  * Use it for server side
  */
 
-import { auth } from "@/auth";
-
-export const currentUser = async () => {
+const getSession = cache(async () => {
   const session = await auth();
+  return session;
+});
 
+export const getCurrentUser = async () => {
+  const session = await getSession();
   return session?.user;
 };
 
-export const currentRole = async () => {
-  const session = await auth();
-
+export const getCurrentUserRole = async () => {
+  const session = await getSession();
   return session?.user?.role;
 };

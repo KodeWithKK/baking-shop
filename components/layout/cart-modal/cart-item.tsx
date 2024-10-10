@@ -1,24 +1,27 @@
-import findOrgPrice from "@/utils/findOrgPrice";
-import { CartItemDataType } from "./types";
+import { type CartItemCakeData } from "@/types/next-auth";
+import { findDiscountedPrice } from "@/lib/pricing";
 
-function CartItem({ data }: Readonly<{ data: CartItemDataType }>) {
+function CartItem({ cakeData }: Readonly<{ cakeData: CartItemCakeData }>) {
   return (
     <div className="group flex w-full items-center gap-2 rounded-md">
       <img
-        src={`${data.imgSrc}?tr=w-320,h-320,q-70`}
+        src={`${cakeData.imgSrc}?tr=w-320,h-320,q-70`}
         alt="cake_image"
         className="h-[52px] rounded-md"
       />
 
       <div className="w-full">
-        <p className="font-medium">{data.name}</p>
-        <span className="mr-2 font-semibold">₹ {data.currPrice}</span>
-        <span className="mr-2 text-[15px] text-gray-800 line-through">
-          ₹ {data?.originalPrice ?? findOrgPrice(data.currPrice)}
+        <p className="font-medium">{cakeData.name}</p>
+        <span className="mr-2 font-semibold">
+          ₹{" "}
+          {cakeData.discountedPrice ?? findDiscountedPrice(cakeData.listPrice)}
         </span>
-        {data?.rating && (
+        <span className="mr-2 text-[15px] text-gray-800 line-through">
+          ₹ {cakeData.listPrice}
+        </span>
+        {cakeData?.rating && (
           <span className="rounded bg-[#1c9550]/10 px-0.5 py-0.5 text-sm font-medium text-[#1c9550]">
-            {data.rating} ★
+            {cakeData.rating} ★
           </span>
         )}
       </div>

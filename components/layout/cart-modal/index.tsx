@@ -1,5 +1,6 @@
 "use client";
 
+import { useCurrentUser } from "@/hooks/use-current-user";
 import { Fragment, useMemo } from "react";
 import { useAppContext } from "@/context/app-provider";
 import { RemoveScroll } from "react-remove-scroll";
@@ -7,26 +8,26 @@ import CartItem from "./cart-item";
 import BillDetails from "./bill-details";
 import CartFooter from "./cart-footer";
 import { CloseIcon } from "@/lib/icons/global";
-import findOrgPrice from "@/utils/findOrgPrice";
+import { findDiscountedPrice } from "@/lib/pricing";
 
 function CartModal() {
-  const { isCartModalOpen, cartItems, toggleCartModal } = useAppContext();
+  const { showCartModal, toggleCartModal } = useAppContext();
+  const user = useCurrentUser();
+  const cartItems = useMemo(() => user?.cartItems ?? [], [user?.cartItems]);
 
-  const totalBuyPrice = useMemo(() => {
-    return cartItems.reduce((acc, item) => acc + item.currPrice, 0);
-  }, [cartItems]);
-
-  const totalCostPrice = useMemo(() => {
+  const totalDiscountedPrice = useMemo(() => {
     return cartItems.reduce((acc, item) => {
-      if (item?.originalPrice) {
-        return acc + item.originalPrice;
-      } else {
-        return acc + findOrgPrice(item.currPrice);
-      }
+      const discountedPrice =
+        item.cake.discountedPrice ?? findDiscountedPrice(item.cake.listPrice);
+      return acc + discountedPrice;
     }, 0);
   }, [cartItems]);
 
-  if (!isCartModalOpen) {
+  const totalListPrice = useMemo(() => {
+    return cartItems.reduce((acc, item) => acc + item.cake.listPrice, 0);
+  }, [cartItems]);
+
+  if (!showCartModal) {
     return null;
   }
 
@@ -58,13 +59,13 @@ function CartModal() {
               <Fragment>
                 <div className="space-y-5 rounded-md bg-white p-2">
                   {cartItems.map((item) => (
-                    <CartItem data={item} key={item.id} />
+                    <CartItem key={item.id} cakeData={item.cake} />
                   ))}
                 </div>
                 <div className="rounded-md bg-white p-2">
                   <BillDetails
-                    totalBuyPrice={totalBuyPrice}
-                    totalCostPrice={totalCostPrice}
+                    totalDiscountedPrice={totalDiscountedPrice}
+                    totalListPrice={totalListPrice}
                   />
                 </div>
               </Fragment>
@@ -74,7 +75,9 @@ function CartModal() {
             )}
           </div>
 
-          {cartItems.length > 0 && <CartFooter totalBuyPrice={totalBuyPrice} />}
+          {cartItems.length > 0 && (
+            <CartFooter totalDiscountedPrice={totalDiscountedPrice} />
+          )}
         </div>
       </div>
     </RemoveScroll>

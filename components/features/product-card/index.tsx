@@ -1,28 +1,21 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import findOrgPrice from "@/utils/findOrgPrice";
-
-type CakesData = {
-  id: string;
-  name: string;
-  totalReviews?: number;
-  originalPrice: number | null;
-  currPrice: number;
-  imgSrc: string;
-  rating: number | null;
-  description: string;
-};
+import {
+  findDiscountedPrice,
+  findDiscount,
+  getCakeCategoryURL,
+} from "@/lib/pricing";
+import { Cake } from "@prisma/client";
 
 type Props = {
-  data: CakesData;
-  href: string;
+  data: Cake;
   className?: string;
 };
 
-function ProductCard({ data, href, className }: Readonly<Props>) {
+function ProductCard({ data, className }: Readonly<Props>) {
   return (
     <Link
-      href={href}
+      href={`${getCakeCategoryURL(data.category)}/${data.id}`}
       className={cn(
         "overflow-hidden rounded-lg border border-gray-200 bg-white",
         className,
@@ -36,20 +29,22 @@ function ProductCard({ data, href, className }: Readonly<Props>) {
         </p>
 
         <p className="">
-          <span className="text-[15px] font-medium">₹ {data.currPrice}</span>
+          <span className="text-[15px] font-medium">
+            ₹ {data.discountedPrice ?? findDiscountedPrice(data.listPrice)}
+          </span>
           <span className="mx-1.5 text-[13px] line-through">
-            ₹ {data.originalPrice ?? findOrgPrice(data.currPrice)}
+            ₹ {data.listPrice}
           </span>
           <span className="text-[13px] font-medium text-[#1c9550]">
-            ({findDiscount(data.currPrice, data.originalPrice)}% OFF)
+            ({findDiscount(data.listPrice, data.discountedPrice)}% OFF)
           </span>
         </p>
 
         <p className="">
           <span className="rounded bg-[#1c9550]/10 px-1 py-0.5 text-[13px] font-medium text-[#1c9550]">
-            {data.rating ?? "NEW"} ★
+            {data.rating || "NEW"} ★
           </span>
-          {data.rating && data.totalReviews && (
+          {data.rating > 0 && data.totalReviews > 0 && (
             <span className="ml-1.5 text-[13px]">
               {data.totalReviews} Review{data.totalReviews > 1 && "s"}
             </span>
@@ -58,11 +53,6 @@ function ProductCard({ data, href, className }: Readonly<Props>) {
       </div>
     </Link>
   );
-}
-
-function findDiscount(currPrice: number, orgPrice: number | null): number {
-  const ogPrice = orgPrice ?? findOrgPrice(currPrice);
-  return Math.trunc(((ogPrice - currPrice) / ogPrice) * 100);
 }
 
 export default ProductCard;

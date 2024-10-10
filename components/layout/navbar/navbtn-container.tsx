@@ -15,12 +15,16 @@ import {
   HeartOutlineIcon,
   UserCircledIcon,
 } from "@/lib/icons/global";
+import { findDiscountedPrice } from "@/lib/pricing";
 
 function NavBtnContainer() {
   const [showOptions, setShowOptions] = useState<boolean>(false);
-  const { wishlistItems, cartItems, toggleCartModal } = useAppContext();
+  const { toggleCartModal } = useAppContext();
   const user = useCurrentUser();
   const pathname = usePathname();
+
+  const wishlistItems = [];
+  const cartItems = user?.cartItems ?? [];
 
   const handleCloseOptions = useCallback(() => {
     setShowOptions(false);
@@ -50,7 +54,14 @@ function NavBtnContainer() {
               {cartItems.length} {cartItems.length > 1 ? "Items" : "Item"}
             </span>
             <span>
-              ₹ {cartItems.reduce((acc, curr) => acc + curr.currPrice, 0)}
+              ₹{" "}
+              {cartItems.reduce((acc, item) => {
+                const discountedPrice =
+                  item.cake.discountedPrice ??
+                  findDiscountedPrice(item.cake.listPrice);
+
+                return acc + discountedPrice;
+              }, 0)}
             </span>
           </div>
         )}

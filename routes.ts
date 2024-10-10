@@ -14,6 +14,8 @@ export const publicDynamicRoutes = [
   "/best-seller",
   "/designer-cakes",
   "/pastries",
+  "/api/user",
+  "/api/admin",
 ];
 
 /**

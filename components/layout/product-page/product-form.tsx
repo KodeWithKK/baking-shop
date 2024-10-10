@@ -3,18 +3,17 @@
 import { Fragment, useState } from "react";
 import { cakeWeights, cakeQuantities } from "./utils";
 import { cn } from "@/lib/utils";
-
-import { CakeCategories } from "@/types/global";
+import { CakeCategory } from "@prisma/client";
 
 const buttonsDataMap = {
-  "best-seller": cakeWeights,
-  "designer-cakes": cakeWeights,
-  pastries: cakeQuantities,
+  [CakeCategory.BEST_SELLER]: cakeWeights,
+  [CakeCategory.DESIGNER_CAKES]: cakeWeights,
+  [CakeCategory.PASTRIES]: cakeQuantities,
 };
 
-function ProductForm({ category }: Readonly<{ category: CakeCategories }>) {
+function ProductForm({ category }: Readonly<{ category: CakeCategory }>) {
   const [selectedWeight, setSelectedWeight] = useState<number>(
-    category === "pastries" ? 1 : 0.5,
+    category === CakeCategory.PASTRIES ? 1 : 0.5,
   );
   const [cakeMessage, setCakeMessage] = useState<string>("");
 
@@ -22,7 +21,7 @@ function ProductForm({ category }: Readonly<{ category: CakeCategories }>) {
     <Fragment>
       <div className="mb-6">
         <p className="text-[15px] font-medium">
-          Select {category === "pastries" ? "Quantity" : "Weights"}
+          Select {category === CakeCategory.PASTRIES ? "Quantity" : "Weights"}
         </p>
         <div className="mt-[10px] flex gap-3">
           {buttonsDataMap[category].map((qty) => (
@@ -31,11 +30,11 @@ function ProductForm({ category }: Readonly<{ category: CakeCategories }>) {
               className={cn(
                 "inline-block w-[75px] rounded-lg border border-gray-500 py-[10px] text-center text-[15px] font-medium",
                 selectedWeight == qty.value && "border-orange-600",
-                category === "pastries" && "w-[70px]",
+                category === CakeCategory.PASTRIES && "w-[70px]",
               )}
               onClick={() => setSelectedWeight(qty.value)}
             >
-              {qty.value} {category !== "pastries" && "Kg"}
+              {qty.value} {category !== CakeCategory.PASTRIES && "Kg"}
             </button>
           ))}
         </div>
