@@ -1,10 +1,12 @@
 "use client";
 
-import { useCallback } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useCallback, useMemo } from "react";
 import { notFound } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
+import { useAppContext } from "@/context/app-provider";
 import { getCake } from "@/data/cake";
 import { addToCart } from "@/data/cart-item";
+import { produce } from "immer";
 
 import ProductContent from "./product-content";
 import FullPageLoader from "@/components/base/loaders/fullpage-loader";
@@ -14,7 +16,7 @@ interface ProductPageProps {
 }
 
 function ProductPage({ productId }: Readonly<ProductPageProps>) {
-  const isAlreadyInCart = false;
+  const { cartItems, addToCart, toggleCartModal } = useAppContext();
 
   const {
     data: cakeData,
@@ -25,15 +27,19 @@ function ProductPage({ productId }: Readonly<ProductPageProps>) {
     queryKey: ["cake", productId],
   });
 
+  const isAlreadyInCart = useMemo(() => {
+    return cartItems.find((item) => item.cake.id === productId);
+  }, [cartItems, productId]);
+
   const handleAddToCart = useCallback(async () => {
     if (cakeData) {
-      if (cakeData.category !== "PASTRIES") {
-        await addToCart(cakeData.id, 0.5);
-      } else {
-        await addToCart(cakeData.id);
-      }
+      await addToCart(
+        productId,
+        cakeData.category !== "PASTRIES" ? 0.5 : undefined,
+        cakeData,
+      );
     }
-  }, [cakeData]);
+  }, [cakeData, productId, addToCart]);
 
   if (isFetching) {
     return <FullPageLoader />;
@@ -56,7 +62,7 @@ function ProductPage({ productId }: Readonly<ProductPageProps>) {
           <button
             type="button"
             className="w-full border border-orange-600 text-orange-600 hover:bg-orange-600/[.15] max-md:rounded-tl-md max-md:border-l-0 md:rounded-lg"
-            onClick={handleAddToCart}
+            onClick={isAlreadyInCart ? toggleCartModal : handleAddToCart}
           >
             {isAlreadyInCart ? "Go To Cart" : "Add To Cart"}
           </button>

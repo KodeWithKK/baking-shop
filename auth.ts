@@ -5,7 +5,7 @@ import { getTwoFactorConfirmationByUserId } from "@/data/two-factor-confirmation
 import { getUserById } from "@/data/user";
 import { getAccountByUserId } from "./data/account";
 import { UserRole } from "@prisma/client";
-import { type CartItem } from "./types/next-auth";
+import { type SessionCartItem } from "./types/next-auth";
 import { db } from "@/lib/db";
 
 export const {
@@ -66,7 +66,7 @@ export const {
         session.user.name = token.name;
         session.user.email = token.email as string;
         session.user.isOAuth = token.isOAuth as boolean;
-        session.user.cartItems = token.cartItems as CartItem[];
+        session.user.cartItems = token.cartItems as SessionCartItem[];
       }
 
       return session;

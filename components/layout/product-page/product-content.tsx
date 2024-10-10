@@ -2,7 +2,7 @@ import ProductHeading from "./product-heading";
 import ProductForm from "./product-form";
 import WrappedText from "@/components/features/wrapped-text";
 import { Cake } from "@prisma/client";
-import { findDiscountedPrice, findDiscount } from "@/lib/pricing";
+import { findDiscountedPrice, findDiscount, formatPrice } from "@/lib/pricing";
 import { dummyReviews } from "./utils";
 import { Review } from "@/types/global";
 
@@ -16,10 +16,12 @@ function ProductContent({ cakeData }: Readonly<{ cakeData: Cake }>) {
       <div className="my-6">
         <span className="mr-3 text-[18px] font-semibold">
           ₹{" "}
-          {cakeData.discountedPrice ?? findDiscountedPrice(cakeData.listPrice)}
+          {formatPrice(
+            cakeData.discountedPrice ?? findDiscountedPrice(cakeData.listPrice),
+          )}
         </span>
         <span className="text-gray-800 line-through">
-          ₹ {cakeData.listPrice}
+          ₹ {formatPrice(cakeData.listPrice)}
         </span>
         <span className="ml-3 mr-2 font-medium text-[#1C9550]">
           ({findDiscount(cakeData.listPrice, cakeData.discountedPrice)}% OFF){" "}

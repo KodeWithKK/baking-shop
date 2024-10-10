@@ -11,9 +11,7 @@ import { CloseIcon } from "@/lib/icons/global";
 import { findDiscountedPrice } from "@/lib/pricing";
 
 function CartModal() {
-  const { showCartModal, toggleCartModal } = useAppContext();
-  const user = useCurrentUser();
-  const cartItems = useMemo(() => user?.cartItems ?? [], [user?.cartItems]);
+  const { cartItems, showCartModal, toggleCartModal } = useAppContext();
 
   const totalDiscountedPrice = useMemo(() => {
     return cartItems.reduce((acc, item) => {

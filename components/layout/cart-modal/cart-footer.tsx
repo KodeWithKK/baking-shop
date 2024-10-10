@@ -1,3 +1,5 @@
+import { formatPrice } from "@/lib/pricing";
+
 function CartFooter({
   totalDiscountedPrice,
 }: Readonly<{ totalDiscountedPrice: number }>) {
@@ -9,7 +11,7 @@ function CartFooter({
       >
         <div className="flex flex-col leading-snug">
           <span className="text-[15px] font-semibold">
-            ₹ {totalDiscountedPrice}
+            ₹ {formatPrice(totalDiscountedPrice)}
           </span>
           <span className="text-[13px] tracking-wide text-orange-200">
             TOTAL

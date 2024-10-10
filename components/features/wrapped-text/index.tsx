@@ -13,7 +13,7 @@ function WrappedText({
   children,
   ...restProps
 }: Readonly<Props>) {
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [showWrappedText, setShowWrappedText] = useState(true);
 
   const wrappedText = useMemo((): string => {
     const words = children.split(" ");
@@ -24,33 +24,27 @@ function WrappedText({
 
   return (
     <p {...restProps}>
-      <span>
-        {isCollapsed && wrappedText}
-        {isCollapsed && children.split(" ").length > wrapLength && (
-          <ReadMoreBtn
-            onClick={() => {
-              setIsCollapsed(false);
-            }}
-          />
-        )}
-      </span>
-      <span>{!isCollapsed && children}</span>
+      <span>{showWrappedText ? wrappedText : children + " "}</span>
+      <ActionButton onClick={() => setShowWrappedText((prev) => !prev)}>
+        {showWrappedText ? "Read More" : "Read Less"}
+      </ActionButton>
     </p>
   );
 }
 
-type ReadMoreBtnType = {
-  onClick: () => void;
+type ActionButtonProps = {
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  children: React.ReactNode;
 };
 
-function ReadMoreBtn({ onClick }: Readonly<ReadMoreBtnType>) {
+function ActionButton({ onClick, children }: Readonly<ActionButtonProps>) {
   return (
     <button
       type="button"
       className="text-[#468fce] underline underline-offset-4"
       onClick={onClick}
     >
-      Read More
+      {children}
     </button>
   );
 }

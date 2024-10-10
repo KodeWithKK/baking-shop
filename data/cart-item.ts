@@ -16,6 +16,8 @@ export const addToCart = async (cakeId: string, cakeWeight?: number) => {
       },
     });
 
+    console.log({ result });
+
     return result;
   } catch (error) {
     return null;

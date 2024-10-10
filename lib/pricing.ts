@@ -19,3 +19,9 @@ export function findDiscount(
 export function getCakeCategoryURL(category: CakeCategory) {
   return category.replace("_", "-").toLowerCase();
 }
+
+export function formatPrice(price: number) {
+  return new Intl.NumberFormat("en-IN", { maximumSignificantDigits: 3 }).format(
+    price,
+  );
+}

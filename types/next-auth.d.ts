@@ -1,7 +1,7 @@
 import { CakeCategory, UserRole } from "@prisma/client";
 import { DefaultSession } from "next-auth";
 
-export interface CartItemCakeData {
+export interface SessionCartItemCake {
   id: string;
   name: string;
   imgSrc: string;
@@ -11,18 +11,18 @@ export interface CartItemCakeData {
   rating: number;
 }
 
-export interface CartItem {
+export interface SessionCartItem {
   id: string;
   cakeWeight?: number;
   quantity: number;
-  cake: CartItemCakeData;
+  cake: SessionCartItemCake;
 }
 
 export type ExtendedUser = DefaultSession["user"] & {
   role: UserRole;
   isTwoFactorEnabled: boolean;
   isOAuth: boolean;
-  cartItems: CartItem[];
+  cartItems: SessionCartItem[];
 };
 
 declare module "next-auth" {
