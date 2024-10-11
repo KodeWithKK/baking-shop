@@ -7,19 +7,22 @@ import {
   useMemo,
   useState,
 } from "react";
-import useApiHooks from "./use-api";
+import useCartApi from "./use-cart-api";
 import { Cake } from "@prisma/client";
-import { SessionCartItem } from "@/types/next-auth";
+import { SessionCartItem, SessionWishlistItem } from "@/types/next-auth";
+import useWishlistApi from "./use-wishlist-api";
 
 const defaultValues = {
   showCartModal: false as boolean,
   cartItems: [] as SessionCartItem[],
+  wishlistItems: [] as SessionWishlistItem[],
   toggleCartModal: () => {},
   addToCart: (
     cakeId: string,
     cakeWeight: number | undefined,
     cakeData: Cake,
   ) => {},
+  toggleWishlistItem: (cakeId: string) => {},
 };
 
 const AppContext = createContext(defaultValues);
@@ -32,7 +35,8 @@ interface AppProviderProps {
 function AppProvider({ children }: Readonly<AppProviderProps>) {
   const [showCartModal, setShowCartModal] = useState<boolean>(false);
 
-  const { cartItems, addToCart } = useApiHooks();
+  const { cartItems, addToCart } = useCartApi();
+  const { wishlistItems, toggleWishlistItem } = useWishlistApi();
 
   const toggleCartModal = useCallback(() => {
     setShowCartModal((prev) => !prev);
@@ -42,10 +46,19 @@ function AppProvider({ children }: Readonly<AppProviderProps>) {
     () => ({
       showCartModal,
       cartItems,
+      wishlistItems,
       toggleCartModal,
       addToCart,
+      toggleWishlistItem,
     }),
-    [showCartModal, cartItems, toggleCartModal, addToCart],
+    [
+      showCartModal,
+      cartItems,
+      wishlistItems,
+      toggleCartModal,
+      addToCart,
+      toggleWishlistItem,
+    ],
   );
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

@@ -1,7 +1,7 @@
 "use server";
 
-import { getCurrentUser } from "@/lib/auth";
 import { db } from "@/lib/db";
+import { getCurrentUser } from "@/lib/auth";
 
 export const addToCart = async (cakeId: string, cakeWeight?: number) => {
   const user = await getCurrentUser();
@@ -15,8 +15,6 @@ export const addToCart = async (cakeId: string, cakeWeight?: number) => {
         userId: user.id!,
       },
     });
-
-    console.log({ result });
 
     return result;
   } catch (error) {

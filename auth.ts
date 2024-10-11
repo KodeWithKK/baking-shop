@@ -5,7 +5,7 @@ import { getTwoFactorConfirmationByUserId } from "@/data/two-factor-confirmation
 import { getUserById } from "@/data/user";
 import { getAccountByUserId } from "./data/account";
 import { UserRole } from "@prisma/client";
-import { type SessionCartItem } from "./types/next-auth";
+import { SessionWishlistItem, type SessionCartItem } from "./types/next-auth";
 import { db } from "@/lib/db";
 
 export const {
@@ -67,15 +67,15 @@ export const {
         session.user.email = token.email as string;
         session.user.isOAuth = token.isOAuth as boolean;
         session.user.cartItems = token.cartItems as SessionCartItem[];
+        session.user.wishlistItems =
+          token.wishlistItems as SessionWishlistItem[];
       }
-
       return session;
     },
     async jwt({ token }) {
       if (!token.sub) return token;
 
       const existingUser = await getUserById(token.sub);
-
       if (!existingUser) return token;
 
       const existingAccount = await getAccountByUserId(existingUser.id);
@@ -86,7 +86,7 @@ export const {
       token.role = existingUser.role;
       token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled;
       token.cartItems = existingUser.CartItem;
-
+      token.wishlistItems = existingUser.WishlistItem;
       return token;
     },
   },

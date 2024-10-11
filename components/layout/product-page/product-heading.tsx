@@ -1,11 +1,18 @@
 "use client";
 
+import { useMemo } from "react";
+import { useAppContext } from "@/context/app-provider";
 import { cn } from "@/lib/utils";
-import { HeartSolidIcon } from "@/lib/icons/global";
 import { Cake } from "@prisma/client";
 
+import { HeartSolidIcon } from "@/lib/icons/global";
+
 function ProductHeading({ cakeData }: Readonly<{ cakeData: Cake }>) {
-  const isAlreadyInWishlist = false;
+  const { wishlistItems, toggleWishlistItem } = useAppContext();
+
+  const isAlreadyInWishlist = useMemo(() => {
+    return wishlistItems.some((item) => item.cakeId === cakeData.id);
+  }, [wishlistItems, cakeData.id]);
 
   return (
     <div className="flex justify-between">
@@ -24,6 +31,7 @@ function ProductHeading({ cakeData }: Readonly<{ cakeData: Cake }>) {
           "grid h-10 w-10 place-items-center rounded-full bg-gray-600",
           isAlreadyInWishlist && "bg-orange-600/20",
         )}
+        onClick={() => toggleWishlistItem(cakeData.id)}
       >
         <HeartSolidIcon
           className={cn(

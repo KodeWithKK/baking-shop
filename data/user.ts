@@ -6,26 +6,6 @@ export const getUserByEmail = async (email: string) => {
   try {
     const user = await db.user.findUnique({
       where: { email },
-      include: {
-        CartItem: {
-          select: {
-            id: true,
-            cakeWeight: true,
-            quantity: true,
-            cake: {
-              select: {
-                id: true,
-                name: true,
-                imgSrc: true,
-                category: true,
-                listPrice: true,
-                discountedPrice: true,
-                rating: true,
-              },
-            },
-          },
-        },
-      },
     });
 
     return user;
@@ -55,6 +35,12 @@ export const getUserById = async (id: string) => {
                 rating: true,
               },
             },
+          },
+        },
+        WishlistItem: {
+          select: {
+            id: true,
+            cakeId: true,
           },
         },
       },

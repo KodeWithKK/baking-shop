@@ -132,6 +132,8 @@ model CartItem {
 
   user User @relation(fields: [userId], references: [id])
   cake Cake @relation(fields: [cakeId], references: [id])
+
+  @@unique([cakeId, userId])
 }
 
 model WishlistItem {
@@ -141,6 +143,8 @@ model WishlistItem {
 
   user User @relation(fields: [userId], references: [id])
   cake Cake @relation(fields: [cakeId], references: [id])
+
+  @@unique([cakeId, userId])
 }
 
 enum Occasion {

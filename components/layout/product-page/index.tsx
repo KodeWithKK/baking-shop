@@ -5,8 +5,6 @@ import { notFound } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { useAppContext } from "@/context/app-provider";
 import { getCake } from "@/data/cake";
-import { addToCart } from "@/data/cart-item";
-import { produce } from "immer";
 
 import ProductContent from "./product-content";
 import FullPageLoader from "@/components/base/loaders/fullpage-loader";
@@ -31,9 +29,9 @@ function ProductPage({ productId }: Readonly<ProductPageProps>) {
     return cartItems.find((item) => item.cake.id === productId);
   }, [cartItems, productId]);
 
-  const handleAddToCart = useCallback(async () => {
+  const handleAddToCart = useCallback(() => {
     if (cakeData) {
-      await addToCart(
+      addToCart(
         productId,
         cakeData.category !== "PASTRIES" ? 0.5 : undefined,
         cakeData,

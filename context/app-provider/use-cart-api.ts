@@ -5,7 +5,7 @@ import { SessionCartItem } from "@/types/next-auth";
 import { Cake } from "@prisma/client";
 import { addToCart } from "@/data/cart-item";
 
-function useApiHooks() {
+function useCartApi() {
   const user = useCurrentUser();
   const [cartItems, setCartItems] = useState<SessionCartItem[]>(() => {
     if (user) return user.cartItems;
@@ -15,6 +15,7 @@ function useApiHooks() {
   const handleAddToCart = useCallback(
     async (cakeId: string, cakeWeight: number | undefined, cakeData: Cake) => {
       if (!user) return;
+
       const nextCartItem = {
         id: window.crypto.randomUUID(),
         cakeWeight: 0.5,
@@ -41,10 +42,10 @@ function useApiHooks() {
       if (addedCartItem) {
         setCartItems(
           produce((draftItem) => {
-            const addedNextCardItem = draftItem.find(
+            const addedNextCartItem = draftItem.find(
               (item) => item.id === nextCartItem.id,
             );
-            if (addedNextCardItem) addedNextCardItem.id = addedCartItem.id;
+            if (addedNextCartItem) addedNextCartItem.id = addedCartItem.id;
             else console.log("something went wrong while adding to cart");
           }),
         );
@@ -53,7 +54,10 @@ function useApiHooks() {
     [user],
   );
 
-  return { cartItems, addToCart: handleAddToCart };
+  return {
+    cartItems,
+    addToCart: handleAddToCart,
+  };
 }
 
-export default useApiHooks;
+export default useCartApi;
