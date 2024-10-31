@@ -6,7 +6,11 @@ import { produce } from "immer";
 import { SessionCartItem } from "@/types/next-auth";
 
 import { useCurrentUser } from "@/hooks/use-current-user";
-import { addToCart, increaseCartItemQuantity } from "@/data/cart-item";
+import {
+  addToCart,
+  decreaseCartItemQuantity,
+  increaseCartItemQuantity,
+} from "@/data/cart-item";
 
 function useCartApi() {
   const user = useCurrentUser();
@@ -73,7 +77,7 @@ function useCartApi() {
     setCartItems(
       produce((draftItems) => {
         const cartItem = draftItems.find((item) => item.id === itemId);
-        if (cartItem && cartItem.quantity > 2) cartItem.quantity--;
+        if (cartItem && cartItem.quantity >= 2) cartItem.quantity--;
         else if (cartItem && cartItem.quantity == 1) {
           const requiredCartItem = draftItems.findIndex(
             (item) => item.id === cartItem.id,
@@ -85,7 +89,7 @@ function useCartApi() {
       }),
     );
 
-    increaseCartItemQuantity(itemId);
+    decreaseCartItemQuantity(itemId);
   }, []);
 
   return {

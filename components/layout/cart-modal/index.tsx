@@ -4,7 +4,6 @@ import { Fragment, useMemo } from "react";
 
 import { RemoveScroll } from "react-remove-scroll";
 
-import { useCurrentUser } from "@/hooks/use-current-user";
 import { useAppContext } from "@/context/app-provider";
 import { CloseIcon } from "@/lib/icons/global";
 import { findDiscountedPrice } from "@/lib/pricing";
@@ -60,7 +59,12 @@ function CartModal() {
               <Fragment>
                 <div className="space-y-5 rounded-md bg-white p-2">
                   {cartItems.map((item) => (
-                    <CartItem key={item.id} cakeData={item.cake} />
+                    <CartItem
+                      key={item.id}
+                      itemId={item.id}
+                      quantity={item.quantity}
+                      cakeData={item.cake}
+                    />
                   ))}
                 </div>
                 <div className="rounded-md bg-white p-2">

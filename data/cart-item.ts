@@ -54,7 +54,7 @@ export const decreaseCartItemQuantity = async (itemId: string) => {
   const currQty = cartItem.quantity;
 
   try {
-    if (currQty > 2) {
+    if (currQty >= 2) {
       await db.cartItem.update({
         where: {
           id: itemId,
