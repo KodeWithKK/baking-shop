@@ -19,7 +19,7 @@ function CartModal() {
     return cartItems.reduce((acc, item) => {
       const discountedPrice =
         item.cake.discountedPrice ?? findDiscountedPrice(item.cake.listPrice);
-      return acc + discountedPrice;
+      return acc + discountedPrice * item.quantity;
     }, 0);
   }, [cartItems]);
 

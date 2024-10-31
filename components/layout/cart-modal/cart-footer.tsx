@@ -11,7 +11,10 @@ function CartFooter({
       >
         <div className="flex flex-col leading-snug">
           <span className="text-[15px] font-semibold">
-            ₹ {formatPrice(totalDiscountedPrice)}
+            ₹{" "}
+            {formatPrice(
+              totalDiscountedPrice + (totalDiscountedPrice < 500 ? 25 : 0),
+            )}
           </span>
           <span className="text-[13px] tracking-wide text-orange-200">
             TOTAL
