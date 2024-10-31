@@ -1,9 +1,10 @@
 "use client";
 
-import { getSession } from "next-auth/react";
 import { logout } from "@/actions/logout";
-import { cn } from "@/lib/utils";
+import { getSession } from "next-auth/react";
+
 import { ExitIcon, UserIcon } from "@/lib/icons/global";
+import { cn } from "@/lib/utils";
 
 interface UserOptionsProps {
   handleClose: () => void;

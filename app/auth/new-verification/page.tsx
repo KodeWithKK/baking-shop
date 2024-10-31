@@ -1,11 +1,13 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
+
 import { newVerification } from "@/actions/new-verification";
+import { useSearchParams } from "next/navigation";
 
 import AuthCardWrapper from "@/components/layout/auth-card-wrapper";
 import FormMessage from "@/components/layout/form-message";
+
 import { BeatLoaderIcon } from "./icons";
 
 function NewVerificationForm() {

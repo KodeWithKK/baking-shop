@@ -1,21 +1,22 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { useAppContext } from "@/context/app-provider";
-import { useCurrentUser } from "@/hooks/use-current-user";
-import { usePathname } from "next/navigation";
 
 import Link from "next/link";
-import Button from "@/components/base/button";
-import NavButton from "./nav-btn";
-import UserOptions from "./user-options";
+import { usePathname } from "next/navigation";
 
+import Button from "@/components/base/button";
+import { useCurrentUser } from "@/hooks/use-current-user";
+import { useAppContext } from "@/context/app-provider";
 import {
   CartOutlineIcon,
   HeartOutlineIcon,
   UserCircledIcon,
 } from "@/lib/icons/global";
 import { findDiscountedPrice, formatPrice } from "@/lib/pricing";
+
+import NavButton from "./nav-btn";
+import UserOptions from "./user-options";
 
 function NavBtnContainer() {
   const [showOptions, setShowOptions] = useState<boolean>(false);

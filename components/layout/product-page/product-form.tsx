@@ -1,9 +1,12 @@
 "use client";
 
 import { Fragment, useState } from "react";
-import { cakeWeights, cakeQuantities } from "./utils";
-import { cn } from "@/lib/utils";
+
 import { CakeCategory } from "@prisma/client";
+
+import { cn } from "@/lib/utils";
+
+import { cakeQuantities, cakeWeights } from "./utils";
 
 const buttonsDataMap = {
   [CakeCategory.BEST_SELLER]: cakeWeights,

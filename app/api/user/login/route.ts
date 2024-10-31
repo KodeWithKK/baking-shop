@@ -1,6 +1,7 @@
-import { NextResponse, NextRequest } from "next/server";
-import { signIn } from "@/auth";
 import { LoginSchema } from "@/schemas";
+import { NextRequest, NextResponse } from "next/server";
+
+import { signIn } from "@/auth";
 
 /* For Authentication in Postman */
 export const POST = async (request: NextRequest) => {

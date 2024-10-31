@@ -1,11 +1,11 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
-import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
+import { useSearchParams } from "next/navigation";
 
 import Button from "@/components/base/button";
-import { GoogleIcon, FacebookIcon, TwitterIcon } from "@/lib/icons/global";
+import { FacebookIcon, GoogleIcon, TwitterIcon } from "@/lib/icons/global";
+import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
 
 function SocalForm() {
   const searchParams = useSearchParams();

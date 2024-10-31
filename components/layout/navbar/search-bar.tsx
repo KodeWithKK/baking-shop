@@ -1,5 +1,7 @@
 import React from "react";
+
 import { SearchIcon } from "@/lib/icons/global";
+
 import NavButton from "./nav-btn";
 
 function SearchBar() {

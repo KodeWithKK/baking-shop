@@ -1,5 +1,31 @@
 {
   "tabWidth": 2,
   "semi": true,
-  "plugins": ["prettier-plugin-tailwindcss"]
+  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+  "importOrderTypeScriptVersion": "5.0.0",
+  "importOrder": [
+    "^(react/(.*)$)|^(react$)",
+    "",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^types$",
+    "^@/types/(.*)$",
+    "",
+    "^@/components/(.*)$",
+    "^@/hooks/(.*)$",
+    "^@/context/(.*)$",
+    "^@/lib/(.*)$",
+    "^@/schemas/(.*)$",
+    "^@/data/(.*)$",
+    "^@/assets/(.*)$",
+    "@/auth.config",
+    "@/auth",
+    "@/routes",
+    "",
+    "^[./]"
+  ],
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "@ianvs/prettier-plugin-sort-imports"
+  ]
 }

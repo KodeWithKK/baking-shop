@@ -1,9 +1,12 @@
-import { produce } from "immer";
 import { useState } from "react";
-import { useCurrentUser } from "@/hooks/use-current-user";
-import { SessionWishlistItem } from "@/types/next-auth";
-import { toggleWishlistItem } from "@/data/wishlist-item";
+
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { produce } from "immer";
+
+import { SessionWishlistItem } from "@/types/next-auth";
+
+import { useCurrentUser } from "@/hooks/use-current-user";
+import { toggleWishlistItem } from "@/data/wishlist-item";
 
 function useWishlistApi() {
   const user = useCurrentUser();

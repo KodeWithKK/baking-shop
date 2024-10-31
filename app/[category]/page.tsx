@@ -1,17 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { notFound } from "next/navigation";
-import { useQuery } from "@tanstack/react-query";
-import { getCakes } from "@/data/cake";
+import { useEffect, useState } from "react";
 
-import ProductCard from "@/components/features/product-card";
-import FullPageLoader from "@/components/base/loaders/fullpage-loader";
-import { Select, Option } from "@/components/base/select";
-import { CakeCategory, Cake } from "@prisma/client";
+import { Cake, CakeCategory } from "@prisma/client";
+import { useQuery } from "@tanstack/react-query";
+import { notFound } from "next/navigation";
+
 import { URLCakeCategory } from "@/types/global";
+
+import FullPageLoader from "@/components/base/loaders/fullpage-loader";
+import { Option, Select } from "@/components/base/select";
+import ProductCard from "@/components/features/product-card";
 import { findDiscountedPrice } from "@/lib/pricing";
 import { cn } from "@/lib/utils";
+import { getCakes } from "@/data/cake";
 
 const titleMap = {
   "best-seller": "All Best Sellers",

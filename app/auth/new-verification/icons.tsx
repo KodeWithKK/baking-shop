@@ -1,4 +1,5 @@
 import { SVGProps } from "react";
+
 type IconProps = Readonly<SVGProps<SVGSVGElement>>;
 
 export function BeatLoaderIcon(props: IconProps) {

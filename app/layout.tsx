@@ -1,12 +1,13 @@
+import type { Metadata } from "next";
 import { SessionProvider } from "next-auth/react";
+import { Poppins } from "next/font/google";
+
+import CartModal from "@/components/layout/cart-modal";
+import Navbar from "@/components/layout/navbar";
 import AppProvider from "@/context/app-provider";
 import TanstackProvider from "@/context/tanstack-provider";
 import { auth } from "@/auth";
-import { Poppins } from "next/font/google";
-import type { Metadata } from "next";
 
-import Navbar from "@/components/layout/navbar";
-import CartModal from "@/components/layout/cart-modal";
 import "./globals.css";
 
 const font = Poppins({

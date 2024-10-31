@@ -1,6 +1,6 @@
-import AuthCardWrapper from "@/components/layout/auth-card-wrapper";
-import Input from "@/components/base/input";
 import Button from "@/components/base/button";
+import Input from "@/components/base/input";
+import AuthCardWrapper from "@/components/layout/auth-card-wrapper";
 
 function ResetPasswordForm() {
   return (

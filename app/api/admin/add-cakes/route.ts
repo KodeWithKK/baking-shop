@@ -1,8 +1,10 @@
-import { NextResponse, NextRequest } from "next/server";
-import { getCurrentUserRole } from "@/lib/auth";
 import { UserRole } from "@prisma/client";
-import { addCakesApiSchema } from "./schema";
+import { NextRequest, NextResponse } from "next/server";
+
+import { getCurrentUserRole } from "@/lib/auth";
 import { addCakes, type ExtendedApiCakeData } from "@/data/cake";
+
+import { addCakesApiSchema } from "./schema";
 
 export const POST = async (request: NextRequest) => {
   const role = await getCurrentUserRole();

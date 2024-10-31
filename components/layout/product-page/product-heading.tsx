@@ -1,11 +1,12 @@
 "use client";
 
 import { useMemo } from "react";
-import { useAppContext } from "@/context/app-provider";
-import { cn } from "@/lib/utils";
+
 import { Cake } from "@prisma/client";
 
+import { useAppContext } from "@/context/app-provider";
 import { HeartSolidIcon } from "@/lib/icons/global";
+import { cn } from "@/lib/utils";
 
 function ProductHeading({ cakeData }: Readonly<{ cakeData: Cake }>) {
   const { wishlistItems, toggleWishlistItem } = useAppContext();

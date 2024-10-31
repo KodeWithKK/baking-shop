@@ -1,9 +1,12 @@
-import { produce } from "immer";
 import { useCallback, useState } from "react";
-import { useCurrentUser } from "@/hooks/use-current-user";
-import { SessionCartItem } from "@/types/next-auth";
+
 import { Cake } from "@prisma/client";
-import { addToCart } from "@/data/cart-item";
+import { produce } from "immer";
+
+import { SessionCartItem } from "@/types/next-auth";
+
+import { useCurrentUser } from "@/hooks/use-current-user";
+import { addToCart, increaseCartItemQuantity } from "@/data/cart-item";
 
 function useCartApi() {
   const user = useCurrentUser();
@@ -32,8 +35,8 @@ function useCartApi() {
       };
 
       setCartItems(
-        produce((draftItem) => {
-          draftItem.push(nextCartItem);
+        produce((draftItems) => {
+          draftItems.push(nextCartItem);
         }),
       );
 
@@ -41,8 +44,8 @@ function useCartApi() {
 
       if (addedCartItem) {
         setCartItems(
-          produce((draftItem) => {
-            const addedNextCartItem = draftItem.find(
+          produce((draftItems) => {
+            const addedNextCartItem = draftItems.find(
               (item) => item.id === nextCartItem.id,
             );
             if (addedNextCartItem) addedNextCartItem.id = addedCartItem.id;
@@ -54,9 +57,42 @@ function useCartApi() {
     [user],
   );
 
+  const handleIncreaseCartItemQuantity = useCallback((itemId: string) => {
+    setCartItems(
+      produce((draftItems) => {
+        const cartItem = draftItems.find((item) => item.id === itemId);
+        if (cartItem) cartItem.quantity++;
+        else console.log("something went wrong while increase cart item qty");
+      }),
+    );
+
+    increaseCartItemQuantity(itemId);
+  }, []);
+
+  const handleDecreaseCartItemQuantity = useCallback((itemId: string) => {
+    setCartItems(
+      produce((draftItems) => {
+        const cartItem = draftItems.find((item) => item.id === itemId);
+        if (cartItem && cartItem.quantity > 2) cartItem.quantity--;
+        else if (cartItem && cartItem.quantity == 1) {
+          const requiredCartItem = draftItems.findIndex(
+            (item) => item.id === cartItem.id,
+          );
+          draftItems.splice(requiredCartItem, 1);
+        } else {
+          console.log("something went wrong while decreasing cart item qty");
+        }
+      }),
+    );
+
+    increaseCartItemQuantity(itemId);
+  }, []);
+
   return {
     cartItems,
     addToCart: handleAddToCart,
+    increaseCartItemQuantity: handleIncreaseCartItemQuantity,
+    decreaseCartItemQuantity: handleDecreaseCartItemQuantity,
   };
 }
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useLayoutEffect } from "react";
+import { useLayoutEffect, useState } from "react";
 
 function useIsTouchDevice() {
   const [isTouchDevice, setIsTouchDevice] = useState<boolean | null>(null);

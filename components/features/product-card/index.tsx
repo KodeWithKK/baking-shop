@@ -1,12 +1,13 @@
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import {
-  findDiscountedPrice,
-  findDiscount,
-  getCakeCategoryURL,
-  formatPrice,
-} from "@/lib/pricing";
 import { Cake } from "@prisma/client";
+import Link from "next/link";
+
+import {
+  findDiscount,
+  findDiscountedPrice,
+  formatPrice,
+  getCakeCategoryURL,
+} from "@/lib/pricing";
+import { cn } from "@/lib/utils";
 
 type Props = {
   data: Cake;

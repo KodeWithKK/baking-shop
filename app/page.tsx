@@ -1,14 +1,15 @@
 "use client";
 
-import FullPageLoader from "@/components/base/loaders/fullpage-loader";
-import useIsTouchDevice from "@/hooks/use-is-touch-device";
-import ProductsDeck from "@/components/features/product-deck";
-import ProductCard from "@/components/features/product-card";
-import Link from "next/link";
-import { useQueries } from "@tanstack/react-query";
 import { Cake, CakeCategory } from "@prisma/client";
-import { getCakes } from "@/data/cake";
+import { useQueries } from "@tanstack/react-query";
+import Link from "next/link";
+
+import FullPageLoader from "@/components/base/loaders/fullpage-loader";
+import ProductCard from "@/components/features/product-card";
+import ProductsDeck from "@/components/features/product-deck";
+import useIsTouchDevice from "@/hooks/use-is-touch-device";
 import { getCakeCategoryURL } from "@/lib/pricing";
+import { getCakes } from "@/data/cake";
 
 export default function Home() {
   const isTouchDevice = useIsTouchDevice();

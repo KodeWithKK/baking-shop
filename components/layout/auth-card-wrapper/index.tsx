@@ -1,7 +1,9 @@
 import Link from "next/link";
+
 import Button from "@/components/base/button";
-import SocalForm from "./social-form";
 import { cn } from "@/lib/utils";
+
+import SocalForm from "./social-form";
 
 interface AuthCardWrapperProps {
   title: string;

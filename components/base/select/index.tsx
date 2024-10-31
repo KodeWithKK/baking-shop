@@ -1,18 +1,20 @@
 "use client";
 
 import {
-  useState,
-  useMemo,
-  useCallback,
   createContext,
+  useCallback,
   useContext,
+  useMemo,
+  useState,
 } from "react";
-import { cn } from "@/lib/utils";
-import { produce } from "immer";
-import Option from "./option";
 
-import { SelectProps, DataMap } from "./types";
+import { produce } from "immer";
+
 import { RightArrowIcon } from "@/lib/icons/global";
+import { cn } from "@/lib/utils";
+
+import Option from "./option";
+import { DataMap, SelectProps } from "./types";
 
 const defaultContextValue = {
   variant: "secondary" as string,

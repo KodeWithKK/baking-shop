@@ -1,4 +1,5 @@
 import { type SessionCartItemCake } from "@/types/next-auth";
+
 import { findDiscountedPrice, formatPrice } from "@/lib/pricing";
 
 function CartItem({ cakeData }: Readonly<{ cakeData: SessionCartItemCake }>) {
@@ -21,7 +22,7 @@ function CartItem({ cakeData }: Readonly<{ cakeData: SessionCartItemCake }>) {
         <span className="mr-2 text-[15px] text-gray-800 line-through">
           ₹ {formatPrice(cakeData.listPrice)}
         </span>
-        {cakeData?.rating && (
+        {cakeData?.rating > 0 && (
           <span className="rounded bg-[#1c9550]/10 px-0.5 py-0.5 text-sm font-medium text-[#1c9550]">
             {cakeData.rating} ★
           </span>

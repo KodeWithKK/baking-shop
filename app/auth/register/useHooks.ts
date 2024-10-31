@@ -1,11 +1,12 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
 import { useState, useTransition } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { RegisterSchema } from "@/schemas";
+
 import { register as doRegisteration } from "@/actions/register";
+import { RegisterSchema } from "@/schemas";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useSearchParams } from "next/navigation";
+import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
 
 type Inputs = z.infer<typeof RegisterSchema>;

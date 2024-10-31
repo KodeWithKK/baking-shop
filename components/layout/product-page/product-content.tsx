@@ -1,10 +1,13 @@
-import ProductHeading from "./product-heading";
-import ProductForm from "./product-form";
-import WrappedText from "@/components/features/wrapped-text";
 import { Cake } from "@prisma/client";
-import { findDiscountedPrice, findDiscount, formatPrice } from "@/lib/pricing";
-import { dummyReviews } from "./utils";
+
 import { Review } from "@/types/global";
+
+import WrappedText from "@/components/features/wrapped-text";
+import { findDiscount, findDiscountedPrice, formatPrice } from "@/lib/pricing";
+
+import ProductForm from "./product-form";
+import ProductHeading from "./product-heading";
+import { dummyReviews } from "./utils";
 
 function ProductContent({ cakeData }: Readonly<{ cakeData: Cake }>) {
   return (

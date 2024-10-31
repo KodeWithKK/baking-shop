@@ -1,9 +1,10 @@
 "use client";
 
 import { useRef } from "react";
-import { cn } from "@/lib/utils";
-import { RightArrowIcon } from "@/lib/icons/global";
+
 import useCarousel from "@/hooks/use-carousel";
+import { RightArrowIcon } from "@/lib/icons/global";
+import { cn } from "@/lib/utils";
 
 function ProductsDeck({
   children,

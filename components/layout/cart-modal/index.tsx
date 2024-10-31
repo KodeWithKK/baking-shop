@@ -1,14 +1,17 @@
 "use client";
 
-import { useCurrentUser } from "@/hooks/use-current-user";
 import { Fragment, useMemo } from "react";
-import { useAppContext } from "@/context/app-provider";
+
 import { RemoveScroll } from "react-remove-scroll";
-import CartItem from "./cart-item";
-import BillDetails from "./bill-details";
-import CartFooter from "./cart-footer";
+
+import { useCurrentUser } from "@/hooks/use-current-user";
+import { useAppContext } from "@/context/app-provider";
 import { CloseIcon } from "@/lib/icons/global";
 import { findDiscountedPrice } from "@/lib/pricing";
+
+import BillDetails from "./bill-details";
+import CartFooter from "./cart-footer";
+import CartItem from "./cart-item";
 
 function CartModal() {
   const { cartItems, showCartModal, toggleCartModal } = useAppContext();

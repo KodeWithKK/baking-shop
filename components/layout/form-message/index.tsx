@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
-import { ExclamationTriangleIcon, CheckCircledIcon } from "./icons";
+
+import { CheckCircledIcon, ExclamationTriangleIcon } from "./icons";
 
 interface FormMessageProps {
   type: "success" | "error";

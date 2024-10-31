@@ -1,8 +1,10 @@
 "use server";
 
-import { db } from "@/lib/db";
 import { CakeCategory } from "@prisma/client";
+
 import { ApiCakeDataType } from "@/types/global";
+
+import { db } from "@/lib/db";
 
 export interface ExtendedApiCakeData extends ApiCakeDataType {
   category: CakeCategory;

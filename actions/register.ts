@@ -1,13 +1,13 @@
 "use server";
 
-import * as z from "zod";
-import bcrypt from "bcrypt";
-
 import { RegisterSchema } from "@/schemas";
+import bcrypt from "bcrypt";
+import * as z from "zod";
+
 import { db } from "@/lib/db";
-import { getUserByEmail } from "@/data/user";
-import { generateVerificationToken } from "@/lib/tokens";
 import { sendVerificationEmail } from "@/lib/mail";
+import { generateVerificationToken } from "@/lib/tokens";
+import { getUserByEmail } from "@/data/user";
 
 export const register = async (values: z.infer<typeof RegisterSchema>) => {
   const validatedFields = RegisterSchema.safeParse(values);

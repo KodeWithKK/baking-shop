@@ -1,13 +1,15 @@
 "use client";
 
 import { useCallback, useMemo } from "react";
-import { notFound } from "next/navigation";
+
 import { useQuery } from "@tanstack/react-query";
+import { notFound } from "next/navigation";
+
+import FullPageLoader from "@/components/base/loaders/fullpage-loader";
 import { useAppContext } from "@/context/app-provider";
 import { getCake } from "@/data/cake";
 
 import ProductContent from "./product-content";
-import FullPageLoader from "@/components/base/loaders/fullpage-loader";
 
 interface ProductPageProps {
   productId: string;

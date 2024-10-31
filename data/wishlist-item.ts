@@ -1,7 +1,7 @@
 "use server";
 
-import { db } from "@/lib/db";
 import { getCurrentUser } from "@/lib/auth";
+import { db } from "@/lib/db";
 
 export const toggleWishlistItem = async (cakeId: string) => {
   const user = await getCurrentUser();

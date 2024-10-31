@@ -1,8 +1,9 @@
 "use client";
 
-import { useId, useState, ForwardedRef, forwardRef, useCallback } from "react";
+import { ForwardedRef, forwardRef, useCallback, useId, useState } from "react";
+
+import { CheckIcon, ClosedEyeIcon, OpenEyeIcon } from "@/lib/icons/global";
 import { cn } from "@/lib/utils";
-import { CheckIcon, OpenEyeIcon, ClosedEyeIcon } from "@/lib/icons/global";
 
 interface InputProps extends React.ComponentPropsWithoutRef<"input"> {
   label?: string;

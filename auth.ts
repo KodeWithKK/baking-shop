@@ -1,12 +1,14 @@
-import NextAuth from "next-auth";
-import authConfig from "@/auth.config";
 import { PrismaAdapter } from "@auth/prisma-adapter";
+import { UserRole } from "@prisma/client";
+import NextAuth from "next-auth";
+
+import { SessionCartItem, SessionWishlistItem } from "@/types/next-auth";
+
+import { db } from "@/lib/db";
+import { getAccountByUserId } from "@/data/account";
 import { getTwoFactorConfirmationByUserId } from "@/data/two-factor-confirmation";
 import { getUserById } from "@/data/user";
-import { getAccountByUserId } from "./data/account";
-import { UserRole } from "@prisma/client";
-import { SessionWishlistItem, type SessionCartItem } from "./types/next-auth";
-import { db } from "@/lib/db";
+import authConfig from "@/auth.config";
 
 export const {
   handlers: { GET, POST },

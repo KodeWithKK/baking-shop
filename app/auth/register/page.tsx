@@ -1,10 +1,11 @@
 "use client";
 
-import useRegisterPageHooks from "./useHooks";
+import Button from "@/components/base/button";
+import Input from "@/components/base/input";
 import AuthCardWrapper from "@/components/layout/auth-card-wrapper";
 import FormMessage from "@/components/layout/form-message";
-import Input from "@/components/base/input";
-import Button from "@/components/base/button";
+
+import useRegisterPageHooks from "./useHooks";
 
 function RegisterForm() {
   const {

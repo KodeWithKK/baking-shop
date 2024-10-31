@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 interface UseCarouselProps {
   // The ref of the element whose childs are these cards

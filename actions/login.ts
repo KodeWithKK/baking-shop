@@ -1,20 +1,20 @@
 "use server";
 
-import * as z from "zod";
-import { AuthError } from "next-auth";
-import bcrypt from "bcryptjs";
-
-import { signIn } from "@/auth";
 import { LoginSchema } from "@/schemas";
-import { getUserByEmail } from "@/data/user";
-import { getTwoFactorTokenByEmail } from "@/data/two-factor-token";
-import { sendVerificationEmail, sendTwoFactorTokenEmail } from "@/lib/mail";
-import {
-  generateVerificationToken,
-  generateTwoFactorToken,
-} from "@/lib/tokens";
+import bcrypt from "bcryptjs";
+import { AuthError } from "next-auth";
+import * as z from "zod";
+
 import { db } from "@/lib/db";
+import { sendTwoFactorTokenEmail, sendVerificationEmail } from "@/lib/mail";
+import {
+  generateTwoFactorToken,
+  generateVerificationToken,
+} from "@/lib/tokens";
 import { getTwoFactorConfirmationByUserId } from "@/data/two-factor-confirmation";
+import { getTwoFactorTokenByEmail } from "@/data/two-factor-token";
+import { getUserByEmail } from "@/data/user";
+import { signIn } from "@/auth";
 
 export const login = async (
   values: z.infer<typeof LoginSchema>,

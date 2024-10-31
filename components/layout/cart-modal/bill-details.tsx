@@ -1,4 +1,4 @@
-import { ItemsListIcon, DeliveryIcon } from "@/lib/icons/global";
+import { DeliveryIcon, ItemsListIcon } from "@/lib/icons/global";
 import { formatPrice } from "@/lib/pricing";
 
 function BillDetails({
