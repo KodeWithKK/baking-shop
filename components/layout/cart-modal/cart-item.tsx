@@ -6,10 +6,16 @@ import { findDiscountedPrice, formatPrice } from "@/lib/pricing";
 interface CartItemProps {
   itemId: string;
   quantity: number;
+  cakeWeight?: number;
   cakeData: SessionCartItemCake;
 }
 
-function CartItem({ itemId, quantity, cakeData }: Readonly<CartItemProps>) {
+function CartItem({
+  itemId,
+  cakeWeight,
+  quantity,
+  cakeData,
+}: Readonly<CartItemProps>) {
   const { increaseCartItemQuantity, decreaseCartItemQuantity } =
     useAppContext();
 
@@ -22,22 +28,22 @@ function CartItem({ itemId, quantity, cakeData }: Readonly<CartItemProps>) {
       />
 
       <div className="w-full">
-        <p className="font-medium">{cakeData.name}</p>
-        <span className="mr-2 font-semibold">
-          ₹{" "}
-          {formatPrice(
-            (cakeData.discountedPrice ??
-              findDiscountedPrice(cakeData.listPrice)) * quantity,
-          )}
-        </span>
-        <span className="mr-2 text-[15px] text-gray-800 line-through">
-          ₹ {formatPrice(cakeData.listPrice)}
-        </span>
-        {cakeData?.rating > 0 && (
-          <span className="rounded bg-[#1c9550]/10 px-0.5 py-0.5 text-sm font-medium text-[#1c9550]">
-            {cakeData.rating} ★
+        <p className="font-medium leading-snug text-[15px]">{cakeData.name}</p>
+        <p className="flex items-center gap-1.5 text-sm mt-1">
+          <span className="">
+            ₹{" "}
+            {formatPrice(
+              (cakeData.discountedPrice ??
+                findDiscountedPrice(cakeData.listPrice)) * quantity,
+            )}
           </span>
-        )}
+          <span className="space-x-1.5">
+            <span className="text-gray-900">•</span>
+            <span className="">
+              {cakeWeight ? `${cakeWeight} Kg` : "200 gm"}
+            </span>
+          </span>
+        </p>
       </div>
 
       <div className="w-fit">

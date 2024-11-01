@@ -3,7 +3,12 @@
 import { getCurrentUser } from "@/lib/auth";
 import { db } from "@/lib/db";
 
-export const addToCart = async (cakeId: string, cakeWeight?: number) => {
+export const addToCart = async (
+  cakeId: string,
+  quantity: number,
+  cakeWeight: number | undefined,
+  cakeMessage: string | undefined,
+) => {
   const user = await getCurrentUser();
   if (!user) return null;
 
@@ -11,7 +16,9 @@ export const addToCart = async (cakeId: string, cakeWeight?: number) => {
     const result = await db.cartItem.create({
       data: {
         cakeId,
+        quantity,
         cakeWeight,
+        cakeMessage,
         userId: user.id!,
       },
     });

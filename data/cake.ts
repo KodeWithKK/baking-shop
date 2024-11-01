@@ -42,11 +42,12 @@ export const getCakes = async (
   }
 };
 
-export const getCake = async (id: string) => {
+export const getCake = async (productId: string, category: CakeCategory) => {
   try {
     const result = await db.cake.findUnique({
       where: {
-        id,
+        id: productId,
+        category,
       },
     });
 

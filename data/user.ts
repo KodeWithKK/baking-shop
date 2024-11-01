@@ -24,6 +24,7 @@ export const getUserById = async (id: string) => {
             id: true,
             cakeWeight: true,
             quantity: true,
+            cakeMessage: true,
             cake: {
               select: {
                 id: true,

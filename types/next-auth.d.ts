@@ -15,6 +15,7 @@ export interface SessionCartItem {
   id: string;
   cakeWeight?: number;
   quantity: number;
+  cakeMessage: string;
   cake: SessionCartItemCake;
 }
 

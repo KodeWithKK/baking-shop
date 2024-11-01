@@ -5,15 +5,25 @@ import { ForwardedRef, forwardRef, useCallback, useId, useState } from "react";
 import { CheckIcon, ClosedEyeIcon, OpenEyeIcon } from "@/lib/icons/global";
 import { cn } from "@/lib/utils";
 
-interface InputProps extends React.ComponentPropsWithoutRef<"input"> {
+interface InputProps
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   label?: string;
   error?: string;
+  size?: "medium" | "large";
   Icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
 const Input = forwardRef(
   (
-    { label, error, Icon, type = "text", ...props }: Readonly<InputProps>,
+    {
+      label,
+      error,
+      Icon,
+      type = "text",
+      className,
+      size = "medium",
+      ...props
+    }: Readonly<InputProps>,
     ref: ForwardedRef<HTMLInputElement>,
   ) => {
     const [selectedType, setSelectedType] = useState<string>(type);
@@ -32,6 +42,7 @@ const Input = forwardRef(
         className={cn(
           type === "checkbox" &&
             "relative inline-flex flex-row-reverse items-center gap-2",
+          className,
         )}
       >
         {label && (
@@ -58,6 +69,8 @@ const Input = forwardRef(
                 "peer h-[13px] w-[13px] appearance-none checked:border-transparent checked:bg-orange-600 focus:outline-none",
               error && "border-orange-600",
               Icon && "pl-[40px]",
+              size === "large" &&
+                "p-[10px] placeholder:text-base border-gray-500 rounded-lg",
             )}
             {...props}
           />

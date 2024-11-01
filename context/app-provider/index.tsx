@@ -22,7 +22,9 @@ const defaultValues = {
   toggleCartModal: () => {},
   addToCart: (
     cakeId: string,
+    cakeQuantity: number,
     cakeWeight: number | undefined,
+    cakeMessage: string,
     cakeData: Cake,
   ) => {},
   increaseCartItemQuantity: (itemId: string) => {},

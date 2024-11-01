@@ -20,13 +20,20 @@ function useCartApi() {
   });
 
   const handleAddToCart = useCallback(
-    async (cakeId: string, cakeWeight: number | undefined, cakeData: Cake) => {
+    async (
+      cakeId: string,
+      cakeQuantity: number,
+      cakeWeight: number | undefined,
+      cakeMessage: string,
+      cakeData: Cake,
+    ) => {
       if (!user) return;
 
       const nextCartItem = {
         id: window.crypto.randomUUID(),
-        cakeWeight: 0.5,
-        quantity: 1,
+        cakeWeight: cakeWeight,
+        cakeMessage: cakeMessage,
+        quantity: cakeQuantity,
         cake: {
           id: cakeData.id,
           name: cakeData.name,
@@ -44,7 +51,12 @@ function useCartApi() {
         }),
       );
 
-      const addedCartItem = await addToCart(cakeId, cakeWeight);
+      const addedCartItem = await addToCart(
+        cakeId,
+        cakeQuantity,
+        cakeWeight,
+        cakeMessage,
+      );
 
       if (addedCartItem) {
         setCartItems(

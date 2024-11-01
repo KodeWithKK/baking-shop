@@ -62,6 +62,7 @@ function CartModal() {
                     <CartItem
                       key={item.id}
                       itemId={item.id}
+                      cakeWeight={item.cakeWeight}
                       quantity={item.quantity}
                       cakeData={item.cake}
                     />
