@@ -57,12 +57,13 @@ function CartModal() {
           >
             {cartItems.length > 0 && (
               <Fragment>
-                <div className="space-y-5 rounded-md bg-white p-2">
+                <div className="rounded-md bg-white p-2">
                   {cartItems.map((item) => (
                     <CartItem
                       key={item.id}
                       itemId={item.id}
                       cakeWeight={item.cakeWeight}
+                      cakeMessage={item.cakeMessage}
                       quantity={item.quantity}
                       cakeData={item.cake}
                     />

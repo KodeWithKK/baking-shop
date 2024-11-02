@@ -301,3 +301,56 @@ export function ExitIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function MessageIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" {...props}>
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M3.013 9.151C3 9.691 3 10.302 3 11v2c0 2.828 0 4.243.879 5.121C4.757 19 6.172 19 9 19h6c2.828 0 4.243 0 5.121-.879C21 17.243 21 15.828 21 13v-2c0-.698 0-1.31-.013-1.849l-8.016 4.453a2 2 0 01-1.942 0zm.23-2.121q.125.03.243.096L12 11.856l8.514-4.73q.119-.065.243-.096c-.13-.474-.33-.845-.636-1.151C19.243 5 17.828 5 15 5H9c-2.828 0-4.243 0-5.121.879-.307.306-.506.677-.636 1.15"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
+export function DeleteIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 256 256" {...props}>
+      <path fill="none" d="M0 0H256V256H0z" />
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={16}
+        d="M216 56L40 56"
+      />
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={16}
+        d="M104 104L104 168"
+      />
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={16}
+        d="M152 104L152 168"
+      />
+      <path
+        d="M200 56v152a8 8 0 01-8 8H64a8 8 0 01-8-8V56M168 56V40a16 16 0 00-16-16h-48a16 16 0 00-16 16v16"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={16}
+      />
+    </svg>
+  );
+}

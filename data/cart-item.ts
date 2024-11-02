@@ -85,3 +85,20 @@ export const decreaseCartItemQuantity = async (itemId: string) => {
     return null;
   }
 };
+
+export const deleteItem = async (itemId: string) => {
+  const user = await getCurrentUser();
+  if (!user) return null;
+
+  try {
+    await db.cartItem.delete({
+      where: {
+        id: itemId,
+      },
+    });
+
+    return { message: "Operation completed successfully" };
+  } catch (error) {
+    return null;
+  }
+};
