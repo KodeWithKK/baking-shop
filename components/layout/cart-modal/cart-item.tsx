@@ -19,7 +19,7 @@ function CartItem({
   cakeMessage,
   cakeData,
 }: Readonly<CartItemProps>) {
-  const { increaseCartItemQuantity, decreaseCartItemQuantity } =
+  const { increaseCartItemQuantity, decreaseCartItemQuantity, deleteCartItem } =
     useAppContext();
 
   return (
@@ -63,7 +63,7 @@ function CartItem({
         </div>
 
         <div className="flex flex-col items-end justify-between">
-          <button type="button">
+          <button type="button" onClick={() => deleteCartItem(itemId)}>
             <DeleteIcon className="text h-[18px] text-orange-600" />
           </button>
 

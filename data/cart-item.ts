@@ -86,7 +86,7 @@ export const decreaseCartItemQuantity = async (itemId: string) => {
   }
 };
 
-export const deleteItem = async (itemId: string) => {
+export const deleteCartItem = async (itemId: string) => {
   const user = await getCurrentUser();
   if (!user) return null;
 

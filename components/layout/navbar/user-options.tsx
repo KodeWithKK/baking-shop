@@ -19,7 +19,7 @@ function UserOptions({ handleClose }: Readonly<UserOptionsProps>) {
   };
 
   return (
-    <div className="boder-gray-800 animate-flip-down animate-duration-300 absolute right-0 top-[60px] w-[168px] rounded-md border bg-white text-gray-950">
+    <div className="boder-gray-800 absolute right-0 top-[60px] w-[168px] animate-flip-down rounded-md border bg-white text-gray-950 animate-duration-300">
       <UserOption Icon={UserIcon} label="My Profile" />
       <hr />
       <UserOption

@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-} from "react";
+import { createContext, useCallback, useContext, useState } from "react";
 
 import { Cake } from "@prisma/client";
 
@@ -20,7 +14,7 @@ const defaultValues = {
   cartItems: [] as SessionCartItem[],
   wishlistItems: [] as SessionWishlistItem[],
   toggleCartModal: () => {},
-  addToCart: (
+  addToCart: async (
     cakeId: string,
     cakeQuantity: number,
     cakeWeight: number | undefined,
@@ -29,6 +23,7 @@ const defaultValues = {
   ) => {},
   increaseCartItemQuantity: (itemId: string) => {},
   decreaseCartItemQuantity: (itemId: string) => {},
+  deleteCartItem: (itemId: string) => {},
   toggleWishlistItem: (cakeId: string) => {},
 };
 
@@ -47,6 +42,7 @@ function AppProvider({ children }: Readonly<AppProviderProps>) {
     addToCart,
     increaseCartItemQuantity,
     decreaseCartItemQuantity,
+    deleteCartItem,
   } = useCartApi();
   const { wishlistItems, toggleWishlistItem } = useWishlistApi();
 
@@ -54,30 +50,23 @@ function AppProvider({ children }: Readonly<AppProviderProps>) {
     setShowCartModal((prev) => !prev);
   }, []);
 
-  const value = useMemo(
-    () => ({
-      showCartModal,
-      cartItems,
-      wishlistItems,
-      toggleCartModal,
-      addToCart,
-      increaseCartItemQuantity,
-      decreaseCartItemQuantity,
-      toggleWishlistItem,
-    }),
-    [
-      showCartModal,
-      cartItems,
-      wishlistItems,
-      toggleCartModal,
-      addToCart,
-      increaseCartItemQuantity,
-      decreaseCartItemQuantity,
-      toggleWishlistItem,
-    ],
+  return (
+    <AppContext.Provider
+      value={{
+        showCartModal,
+        cartItems,
+        wishlistItems,
+        toggleCartModal,
+        addToCart,
+        increaseCartItemQuantity,
+        decreaseCartItemQuantity,
+        deleteCartItem,
+        toggleWishlistItem,
+      }}
+    >
+      {children}
+    </AppContext.Provider>
   );
-
-  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
 
 export default AppProvider;

@@ -9,6 +9,7 @@ import { useCurrentUser } from "@/hooks/use-current-user";
 import {
   addToCart,
   decreaseCartItemQuantity,
+  deleteCartItem,
   increaseCartItemQuantity,
 } from "@/data/cart-item";
 
@@ -104,11 +105,27 @@ function useCartApi() {
     decreaseCartItemQuantity(itemId);
   }, []);
 
+  const handleDeleteCartItem = useCallback((itemId: string) => {
+    setCartItems(
+      produce((draftItems) => {
+        const cartItemIdx = draftItems.findIndex((item) => item.id === itemId);
+        if (cartItemIdx != -1) {
+          draftItems.splice(cartItemIdx, 1);
+        } else {
+          console.log("something went wrong while deleting cart item");
+        }
+      }),
+    );
+
+    deleteCartItem(itemId);
+  }, []);
+
   return {
     cartItems,
     addToCart: handleAddToCart,
     increaseCartItemQuantity: handleIncreaseCartItemQuantity,
     decreaseCartItemQuantity: handleDecreaseCartItemQuantity,
+    deleteCartItem: handleDeleteCartItem,
   };
 }
 

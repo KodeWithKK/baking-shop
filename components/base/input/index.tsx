@@ -70,7 +70,7 @@ const Input = forwardRef(
               error && "border-orange-600",
               Icon && "pl-[40px]",
               size === "large" &&
-                "p-[10px] placeholder:text-base border-gray-500 rounded-lg",
+                "rounded-lg border-gray-500 p-[10px] placeholder:text-base",
             )}
             {...props}
           />
