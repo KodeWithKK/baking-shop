@@ -9,7 +9,7 @@ import ProductCard from "@/components/features/product-card";
 import ProductsDeck from "@/components/features/product-deck";
 import useIsTouchDevice from "@/hooks/use-is-touch-device";
 import { getCakeCategoryURL } from "@/lib/pricing";
-import { getCakes } from "@/data/cake";
+import { getCakesByCategory } from "@/data/cake";
 
 export default function Home() {
   const isTouchDevice = useIsTouchDevice();
@@ -18,7 +18,7 @@ export default function Home() {
   const results = useQueries({
     queries: categories.map((category) => ({
       queryKey: ["home-cakes", category],
-      queryFn: () => getCakes(category, 0, 16),
+      queryFn: () => getCakesByCategory(category, 0, 16),
     })),
   });
 
@@ -77,7 +77,7 @@ function CategoryDisplay({
           <ProductCard
             key={cakeData.id}
             data={cakeData}
-            className="w-[200px] flex-shrink-0"
+            className="w-[228px] flex-shrink-0"
           />
         ))}
       </ProductsDeck>

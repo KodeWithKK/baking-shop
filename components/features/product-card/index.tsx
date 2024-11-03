@@ -1,6 +1,12 @@
+"use client";
+
+import { useMemo } from "react";
+
 import { Cake } from "@prisma/client";
 import Link from "next/link";
 
+import { useAppContext } from "@/context/app-provider";
+import { HeartSolidIcon } from "@/lib/icons/global";
 import {
   findDiscount,
   findDiscountedPrice,
@@ -15,6 +21,12 @@ type Props = {
 };
 
 function ProductCard({ data, className }: Readonly<Props>) {
+  const { wishlistItems, toggleWishlistItem } = useAppContext();
+
+  const isAlreadyInWishlist = useMemo(() => {
+    return wishlistItems.some((item) => item.cakeId === data.id);
+  }, [wishlistItems, data.id]);
+
   return (
     <Link
       href={`${getCakeCategoryURL(data.category)}/${data.id}`}
@@ -23,7 +35,26 @@ function ProductCard({ data, className }: Readonly<Props>) {
         className,
       )}
     >
-      <img src={`${data.imgSrc}?tr=w-320,h-320,q-90`} alt="data-img" />
+      <div className="relative">
+        <img src={`${data.imgSrc}?tr=w-320,h-320,q-90`} alt="data-img" />
+        <button
+          className={cn(
+            "absolute right-1 top-1 rounded-full bg-black/20 p-1",
+            isAlreadyInWishlist && "bg-orange-600/20",
+          )}
+          onClick={(e) => {
+            e.preventDefault();
+            toggleWishlistItem(data.id);
+          }}
+        >
+          <HeartSolidIcon
+            className={cn(
+              "h-[18px] text-white",
+              isAlreadyInWishlist && "text-orange-600",
+            )}
+          />
+        </button>
+      </div>
 
       <div className="space-y-px p-2 pt-0">
         <p className="overflow-hidden text-ellipsis text-nowrap text-[15px] font-medium">

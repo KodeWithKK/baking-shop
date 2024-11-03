@@ -1,6 +1,11 @@
 import { useState } from "react";
 
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { Cake } from "@prisma/client";
+import {
+  QueryFilters,
+  useMutation,
+  useQueryClient,
+} from "@tanstack/react-query";
 import { produce } from "immer";
 
 import { SessionWishlistItem } from "@/types/next-auth";
@@ -20,10 +25,9 @@ function useWishlistApi() {
   );
 
   const { mutate: handleToggleWishlistItem } = useMutation({
-    mutationKey: ["toggleWishlistItem", user?.id],
+    mutationKey: ["toggleWishlistItemMutation", user?.id],
     onMutate: async (cakeId: string) => {
       if (user) {
-        // Optimistic Update
         const isAlreadyInWishlist = !!wishlistItems.find(
           (item) => item.cakeId === cakeId,
         );
@@ -32,9 +36,18 @@ function useWishlistApi() {
           setWishlistItems((prevItems) => {
             return prevItems.filter((item) => item.cakeId !== cakeId);
           });
-        } else {
+
+          // updating the wishlist item cache data
+          queryClient.setQueryData<Cake[]>(["wishlist-cakes"], (prevItems) => {
+            return prevItems?.filter((item) => item.id !== cakeId) ?? [];
+          });
+        }
+
+        const nextItemId = window.crypto.randomUUID();
+
+        if (!isAlreadyInWishlist) {
           const nextWishlistItem = {
-            id: window.crypto.randomUUID(),
+            id: nextItemId,
             cakeId,
           };
 
@@ -47,7 +60,7 @@ function useWishlistApi() {
 
         // Cancel any outgoing refetches
         await queryClient.cancelQueries({
-          queryKey: ["toggleWishlistItem", user.id],
+          queryKey: ["toggleWishlistItemMutation", user.id],
         });
 
         // perform action
@@ -58,10 +71,12 @@ function useWishlistApi() {
           setWishlistItems(
             produce((draftItem) => {
               const addedWishlistItem = draftItem.find(
-                (item) => item.id === result.data.id,
+                (item) => item.id === nextItemId,
               );
-              if (addedWishlistItem) addedWishlistItem.id = result.data.id;
-              else console.log("something went wrong while adding to wishlist");
+
+              if (addedWishlistItem) {
+                addedWishlistItem.id = result.data.id;
+              }
             }),
           );
         }

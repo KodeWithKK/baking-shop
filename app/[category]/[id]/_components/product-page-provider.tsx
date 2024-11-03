@@ -10,7 +10,7 @@ import { Cake, CakeCategory } from "@prisma/client";
 import { useQuery } from "@tanstack/react-query";
 
 import { useAppContext } from "@/context/app-provider";
-import { getCake } from "@/data/cake";
+import { getCakeByIdAndCategory } from "@/data/cake";
 
 const defaultValue = {
   cakeData: {} as Cake | null | undefined,
@@ -53,7 +53,7 @@ function ProductPageProvider({
     isError,
   } = useQuery({
     queryFn: () =>
-      getCake(
+      getCakeByIdAndCategory(
         productId,
         category.toUpperCase().replace("-", "_") as CakeCategory,
       ),

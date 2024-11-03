@@ -22,7 +22,7 @@ export const addCakes = async (cakeData: ExtendedApiCakeData[]) => {
   }
 };
 
-export const getCakes = async (
+export const getCakesByCategory = async (
   category: CakeCategory,
   skip: number,
   take: number,
@@ -42,7 +42,10 @@ export const getCakes = async (
   }
 };
 
-export const getCake = async (productId: string, category: CakeCategory) => {
+export const getCakeByIdAndCategory = async (
+  productId: string,
+  category: CakeCategory,
+) => {
   try {
     const result = await db.cake.findUnique({
       where: {

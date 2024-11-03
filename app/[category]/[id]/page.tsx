@@ -34,7 +34,7 @@ function ProductPage() {
           className="aspect-square h-full rounded-lg object-cover"
         />
 
-        <div className="fixed bottom-0 left-0 mt-3 flex w-full bg-white px-[0] max-lg:rounded-t-md max-lg:py-0 max-lg:shadow-[0_-1px_2px_#0000000d] md:gap-3 md:px-[10%] lg:static lg:bg-inherit lg:px-0">
+        <div className="fixed bottom-0 left-0 z-[20] mt-3 flex w-full bg-white px-[0] max-lg:rounded-t-md max-lg:py-0 max-lg:shadow-[0_-1px_2px_#0000000d] md:gap-3 md:px-[10%] lg:static lg:bg-inherit lg:px-0">
           <button
             type="button"
             className="w-full border border-orange-600 text-orange-600 hover:bg-orange-600/[.15] max-md:rounded-tl-md max-md:border-l-0 md:rounded-lg"

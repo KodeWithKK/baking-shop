@@ -20,11 +20,9 @@ import UserOptions from "./user-options";
 
 function NavBtnContainer() {
   const [showOptions, setShowOptions] = useState<boolean>(false);
-  const { cartItems, toggleCartModal } = useAppContext();
+  const { cartItems, wishlistItems, toggleCartModal } = useAppContext();
   const user = useCurrentUser();
   const pathname = usePathname();
-
-  const wishlistItems = [];
 
   const handleCloseOptions = useCallback(() => {
     setShowOptions(false);
@@ -33,8 +31,9 @@ function NavBtnContainer() {
   return (
     <div className="relative flex items-center text-[15px] font-medium text-orange-600">
       {/* Wishlist */}
-      <NavButton Icon={HeartOutlineIcon}>
-        {wishlistItems.length === 0 && "Wishlist"}
+      <Link href="/wishlist">
+        <NavButton Icon={HeartOutlineIcon}>
+          {/* {wishlistItems.length === 0 && "Wishlist"}
         {wishlistItems.length > 0 && (
           <div className="flex flex-col text-sm font-medium leading-tight">
             <span>
@@ -42,8 +41,10 @@ function NavBtnContainer() {
               {wishlistItems.length > 1 ? "Items" : "Item"}
             </span>
           </div>
-        )}
-      </NavButton>
+        )} */}
+          Wishlist
+        </NavButton>
+      </Link>
 
       {/* Cart */}
       <NavButton Icon={CartOutlineIcon} onClick={toggleCartModal}>
