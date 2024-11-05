@@ -21,14 +21,14 @@ export default auth((req) => {
     publicDynamicRoutes.some((route) => nextUrl.pathname.startsWith(route));
   const isAuthRoute = authRoutes.includes(nextUrl.pathname);
 
-  if (isApiAuthRoute) return null;
+  if (isApiAuthRoute) return undefined;
 
   // Redirect if you are already logged in and goes to auth route
   if (isAuthRoute) {
     if (isLoggedIn) {
       return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
     }
-    return null;
+    return undefined;
   }
 
   // Redirect to login page if you are not authenticated and try to access Protected Route
