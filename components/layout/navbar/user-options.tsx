@@ -20,7 +20,7 @@ function UserOptions({ handleClose }: Readonly<UserOptionsProps>) {
   };
 
   return (
-    <div className="boder-gray-800 absolute right-0 top-[60px] w-[156px] animate-flip-down rounded-md border bg-white text-gray-950 animate-duration-300">
+    <div className="boder-gray-800 absolute right-0 top-[57px] w-[156px] animate-flip-down rounded-md border bg-white text-gray-950 animate-duration-300">
       <Link href="/wishlist" onClick={handleClose}>
         <UserOption Icon={HeartOutlineIcon} label="My Wishlist" />
       </Link>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -18,12 +18,22 @@ import UserOptions from "./user-options";
 function NavBtnContainer() {
   const [showOptions, setShowOptions] = useState<boolean>(false);
   const { cartItems, toggleCartModal } = useAppContext();
+
   const user = useCurrentUser();
   const pathname = usePathname();
 
   const handleCloseOptions = useCallback(() => {
     setShowOptions(false);
   }, []);
+
+  const totalCartValue = useMemo(() => {
+    return cartItems.reduce((acc, item) => {
+      const discountedPrice =
+        item.cake.discountedPrice ?? findDiscountedPrice(item.cake.listPrice);
+
+      return acc + discountedPrice;
+    }, 0);
+  }, [cartItems]);
 
   return (
     <div className="relative flex items-center gap-2.5 text-[15px] font-medium text-brand-600 lg:gap-4">
@@ -38,18 +48,7 @@ function NavBtnContainer() {
             <span>
               {cartItems.length} {cartItems.length > 1 ? "Items" : "Item"}
             </span>
-            <span>
-              ₹{" "}
-              {formatPrice(
-                cartItems.reduce((acc, item) => {
-                  const discountedPrice =
-                    item.cake.discountedPrice ??
-                    findDiscountedPrice(item.cake.listPrice);
-
-                  return acc + discountedPrice;
-                }, 0),
-              )}
-            </span>
+            <span>₹ {formatPrice(totalCartValue)}</span>
           </div>
         )}
       </NavButton>
@@ -68,7 +67,10 @@ function NavBtnContainer() {
           className=""
           onClick={() => setShowOptions((prev) => !prev)}
         >
-          <UserCircledIcon className="h-[36px]" />
+          {!user.image && <UserCircledIcon className="h-[36px]" />}
+          {user.image && (
+            <img src={user.image} className="h-[36px] rounded-full" alt="" />
+          )}
         </button>
       )}
 

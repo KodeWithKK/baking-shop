@@ -7,7 +7,7 @@ function CartFooter({
     <div className="sticky bottom-0 right-0 w-full rotate-180 rounded-md bg-white px-3 py-5 shadow-md">
       <button
         type="button"
-        className="bg-brand-600 flex w-full rotate-180 items-center justify-between rounded-md px-3 py-3 text-white"
+        className="flex w-full rotate-180 items-center justify-between rounded-md bg-brand-600 px-3 py-3 text-white"
       >
         <div className="flex flex-col leading-snug">
           <span className="text-[15px] font-semibold">
@@ -16,11 +16,11 @@ function CartFooter({
               totalDiscountedPrice + (totalDiscountedPrice < 500 ? 25 : 0),
             )}
           </span>
-          <span className="text-brand-200 text-[13px] tracking-wide">
+          <span className="text-[13px] tracking-wide text-brand-200">
             TOTAL
           </span>
         </div>
-        <span className="text-[18px]">Login to Proceed {">"}</span>
+        <span className="text-[18px]">Checkout {">"}</span>
       </button>
     </div>
   );
