@@ -59,3 +59,20 @@ export const getCakeByIdAndCategory = async (
     return null;
   }
 };
+
+export const searchCakes = async (searchTerm: string) => {
+  try {
+    const result = await db.cake.findMany({
+      where: {
+        name: {
+          contains: searchTerm,
+          mode: "insensitive",
+        },
+      },
+    });
+
+    return result;
+  } catch (error) {
+    return null;
+  }
+};

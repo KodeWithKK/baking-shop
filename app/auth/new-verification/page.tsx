@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 import { newVerification } from "@/actions/new-verification";
-import { useSearchParams } from "next/navigation";
 
 import AuthCardWrapper from "@/components/layout/auth-card-wrapper";
 import FormMessage from "@/components/layout/form-message";
@@ -52,7 +52,7 @@ function NewVerificationForm() {
     >
       <div className="flex justify-center space-y-[15px]">
         {!successMessage && !errorMessage && (
-          <BeatLoaderIcon className="text-brand-600 h-[64px]" />
+          <BeatLoaderIcon className="h-[64px] text-brand-600" />
         )}
         <FormMessage type="success" message={successMessage} />
         {!successMessage && <FormMessage type="error" message={errorMessage} />}

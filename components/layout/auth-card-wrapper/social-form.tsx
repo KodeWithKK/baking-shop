@@ -1,7 +1,8 @@
 "use client";
 
-import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
+
+import { signIn } from "next-auth/react";
 
 import Button from "@/components/base/button";
 import { FacebookIcon, GoogleIcon, TwitterIcon } from "@/lib/icons/global";

@@ -11,6 +11,8 @@ interface InputProps
   error?: string;
   size?: "medium" | "large";
   Icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  inputClassName?: string;
+  containerClassName?: string;
 }
 
 const Input = forwardRef(
@@ -19,9 +21,10 @@ const Input = forwardRef(
       label,
       error,
       Icon,
-      type = "text",
-      className,
       size = "medium",
+      type = "text",
+      containerClassName,
+      className,
       ...props
     }: Readonly<InputProps>,
     ref: ForwardedRef<HTMLInputElement>,
@@ -42,7 +45,7 @@ const Input = forwardRef(
         className={cn(
           type === "checkbox" &&
             "relative inline-flex flex-row-reverse items-center gap-2",
-          className,
+          containerClassName,
         )}
       >
         {label && (
@@ -66,11 +69,12 @@ const Input = forwardRef(
               "peer block rounded border border-gray-200 p-1.5 placeholder:text-[15px] placeholder:text-gray-800 focus:border-brand-600/[.75] focus:outline-brand-600/[.75]",
               type !== "checkbox" && "w-full",
               type === "checkbox" &&
-                "peer h-[13px] w-[13px] appearance-none checked:border-transparent checked:bg-brand-600 focus:outline-none",
+                "h-[13px] w-[13px] appearance-none checked:border-transparent checked:bg-brand-600 focus:outline-none",
               error && "border-brand-600",
               Icon && "pl-[40px]",
               size === "large" &&
                 "rounded-lg border-gray-500 p-[10px] placeholder:text-base",
+              className,
             )}
             {...props}
           />
@@ -98,9 +102,9 @@ const Input = forwardRef(
 
           {Icon && type !== "checkbox" && (
             <Icon
-              className={
-                "absolute left-[10px] top-[8px] h-6 peer-focus:text-brand-600"
-              }
+              className={cn(
+                "absolute left-[10px] top-[8px] h-6 peer-focus:text-brand-600",
+              )}
             />
           )}
         </div>

@@ -1,5 +1,6 @@
-import { UserRole } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
+
+import { UserRole } from "@prisma/client";
 
 import { getCurrentUserRole } from "@/lib/auth";
 import { addCakes, type ExtendedApiCakeData } from "@/data/cake";

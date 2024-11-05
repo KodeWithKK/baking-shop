@@ -60,6 +60,12 @@ function useWishlistApi({ toggleLoginRequiredModal }: UseWishlistApiPrams) {
             draftItem.push(nextWishlistItem);
           }),
         );
+
+        // invalidate the wishlist item cache data
+        queryClient.invalidateQueries({
+          queryKey: ["wishlist-cakes"],
+          exact: true,
+        });
       }
 
       // Cancel any outgoing refetches

@@ -55,19 +55,19 @@ function CartItem({
           {cakeMessage && (
             <div className="mt-0.5 flex items-center border-gray-400 text-sm">
               <MessageIcon className="mr-1 w-[18px]" />
-              <span className="text-brand-600 mx-0.5 font-semibold">❝</span>
+              <span className="mx-0.5 font-semibold text-brand-600">❝</span>
               {cakeMessage}
-              <span className="text-brand-600 mx-0.5 font-semibold">❞</span>
+              <span className="mx-0.5 font-semibold text-brand-600">❞</span>
             </div>
           )}
         </div>
 
         <div className="flex flex-col items-end justify-between">
           <button type="button" onClick={() => deleteCartItem(itemId)}>
-            <DeleteIcon className="text text-brand-600 h-[18px]" />
+            <DeleteIcon className="text h-[18px] text-brand-600" />
           </button>
 
-          <div className="bg-brand-600 flex items-center rounded-md font-medium text-white">
+          <div className="flex items-center rounded-md bg-brand-600 font-medium text-white">
             <button
               type="button"
               className="px-2.5 py-1"

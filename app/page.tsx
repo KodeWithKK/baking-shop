@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
+
 import { Cake, CakeCategory } from "@prisma/client";
 import { useQueries } from "@tanstack/react-query";
-import Link from "next/link";
 
 import FullPageLoader from "@/components/base/loaders/fullpage-loader";
 import ProductCard from "@/components/features/product-card";

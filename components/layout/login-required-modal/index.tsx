@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+
 import { RemoveScroll } from "react-remove-scroll";
 
 import LoginForm from "@/app/auth/login/page";

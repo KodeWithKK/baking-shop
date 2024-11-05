@@ -1,9 +1,9 @@
 "use client";
 
 import { useMemo } from "react";
+import Link from "next/link";
 
 import { Cake } from "@prisma/client";
-import Link from "next/link";
 
 import { useAppContext } from "@/context/app-provider";
 import { HeartSolidIcon } from "@/lib/icons/global";

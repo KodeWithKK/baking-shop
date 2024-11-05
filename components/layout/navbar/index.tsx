@@ -1,10 +1,22 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+import { cn } from "@/lib/utils";
 
 import NavBtnContainer from "./navbtn-container";
 
 function Navbar() {
+  const pathname = usePathname();
+
   return (
-    <nav className="fixed left-0 top-0 z-[100] flex w-full items-center justify-between rounded-b-[10px] bg-white px-5 py-[10px] text-brand-600 shadow-sm max-sm:px-[4%]">
+    <nav
+      className={cn(
+        "fixed left-0 top-0 z-[100] flex w-full items-center justify-between rounded-b-[10px] bg-white px-5 py-[10px] text-brand-600 shadow-sm max-sm:px-[4%]",
+        pathname.startsWith("/search") && "hidden",
+      )}
+    >
       <Link href="/">
         <div className="justify-content flex items-center">
           <img

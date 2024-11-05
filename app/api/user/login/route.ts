@@ -1,5 +1,6 @@
-import { LoginSchema } from "@/schemas";
 import { NextRequest, NextResponse } from "next/server";
+
+import { LoginSchema } from "@/schemas";
 
 import { signIn } from "@/auth";
 

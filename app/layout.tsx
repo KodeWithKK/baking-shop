@@ -1,6 +1,7 @@
+import { Poppins } from "next/font/google";
+
 import type { Metadata } from "next";
 import { SessionProvider } from "next-auth/react";
-import { Poppins } from "next/font/google";
 
 import CartModal from "@/components/features/cart-modal";
 import Navbar from "@/components/layout/navbar";

@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
+
 import { logout } from "@/actions/logout";
 import { getSession } from "next-auth/react";
-import Link from "next/link";
 
 import { ExitIcon, HeartOutlineIcon } from "@/lib/icons/global";
 import { cn } from "@/lib/utils";

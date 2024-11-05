@@ -9,6 +9,7 @@
   "importOrderTypeScriptVersion": "5.0.0",
   "importOrder": [
     "^(react/(.*)$)|^(react$)",
+    "^(next/(.*)$)|^(react$)",
     "",
     "<THIRD_PARTY_MODULES>",
     "",

@@ -354,3 +354,14 @@ export function DeleteIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function LeftArrowIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" {...props}>
+      <g fill="currentColor" fillRule="evenodd" clipRule="evenodd">
+        <path d="M2.461 12a.75.75 0 01.75-.75l17.79.012a.75.75 0 11-.002 1.5L3.21 12.75a.75.75 0 01-.749-.75" />
+        <path d="M10.517 4.47a.75.75 0 01.001 1.06L4.06 12l6.458 6.47a.75.75 0 01-1.061 1.06l-6.988-7a.75.75 0 010-1.06l6.988-7a.75.75 0 011.06 0" />
+      </g>
+    </svg>
+  );
+}

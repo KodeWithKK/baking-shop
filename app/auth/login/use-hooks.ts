@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import { login } from "@/actions/login";
 import { LoginSchema } from "@/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { getSession } from "next-auth/react";
-import { useRouter, useSearchParams } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
 

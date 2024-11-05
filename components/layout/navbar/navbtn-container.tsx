@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -69,7 +68,11 @@ function NavBtnContainer() {
         >
           {!user.image && <UserCircledIcon className="h-[36px]" />}
           {user.image && (
-            <img src={user.image} className="h-[36px] rounded-full" alt="" />
+            <img
+              src={user.image}
+              className="h-[36px] rounded-full text-[15px] text-gray-900"
+              alt="user"
+            />
           )}
         </button>
       )}
