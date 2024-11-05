@@ -7,7 +7,7 @@ import Input from "@/components/base/input";
 import AuthCardWrapper from "@/components/layout/auth-card-wrapper";
 import FormMessage from "@/components/layout/form-message";
 
-import useLoginPageHooks from "./useHooks";
+import useLoginPageHooks from "./use-hooks";
 
 function LoginForm() {
   const {

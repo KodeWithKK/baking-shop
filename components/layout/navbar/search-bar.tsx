@@ -10,12 +10,12 @@ function SearchBar() {
       <div className="relative hidden lg:block">
         <input
           type="text"
-          className="w-[240px] rounded-md border border-orange-500 p-[5px] pl-[40px] text-gray-975 placeholder:text-[14px] placeholder:text-gray-800 focus:border-orange-600/[.75] focus:outline-orange-600/[.75]"
+          className="peer w-[268px] rounded-full border border-gray-700 p-[5px] pl-[40px] text-gray-700 placeholder:text-[14px] placeholder:text-gray-800 focus:border-brand-600/[.75] focus:outline-brand-600/[.75]"
           placeholder="Search for cakes"
           spellCheck={false}
         />
 
-        <SearchIcon className="absolute left-2 top-1 h-7" />
+        <SearchIcon className="absolute left-2 top-1 h-7 text-gray-950 peer-focus:text-brand-600" />
       </div>
 
       <div className="lg:hidden">

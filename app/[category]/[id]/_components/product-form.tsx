@@ -31,7 +31,7 @@ function ProductForm({ category }: Readonly<{ category: CakeCategory }>) {
                 key={id}
                 className={cn(
                   "inline-block w-[70px] rounded-lg border border-gray-500 py-[10px] text-center text-[15px] font-medium",
-                  selectedQuantity === value && "border-orange-600",
+                  selectedQuantity === value && "border-brand-600",
                 )}
                 onClick={() => setSelectedQuantity(value)}
               >
@@ -45,7 +45,7 @@ function ProductForm({ category }: Readonly<{ category: CakeCategory }>) {
                 key={id}
                 className={cn(
                   "inline-block w-[75px] rounded-lg border border-gray-500 py-[10px] text-center text-[15px] font-medium",
-                  selectedWeight === value && "border-orange-600",
+                  selectedWeight === value && "border-brand-600",
                 )}
                 onClick={() => setSelectedWeight(value)}
               >
@@ -74,7 +74,7 @@ function ProductForm({ category }: Readonly<{ category: CakeCategory }>) {
           size="large"
         />
         {cakeMessage.length > 25 && (
-          <p className="mt-1 text-[15px] text-orange-600">
+          <p className="mt-1 text-[15px] text-brand-600">
             Cake message is too long!
           </p>
         )}

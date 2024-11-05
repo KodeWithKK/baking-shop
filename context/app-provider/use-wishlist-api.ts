@@ -1,11 +1,7 @@
 import { useState } from "react";
 
 import { Cake } from "@prisma/client";
-import {
-  QueryFilters,
-  useMutation,
-  useQueryClient,
-} from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { produce } from "immer";
 
 import { SessionWishlistItem } from "@/types/next-auth";
@@ -13,7 +9,11 @@ import { SessionWishlistItem } from "@/types/next-auth";
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { toggleWishlistItem } from "@/data/wishlist-item";
 
-function useWishlistApi() {
+interface UseWishlistApiPrams {
+  toggleLoginRequiredModal: () => void;
+}
+
+function useWishlistApi({ toggleLoginRequiredModal }: UseWishlistApiPrams) {
   const user = useCurrentUser();
   const queryClient = useQueryClient();
 
@@ -27,59 +27,62 @@ function useWishlistApi() {
   const { mutate: handleToggleWishlistItem } = useMutation({
     mutationKey: ["toggleWishlistItemMutation", user?.id],
     onMutate: async (cakeId: string) => {
-      if (user) {
-        const isAlreadyInWishlist = !!wishlistItems.find(
-          (item) => item.cakeId === cakeId,
-        );
+      if (!user) {
+        toggleLoginRequiredModal();
+        return;
+      }
 
-        if (isAlreadyInWishlist) {
-          setWishlistItems((prevItems) => {
-            return prevItems.filter((item) => item.cakeId !== cakeId);
-          });
+      const isAlreadyInWishlist = !!wishlistItems.find(
+        (item) => item.cakeId === cakeId,
+      );
 
-          // updating the wishlist item cache data
-          queryClient.setQueryData<Cake[]>(["wishlist-cakes"], (prevItems) => {
-            return prevItems?.filter((item) => item.id !== cakeId) ?? [];
-          });
-        }
-
-        const nextItemId = window.crypto.randomUUID();
-
-        if (!isAlreadyInWishlist) {
-          const nextWishlistItem = {
-            id: nextItemId,
-            cakeId,
-          };
-
-          setWishlistItems(
-            produce((draftItem) => {
-              draftItem.push(nextWishlistItem);
-            }),
-          );
-        }
-
-        // Cancel any outgoing refetches
-        await queryClient.cancelQueries({
-          queryKey: ["toggleWishlistItemMutation", user.id],
+      if (isAlreadyInWishlist) {
+        setWishlistItems((prevItems) => {
+          return prevItems.filter((item) => item.cakeId !== cakeId);
         });
 
-        // perform action
-        const result = await toggleWishlistItem(cakeId);
+        // updating the wishlist item cache data
+        queryClient.setQueryData<Cake[]>(["wishlist-cakes"], (prevItems) => {
+          return prevItems?.filter((item) => item.id !== cakeId) ?? [];
+        });
+      }
 
-        // fix the added data
-        if (result?.isItemAdded) {
-          setWishlistItems(
-            produce((draftItem) => {
-              const addedWishlistItem = draftItem.find(
-                (item) => item.id === nextItemId,
-              );
+      const nextItemId = window.crypto.randomUUID();
 
-              if (addedWishlistItem) {
-                addedWishlistItem.id = result.data.id;
-              }
-            }),
-          );
-        }
+      if (!isAlreadyInWishlist) {
+        const nextWishlistItem = {
+          id: nextItemId,
+          cakeId,
+        };
+
+        setWishlistItems(
+          produce((draftItem) => {
+            draftItem.push(nextWishlistItem);
+          }),
+        );
+      }
+
+      // Cancel any outgoing refetches
+      await queryClient.cancelQueries({
+        queryKey: ["toggleWishlistItemMutation", user.id],
+      });
+
+      // perform action
+      const result = await toggleWishlistItem(cakeId);
+
+      // fix the added data
+      if (result?.isItemAdded) {
+        setWishlistItems(
+          produce((draftItem) => {
+            const addedWishlistItem = draftItem.find(
+              (item) => item.id === nextItemId,
+            );
+
+            if (addedWishlistItem) {
+              addedWishlistItem.id = result.data.id;
+            }
+          }),
+        );
       }
     },
   });

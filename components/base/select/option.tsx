@@ -24,7 +24,7 @@ function Option({ value, text = value }: Readonly<OptionProps>) {
       className={cn(
         "w-full px-2 py-1 text-left text-[15px]",
         variant === "secondary" &&
-          "hover:bg-orange-600/30 max-md:hover:bg-orange-600/20",
+          "hover:bg-brand-600/30 max-md:hover:bg-brand-600/20",
       )}
       onClick={() => {
         handleOptionClick(value);

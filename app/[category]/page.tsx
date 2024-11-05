@@ -91,7 +91,11 @@ export default function Page({ params }: Readonly<Props>) {
           <span className="text-[15px] max-md:text-sm max-md:font-medium">
             Sort by:{" "}
           </span>
-          <Select defaultValue={orderBy} onChange={setOrderBy}>
+          <Select
+            variant="secondary"
+            defaultValue={orderBy}
+            onChange={setOrderBy}
+          >
             <Option value="Popularity" />
             <Option value="Price Ascending" />
             <Option value="Price Decending" />

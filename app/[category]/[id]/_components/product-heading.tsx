@@ -30,14 +30,14 @@ function ProductHeading({ cakeData }: Readonly<{ cakeData: Cake }>) {
       <button
         className={cn(
           "grid h-10 w-10 place-items-center rounded-full bg-gray-600",
-          isAlreadyInWishlist && "bg-orange-600/20",
+          isAlreadyInWishlist && "bg-brand-600/20",
         )}
         onClick={() => toggleWishlistItem(cakeData.id)}
       >
         <HeartSolidIcon
           className={cn(
             "h-6 w-6 text-white",
-            isAlreadyInWishlist && "text-orange-600",
+            isAlreadyInWishlist && "text-brand-600",
           )}
         />
       </button>

@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import { SessionProvider } from "next-auth/react";
 import { Poppins } from "next/font/google";
 
-import CartModal from "@/components/layout/cart-modal";
+import CartModal from "@/components/features/cart-modal";
 import Navbar from "@/components/layout/navbar";
 import AppProvider from "@/context/app-provider";
 import TanstackProvider from "@/context/tanstack-provider";
 import { auth } from "@/auth";
 
 import "./globals.css";
+
+import LoginRequiredModal from "@/components/layout/login-required-modal";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -31,17 +33,14 @@ export default async function RootLayout({
     <SessionProvider session={session}>
       <html lang="en">
         <head>
-          <link
-            rel="shortcut icon"
-            href="https://blogger.googleusercontent.com/img/a/AVvXsEjiJsyFdqTbr-zK8IeKUJcdiFOTpoN7QNyUkELPbSKOafFNiH3szSqIG7HVqIAqde7k3jBthnwkoueXU3fF0HjH9Nfg-QSNJtw7b_tKsNyZ74zjz105lurwxV5AAillsKMZSGNRxfWnEdNOeyyzbR0Xw2Fo8TISK4ecNdvOxr0faEkDgwPaGKqR3NPHES4"
-            type="image/x-icon"
-          />
+          <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
         </head>
         <body className={font.className} suppressHydrationWarning>
           <TanstackProvider>
             <AppProvider>
               <Navbar />
               <CartModal />
+              <LoginRequiredModal />
 
               <div className="min-h-screen bg-[#f7f7f7] pt-[71px] text-gray-975">
                 {children}

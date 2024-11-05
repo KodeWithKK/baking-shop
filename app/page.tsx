@@ -65,10 +65,10 @@ function CategoryDisplay({
       <div className="flex items-center justify-between">
         <h2 className="text-[26px] leading-none max-sm:text-[24px]">{name}</h2>
         <Link
-          className="font-medium text-orange-600 underline underline-offset-4 max-sm:text-[15px]"
+          className="font-medium text-brand-600 max-sm:text-sm"
           href={getCakeCategoryURL(cakesData[0].category)}
         >
-          View All
+          See All Cakes ➝
         </Link>
       </div>
 

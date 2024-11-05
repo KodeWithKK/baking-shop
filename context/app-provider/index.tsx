@@ -9,33 +9,51 @@ import { SessionCartItem, SessionWishlistItem } from "@/types/next-auth";
 import useCartApi from "./use-cart-api";
 import useWishlistApi from "./use-wishlist-api";
 
-const defaultValues = {
-  showCartModal: false as boolean,
-  cartItems: [] as SessionCartItem[],
-  wishlistItems: [] as SessionWishlistItem[],
-  toggleCartModal: () => {},
-  addToCart: async (
+interface AppContextValue {
+  showCartModal: boolean;
+  showLoginRequiredModal: boolean;
+  cartItems: SessionCartItem[];
+  wishlistItems: SessionWishlistItem[];
+  toggleCartModal: () => void;
+  toggleLoginRequiredModal: () => void;
+  closeLoginRequiredModal: () => void;
+  addToCart: (
     cakeId: string,
     cakeQuantity: number,
     cakeWeight: number | undefined,
     cakeMessage: string,
     cakeData: Cake,
-  ) => {},
-  increaseCartItemQuantity: (itemId: string) => {},
-  decreaseCartItemQuantity: (itemId: string) => {},
-  deleteCartItem: (itemId: string) => {},
-  toggleWishlistItem: (cakeId: string) => {},
-};
+  ) => Promise<void>;
+  increaseCartItemQuantity: (itemId: string) => void;
+  decreaseCartItemQuantity: (itemId: string) => void;
+  deleteCartItem: (itemId: string) => void;
+  toggleWishlistItem: (cakeId: string) => void;
+}
 
-const AppContext = createContext(defaultValues);
-export const useAppContext = () => useContext(AppContext);
+const AppContext = createContext<AppContextValue | null>(null);
+export const useAppContext = () => {
+  return useContext(AppContext) as AppContextValue;
+};
 
 interface AppProviderProps {
   children: React.ReactNode;
 }
 
 function AppProvider({ children }: Readonly<AppProviderProps>) {
-  const [showCartModal, setShowCartModal] = useState<boolean>(false);
+  const [showLoginRequiredModal, setShowLoginRequiredModal] = useState(false);
+  const [showCartModal, setShowCartModal] = useState(false);
+
+  const toggleCartModal = useCallback(() => {
+    setShowCartModal((prev) => !prev);
+  }, []);
+
+  const toggleLoginRequiredModal = useCallback(() => {
+    setShowLoginRequiredModal((prev) => !prev);
+  }, []);
+
+  const closeLoginRequiredModal = useCallback(() => {
+    setShowLoginRequiredModal(false);
+  }, []);
 
   const {
     cartItems,
@@ -43,20 +61,22 @@ function AppProvider({ children }: Readonly<AppProviderProps>) {
     increaseCartItemQuantity,
     decreaseCartItemQuantity,
     deleteCartItem,
-  } = useCartApi();
-  const { wishlistItems, toggleWishlistItem } = useWishlistApi();
+  } = useCartApi({ toggleLoginRequiredModal });
 
-  const toggleCartModal = useCallback(() => {
-    setShowCartModal((prev) => !prev);
-  }, []);
+  const { wishlistItems, toggleWishlistItem } = useWishlistApi({
+    toggleLoginRequiredModal,
+  });
 
   return (
     <AppContext.Provider
       value={{
         showCartModal,
+        showLoginRequiredModal,
         cartItems,
         wishlistItems,
         toggleCartModal,
+        toggleLoginRequiredModal,
+        closeLoginRequiredModal,
         addToCart,
         increaseCartItemQuantity,
         decreaseCartItemQuantity,

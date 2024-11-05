@@ -50,7 +50,7 @@ const Input = forwardRef(
             htmlFor={inputId}
             className={cn(
               "inline-block flex-shrink-0 text-[15px]",
-              error && "text-orange-600",
+              error && "text-brand-600",
             )}
           >
             {label}
@@ -63,11 +63,11 @@ const Input = forwardRef(
             type={selectedType}
             id={inputId}
             className={cn(
-              "peer block rounded border border-gray-200 p-1.5 placeholder:text-[15px] placeholder:text-gray-800 focus:border-orange-600/[.75] focus:outline-orange-600/[.75]",
+              "peer block rounded border border-gray-200 p-1.5 placeholder:text-[15px] placeholder:text-gray-800 focus:border-brand-600/[.75] focus:outline-brand-600/[.75]",
               type !== "checkbox" && "w-full",
               type === "checkbox" &&
-                "peer h-[13px] w-[13px] appearance-none checked:border-transparent checked:bg-orange-600 focus:outline-none",
-              error && "border-orange-600",
+                "peer h-[13px] w-[13px] appearance-none checked:border-transparent checked:bg-brand-600 focus:outline-none",
+              error && "border-brand-600",
               Icon && "pl-[40px]",
               size === "large" &&
                 "rounded-lg border-gray-500 p-[10px] placeholder:text-base",
@@ -75,7 +75,7 @@ const Input = forwardRef(
             {...props}
           />
 
-          {error && <p className="text-orange-600">{error}</p>}
+          {error && <p className="text-brand-600">{error}</p>}
 
           {type === "password" && (
             <button
@@ -85,12 +85,12 @@ const Input = forwardRef(
             >
               {selectedType === "password" && (
                 <OpenEyeIcon
-                  className={cn("h-[22px]", error && "text-orange-600")}
+                  className={cn("h-[22px]", error && "text-brand-600")}
                 />
               )}
               {selectedType === "text" && (
                 <ClosedEyeIcon
-                  className={cn("h-[22px]", error && "text-orange-600")}
+                  className={cn("h-[22px]", error && "text-brand-600")}
                 />
               )}
             </button>
@@ -99,7 +99,7 @@ const Input = forwardRef(
           {Icon && type !== "checkbox" && (
             <Icon
               className={
-                "absolute left-[10px] top-[8px] h-6 peer-focus:text-orange-600"
+                "absolute left-[10px] top-[8px] h-6 peer-focus:text-brand-600"
               }
             />
           )}

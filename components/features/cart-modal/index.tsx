@@ -34,7 +34,7 @@ function CartModal() {
   return (
     <RemoveScroll>
       <div
-        className="fixed left-0 top-0 z-[1000] h-screen w-full bg-black/90 text-gray-975"
+        className="fixed left-0 top-0 z-[1000] h-screen w-full bg-black/90 text-gray-975 backdrop-blur-sm"
         onClick={toggleCartModal}
       >
         <div
@@ -44,7 +44,7 @@ function CartModal() {
           <div className="sticky right-0 top-0 flex w-full justify-between bg-white px-5 py-4 shadow-md max-md:rounded-b-md">
             <h2 className="text-center text-[28px]">My Cart</h2>
             <button
-              className="grid h-10 w-10 place-items-center rounded-md hover:text-orange-600"
+              className="grid h-10 w-10 place-items-center rounded-md hover:text-brand-600"
               onClick={toggleCartModal}
             >
               <CloseIcon className="h-8 w-8" />

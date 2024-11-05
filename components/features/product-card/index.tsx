@@ -40,7 +40,7 @@ function ProductCard({ data, className }: Readonly<Props>) {
         <button
           className={cn(
             "absolute right-1 top-1 rounded-full bg-black/20 p-1",
-            isAlreadyInWishlist && "bg-orange-600/20",
+            isAlreadyInWishlist && "bg-brand-600/20",
           )}
           onClick={(e) => {
             e.preventDefault();
@@ -50,7 +50,7 @@ function ProductCard({ data, className }: Readonly<Props>) {
           <HeartSolidIcon
             className={cn(
               "h-[18px] text-white",
-              isAlreadyInWishlist && "text-orange-600",
+              isAlreadyInWishlist && "text-brand-600",
             )}
           />
         </button>

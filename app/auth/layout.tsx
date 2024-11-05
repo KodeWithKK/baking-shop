@@ -4,7 +4,7 @@ interface AuthLayoutProps {
 
 function AuthLayout({ children }: Readonly<AuthLayoutProps>) {
   return (
-    <section className="grid min-h-[calc(100vh-71px)] place-items-center pb-[20px] pt-[20px]">
+    <section className="grid min-h-[calc(100vh-71px)] pb-[20px] pt-[20px] max-sm:p-4 sm:place-items-center">
       {children}
     </section>
   );

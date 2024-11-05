@@ -13,7 +13,11 @@ import {
   increaseCartItemQuantity,
 } from "@/data/cart-item";
 
-function useCartApi() {
+interface UseCartApiPrams {
+  toggleLoginRequiredModal: () => void;
+}
+
+function useCartApi({ toggleLoginRequiredModal }: UseCartApiPrams) {
   const user = useCurrentUser();
   const [cartItems, setCartItems] = useState<SessionCartItem[]>(() => {
     if (user) return user.cartItems;
@@ -28,7 +32,10 @@ function useCartApi() {
       cakeMessage: string,
       cakeData: Cake,
     ) => {
-      if (!user) return;
+      if (!user) {
+        toggleLoginRequiredModal();
+        return;
+      }
 
       const nextCartItem = {
         id: window.crypto.randomUUID(),
@@ -71,7 +78,7 @@ function useCartApi() {
         );
       }
     },
-    [user],
+    [user, toggleLoginRequiredModal],
   );
 
   const handleIncreaseCartItemQuantity = useCallback((itemId: string) => {

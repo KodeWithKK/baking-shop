@@ -17,7 +17,7 @@ export default function FormMessage({
     <div
       className={cn(
         "flex items-center gap-x-2 rounded-md p-3 text-sm",
-        type === "error" && "bg-orange-600/15 text-orange-600",
+        type === "error" && "bg-brand-600/15 text-brand-600",
         type === "success" && "bg-emerald-500/15 text-emerald-500",
       )}
     >

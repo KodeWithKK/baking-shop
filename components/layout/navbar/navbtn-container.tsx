@@ -8,19 +8,16 @@ import { usePathname } from "next/navigation";
 import Button from "@/components/base/button";
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { useAppContext } from "@/context/app-provider";
-import {
-  CartOutlineIcon,
-  HeartOutlineIcon,
-  UserCircledIcon,
-} from "@/lib/icons/global";
+import { CartOutlineIcon, UserCircledIcon } from "@/lib/icons/global";
 import { findDiscountedPrice, formatPrice } from "@/lib/pricing";
 
 import NavButton from "./nav-btn";
+import SearchBar from "./search-bar";
 import UserOptions from "./user-options";
 
 function NavBtnContainer() {
   const [showOptions, setShowOptions] = useState<boolean>(false);
-  const { cartItems, wishlistItems, toggleCartModal } = useAppContext();
+  const { cartItems, toggleCartModal } = useAppContext();
   const user = useCurrentUser();
   const pathname = usePathname();
 
@@ -29,22 +26,9 @@ function NavBtnContainer() {
   }, []);
 
   return (
-    <div className="relative flex items-center text-[15px] font-medium text-orange-600">
-      {/* Wishlist */}
-      <Link href="/wishlist">
-        <NavButton Icon={HeartOutlineIcon}>
-          {/* {wishlistItems.length === 0 && "Wishlist"}
-        {wishlistItems.length > 0 && (
-          <div className="flex flex-col text-sm font-medium leading-tight">
-            <span>
-              {wishlistItems.length}{" "}
-              {wishlistItems.length > 1 ? "Items" : "Item"}
-            </span>
-          </div>
-        )} */}
-          Wishlist
-        </NavButton>
-      </Link>
+    <div className="relative flex items-center gap-2.5 text-[15px] font-medium text-brand-600 lg:gap-4">
+      {/* Search Bar */}
+      <SearchBar />
 
       {/* Cart */}
       <NavButton Icon={CartOutlineIcon} onClick={toggleCartModal}>
@@ -73,17 +57,18 @@ function NavBtnContainer() {
       {/* Login */}
       {!user && !pathname.startsWith("/auth") && (
         <Link href="/auth/login">
-          <Button className="ml-2 text-sm">Sign In</Button>
+          <Button className="text-sm">Sign In</Button>
         </Link>
       )}
 
+      {/* User Menu */}
       {user && (
         <button
           type="button"
-          className="ml-2"
+          className=""
           onClick={() => setShowOptions((prev) => !prev)}
         >
-          <UserCircledIcon className="h-[32px]" />
+          <UserCircledIcon className="h-[36px]" />
         </button>
       )}
 

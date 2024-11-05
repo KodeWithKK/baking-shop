@@ -70,7 +70,8 @@ function Select({
           className={cn(
             "w-full rounded-md px-2 py-1",
             variant === "secondary" && "w-[175px]",
-            variant === "secondary" && "bg-[#cdccd1] max-md:bg-[#d8d7db]",
+            variant === "secondary" &&
+              "bg-gray-900/30 max-md:bg-gray-900/[.25]",
           )}
           onClick={() => {
             setIsOptionsCollapsed((prev) => !prev);

@@ -145,7 +145,7 @@ const pastries: ApiCakeDataType[] = [
     name: "Flavoursome Orange Chocolate Mousse",
     listPrice: 149,
     imgSrc:
-      "https://bkmedia.bakingo.com/appetizing-choco-orange-mousse-past2865choc-A.jpg",
+      "https://bkmedia.bakingo.com/appetizing-choco-brand-mousse-past2865choc-A.jpg",
     description:
       "Spoil yourself or your loved ones with this toothy orange chocolate mousse. The intense flavour of chocolate combined with a unique tangy taste of orange on the top will be a whole other experience for your taste buds. Orange chunks in every bite will give an extraordinary feel to your sweet tooth. Order this heavenly mousse now. ",
   },

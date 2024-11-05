@@ -2,8 +2,9 @@
 
 import { logout } from "@/actions/logout";
 import { getSession } from "next-auth/react";
+import Link from "next/link";
 
-import { ExitIcon, UserIcon } from "@/lib/icons/global";
+import { ExitIcon, HeartOutlineIcon } from "@/lib/icons/global";
 import { cn } from "@/lib/utils";
 
 interface UserOptionsProps {
@@ -19,8 +20,11 @@ function UserOptions({ handleClose }: Readonly<UserOptionsProps>) {
   };
 
   return (
-    <div className="boder-gray-800 absolute right-0 top-[60px] w-[168px] animate-flip-down rounded-md border bg-white text-gray-950 animate-duration-300">
-      <UserOption Icon={UserIcon} label="My Profile" />
+    <div className="boder-gray-800 absolute right-0 top-[60px] w-[156px] animate-flip-down rounded-md border bg-white text-gray-950 animate-duration-300">
+      <Link href="/wishlist" onClick={handleClose}>
+        <UserOption Icon={HeartOutlineIcon} label="My Wishlist" />
+      </Link>
+
       <hr />
       <UserOption
         Icon={ExitIcon}
@@ -50,8 +54,8 @@ function UserOption({
       <button
         type="button"
         className={cn(
-          "flex w-full items-center gap-2 rounded-md p-1.5 hover:bg-orange-100",
-          actionType === "dangerous" && "text-orange-600",
+          "flex w-full items-center gap-2 rounded-md p-1.5 hover:bg-brand-100",
+          actionType === "dangerous" && "text-brand-600",
         )}
         onClick={onClick}
       >

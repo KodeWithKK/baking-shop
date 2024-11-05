@@ -52,7 +52,7 @@ function NewVerificationForm() {
     >
       <div className="flex justify-center space-y-[15px]">
         {!successMessage && !errorMessage && (
-          <BeatLoaderIcon className="h-[64px] text-orange-600" />
+          <BeatLoaderIcon className="text-brand-600 h-[64px]" />
         )}
         <FormMessage type="success" message={successMessage} />
         {!successMessage && <FormMessage type="error" message={errorMessage} />}
