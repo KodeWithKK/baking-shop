@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
-import { useSelectContext } from "../select";
-import { OptionProps } from "../select/types";
+import { useSelectContext } from ".";
+import { OptionProps } from "./types";
 
 function Option({ value, text = value }: Readonly<OptionProps>) {
   const [isDataAdded, setIsDataAdded] = useState<boolean>(false);

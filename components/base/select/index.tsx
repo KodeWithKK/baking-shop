@@ -16,15 +16,25 @@ import { cn } from "@/lib/utils";
 import Option from "./option";
 import { DataMap, SelectProps } from "./types";
 
-const defaultContextValue = {
-  variant: "secondary" as string,
-  addDataMap: (value: string, text: string) => {},
-  handleOptionClick: (value: string) => {},
+interface ISelectContext {
+  variant: string;
+  addDataMap: (value: string, text: string) => void;
+  handleOptionClick: (value: string) => void;
+}
+
+const SelectContext = createContext<ISelectContext | null>(null);
+
+export const useSelectContext = () => {
+  const context = useContext(SelectContext);
+
+  if (!context) {
+    throw new Error(
+      "useSelectContext must be used within a SelectContextProvider",
+    );
+  }
+
+  return context;
 };
-
-const SelectContext = createContext(defaultContextValue);
-export const useSelectContext = () => useContext(SelectContext);
-
 function Select({
   variant = "secondary",
   placeholder = "Select Value",

@@ -1,12 +1,17 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 
 import { RemoveScroll } from "react-remove-scroll";
 
-import LoginForm from "@/app/auth/login/page";
 import { useAppContext } from "@/context/app-provider";
 import { CloseIcon } from "@/lib/icons/global";
+
+// Dynamically import the LoginForm component and disable SSR
+const LoginForm = dynamic(() => import("@/app/auth/login/page"), {
+  ssr: false,
+});
 
 function LoginRequiredModal() {
   const pathname = usePathname();

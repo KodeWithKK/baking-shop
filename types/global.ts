@@ -1,4 +1,4 @@
-import { CakeCategory } from "@prisma/client";
+// import { CakeCategory } from "@prisma/client";
 
 export interface Review {
   id: string;

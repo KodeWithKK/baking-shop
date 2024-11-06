@@ -12,23 +12,34 @@ import { useQuery } from "@tanstack/react-query";
 import { useAppContext } from "@/context/app-provider";
 import { getCakeByIdAndCategory } from "@/data/cake";
 
-const defaultValue = {
-  cakeData: {} as Cake | null | undefined,
-  isFetching: true,
-  isError: false,
-  isAlreadyInCart: false,
-  selectedQuantity: 1,
-  selectedWeight: 0.5,
-  cakeMessage: "",
-  handleAddToCart: () => {},
-  toggleCartModal: () => {},
-  setSelectedQuantity: (qty: number) => {},
-  setSelectedWeight: (weight: number) => {},
-  setCakeMessage: (message: string) => {},
-};
+interface IProductPageContext {
+  cakeData: Cake | null | undefined;
+  isFetching: boolean;
+  isError: boolean;
+  isAlreadyInCart: boolean;
+  selectedQuantity: number;
+  selectedWeight: number;
+  cakeMessage: string;
+  handleAddToCart: () => void;
+  toggleCartModal: () => void;
+  setSelectedQuantity: (qty: number) => void;
+  setSelectedWeight: (weight: number) => void;
+  setCakeMessage: (message: string) => void;
+}
 
-const ProductPageContext = createContext(defaultValue);
-export const useProductPageContext = () => useContext(ProductPageContext);
+const ProductPageContext = createContext<IProductPageContext | null>(null);
+
+export const useProductPageContext = () => {
+  const context = useContext(ProductPageContext);
+
+  if (!context) {
+    throw new Error(
+      "useProductPageContext must be used within a ProductPageProvider",
+    );
+  }
+
+  return context;
+};
 
 interface ProductPageProps {
   productId: string;

@@ -9,7 +9,7 @@ import { SessionCartItem, SessionWishlistItem } from "@/types/next-auth";
 import useCartApi from "./use-cart-api";
 import useWishlistApi from "./use-wishlist-api";
 
-interface AppContextValue {
+interface IAppContext {
   showCartModal: boolean;
   showLoginRequiredModal: boolean;
   cartItems: SessionCartItem[];
@@ -30,9 +30,16 @@ interface AppContextValue {
   toggleWishlistItem: (cakeId: string) => void;
 }
 
-const AppContext = createContext<AppContextValue | null>(null);
+const AppContext = createContext<IAppContext | null>(null);
+
 export const useAppContext = () => {
-  return useContext(AppContext) as AppContextValue;
+  const context = useContext(AppContext);
+
+  if (!context) {
+    throw new Error("useAppContext must be used within a AppContextProvider");
+  }
+
+  return context;
 };
 
 interface AppProviderProps {

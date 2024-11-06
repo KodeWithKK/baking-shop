@@ -31,12 +31,12 @@ export default async function RootLayout({
   const session = await auth();
 
   return (
-    <SessionProvider session={session}>
-      <html lang="en">
-        <head>
-          <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
-        </head>
-        <body className={font.className} suppressHydrationWarning>
+    <html lang="en">
+      <head>
+        <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+      </head>
+      <body className={font.className} suppressHydrationWarning>
+        <SessionProvider session={session}>
           <TanstackProvider>
             <AppProvider>
               <Navbar />
@@ -48,8 +48,8 @@ export default async function RootLayout({
               </div>
             </AppProvider>
           </TanstackProvider>
-        </body>
-      </html>
-    </SessionProvider>
+        </SessionProvider>
+      </body>
+    </html>
   );
 }
