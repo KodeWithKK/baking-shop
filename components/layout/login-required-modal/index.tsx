@@ -26,7 +26,7 @@ function LoginRequiredModal() {
 
   return (
     <RemoveScroll>
-      <div className="fixed left-0 top-0 z-[100] grid h-screen w-screen place-items-center bg-black/90 px-4 backdrop-blur-sm">
+      <div className="w fixed left-0 top-0 z-[100] grid h-screen w-full place-items-center bg-black/90 px-4 backdrop-blur-sm">
         <div className="relative max-sm:w-full">
           <button
             type="button"

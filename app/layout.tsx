@@ -41,7 +41,7 @@ export default async function RootLayout({
               <CartModal />
               <LoginRequiredModal />
 
-              <div className="min-h-screen bg-[#f7f7f7] pt-[71px] text-gray-975">
+              <div className="min-h-screen bg-[#f7f7f7] pt-[69px] text-gray-975 sm:pt-[71px]">
                 {children}
               </div>
             </AppProvider>

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   darkMode: ["class"],
@@ -59,6 +60,48 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animated")],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".h-screen": {
+          height: "100dvh",
+          "@supports not (height: 100dvh)": {
+            height: "100vh",
+          },
+        },
+        ".max-h-screen": {
+          maxHeight: "100dvh",
+          "@supports not (max-height: 100dvh)": {
+            maxHeight: "100vh",
+          },
+        },
+        ".min-h-screen": {
+          minHeight: "100dvh",
+          "@supports not (min-height: 100dvh)": {
+            minHeight: "100vh",
+          },
+        },
+        ".w-screen": {
+          width: "100dvw",
+          "@supports not (width: 100dvw)": {
+            width: "100vw",
+          },
+        },
+        ".max-w-screen": {
+          maxWidth: "100dvw",
+          "@supports not (max-width: 100dvw)": {
+            maxWidth: "100vw",
+          },
+        },
+        ".min-w-screen": {
+          minWidth: "100dvw",
+          "@supports not (min-width: 100dvw)": {
+            minWidth: "100vw",
+          },
+        },
+      });
+    }),
+    require("tailwindcss-animated"),
+  ],
 };
 export default config;
