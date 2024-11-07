@@ -37,7 +37,7 @@ function ProductPage() {
         <div className="fixed bottom-0 left-0 z-[20] mt-3 flex w-full bg-white px-[0] max-lg:rounded-t-md max-lg:py-0 max-lg:shadow-[0_-1px_2px_#0000000d] md:gap-3 md:px-[10%] lg:static lg:bg-inherit lg:px-0">
           <button
             type="button"
-            className="w-full border border-brand-600 text-brand-600 hover:bg-brand-600/[.15] max-md:rounded-tl-md max-md:border-l-0 md:rounded-lg"
+            className="w-full border border-brand-600 text-brand-600 active:bg-brand-600/[.15] max-md:rounded-tl-md max-md:border-l-0 md:rounded-lg md:hover:bg-brand-600/[.15]"
             onClick={isAlreadyInCart ? toggleCartModal : handleAddToCart}
           >
             {isAlreadyInCart ? "Go To Cart" : "Add To Cart"}
@@ -45,7 +45,7 @@ function ProductPage() {
 
           <button
             type="button"
-            className="w-full bg-brand-600 py-4 text-white max-md:rounded-tr-md md:rounded-lg"
+            className="w-full bg-brand-500 py-4 text-white active:bg-brand-600 max-md:rounded-tr-md md:rounded-lg md:hover:bg-brand-600"
           >
             Buy Now
           </button>
