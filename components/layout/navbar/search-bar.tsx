@@ -62,6 +62,10 @@ function SearchBar() {
               </div>
             )}
 
+            {data && data.length === 0 && (
+              <div className="p-1">No search result found</div>
+            )}
+
             {data?.map((cake) => (
               <Link
                 key={cake.id}

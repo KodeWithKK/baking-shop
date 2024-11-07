@@ -58,6 +58,9 @@ function SearchPage() {
       </div>
       <div className="py-4">
         {isLoading && <FullPageLoader />}
+        {data && data.length == 0 && (
+          <div className="px-4 pt-1.5 text-center">No search result found</div>
+        )}
         {searchTerm && data && (
           <div className="">
             {data.map((cake) => (
