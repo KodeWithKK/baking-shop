@@ -20,7 +20,7 @@ function useSearchQuery({ searchTerm }: UseSearchQueryParams) {
   }, [searchTerm]);
 
   const { data, isLoading } = useQuery({
-    queryKey: ["products", debouncedSearchTerm],
+    queryKey: ["searched-products", debouncedSearchTerm],
     queryFn: () => searchCakes(debouncedSearchTerm),
     enabled: !!debouncedSearchTerm,
   });
