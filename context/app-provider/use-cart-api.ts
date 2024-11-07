@@ -127,12 +127,17 @@ function useCartApi({ toggleLoginRequiredModal }: UseCartApiPrams) {
     deleteCartItem(itemId);
   }, []);
 
+  const resetCartItemsSessionData = useCallback(() => {
+    setCartItems([]);
+  }, []);
+
   return {
     cartItems,
     addToCart: handleAddToCart,
     increaseCartItemQuantity: handleIncreaseCartItemQuantity,
     decreaseCartItemQuantity: handleDecreaseCartItemQuantity,
     deleteCartItem: handleDeleteCartItem,
+    resetCartItemsSessionData,
   };
 }
 

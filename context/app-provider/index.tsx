@@ -26,6 +26,7 @@ interface IAppContext {
   ) => Promise<void>;
   increaseCartItemQuantity: (itemId: string) => void;
   decreaseCartItemQuantity: (itemId: string) => void;
+  resetWislistAndCartItemsSessionData: () => void;
   deleteCartItem: (itemId: string) => void;
   toggleWishlistItem: (cakeId: string) => void;
 }
@@ -68,11 +69,18 @@ function AppProvider({ children }: Readonly<AppProviderProps>) {
     increaseCartItemQuantity,
     decreaseCartItemQuantity,
     deleteCartItem,
+    resetCartItemsSessionData,
   } = useCartApi({ toggleLoginRequiredModal });
 
-  const { wishlistItems, toggleWishlistItem } = useWishlistApi({
-    toggleLoginRequiredModal,
-  });
+  const { wishlistItems, toggleWishlistItem, resetWishlistItemsSessionData } =
+    useWishlistApi({
+      toggleLoginRequiredModal,
+    });
+
+  const resetWislistAndCartItemsSessionData = useCallback(() => {
+    resetCartItemsSessionData();
+    resetWishlistItemsSessionData();
+  }, [resetCartItemsSessionData, resetWishlistItemsSessionData]);
 
   return (
     <AppContext.Provider
@@ -87,6 +95,7 @@ function AppProvider({ children }: Readonly<AppProviderProps>) {
         addToCart,
         increaseCartItemQuantity,
         decreaseCartItemQuantity,
+        resetWislistAndCartItemsSessionData,
         deleteCartItem,
         toggleWishlistItem,
       }}

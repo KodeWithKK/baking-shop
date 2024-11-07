@@ -5,6 +5,7 @@ import Link from "next/link";
 import { logout } from "@/actions/logout";
 import { getSession } from "next-auth/react";
 
+import { useAppContext } from "@/context/app-provider";
 import { ExitIcon, HeartOutlineIcon } from "@/lib/icons/global";
 import { cn } from "@/lib/utils";
 
@@ -13,9 +14,12 @@ interface UserOptionsProps {
 }
 
 function UserOptions({ handleClose }: Readonly<UserOptionsProps>) {
+  const { resetWislistAndCartItemsSessionData } = useAppContext();
+
   const handleLogout = () => {
     logout().then(async () => {
       await getSession();
+      resetWislistAndCartItemsSessionData();
       handleClose();
     });
   };

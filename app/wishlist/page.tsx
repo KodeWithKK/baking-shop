@@ -32,7 +32,7 @@ export default function WishlistPage() {
           Wishlist Items
         </h2>
 
-        <div className="max-md:mb-2 max-md:flex max-md:flex-col max-md:gap-1">
+        <div className="z-[10] max-md:mb-2 max-md:flex max-md:flex-col max-md:gap-1">
           <span className="text-[15px] max-md:text-sm max-md:font-medium">
             Sort by:{" "}
           </span>

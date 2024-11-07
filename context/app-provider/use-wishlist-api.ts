@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 import { Cake } from "@prisma/client";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -93,9 +93,14 @@ function useWishlistApi({ toggleLoginRequiredModal }: UseWishlistApiPrams) {
     },
   });
 
+  const resetWishlistItemsSessionData = useCallback(() => {
+    setWishlistItems([]);
+  }, []);
+
   return {
     wishlistItems,
     toggleWishlistItem: handleToggleWishlistItem,
+    resetWishlistItemsSessionData,
   };
 }
 
