@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import Input from "@/components/base/input";
+import { FullPageLoader } from "@/components/base/loaders";
 import useSearchQuery from "@/hooks/use-search-query";
 import { CloseIcon, LeftArrowIcon, SearchIcon } from "@/lib/icons/global";
 import { findDiscountedPrice } from "@/lib/pricing";
@@ -56,6 +57,7 @@ function SearchPage() {
         </div>
       </div>
       <div className="py-4">
+        {isLoading && <FullPageLoader />}
         {searchTerm && data && (
           <div className="">
             {data.map((cake) => (

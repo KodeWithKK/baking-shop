@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { InlineLoader } from "@/components/base/loaders";
 import useSearchQuery from "@/hooks/use-search-query";
 import { CloseIcon, SearchIcon } from "@/lib/icons/global";
 import { findDiscountedPrice } from "@/lib/pricing";
@@ -53,9 +54,15 @@ function SearchBar() {
           </button>
         )}
 
-        {searchTerm && data && showSearchResults && (
+        {searchTerm && showSearchResults && (
           <div className="absolute mt-1 max-h-[280px] w-full overflow-y-auto rounded-lg border border-gray-600 bg-white text-sm text-gray-950 max-lg:hidden">
-            {data.map((cake) => (
+            {isLoading && (
+              <div className="grid h-[280px] scale-90 place-items-center">
+                <InlineLoader />
+              </div>
+            )}
+
+            {data?.map((cake) => (
               <Link
                 key={cake.id}
                 href={`/${cake.category.toLowerCase().replace("_", "-")}/${cake.id}`}

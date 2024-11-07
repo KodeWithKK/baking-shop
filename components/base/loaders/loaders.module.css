@@ -1,0 +1,11 @@
+.fullpageLoaderWrapperHeight {
+  height: calc(100dvh - 71px);
+  height: calc(100vh - 71px);
+}
+
+@media (max-width: 480px) {
+  .fullpageLoaderWrapperHeight {
+    height: calc(100dvh - 69px);
+    height: calc(100vh - 69px);
+  }
+}

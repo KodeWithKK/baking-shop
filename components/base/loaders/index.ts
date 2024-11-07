@@ -1,3 +1,4 @@
 import FullPageLoader from "./fullpage-loader";
+import InlineLoader from "./inline-loader";
 
-export { FullPageLoader };
+export { InlineLoader, FullPageLoader };
