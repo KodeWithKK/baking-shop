@@ -62,7 +62,7 @@ function SearchPage() {
               <Link
                 key={cake.id}
                 href={`/${cake.category.toLowerCase().replace("_", "-")}/${cake.id}`}
-                className="flex gap-1 px-4 py-1.5 hover:bg-brand-100"
+                className="flex gap-1 px-4 py-1.5 hover:bg-brand-600/[.15]"
               >
                 <img
                   src={`${cake.imgSrc}?tr=w-50,h-50,q-90`}
@@ -70,17 +70,17 @@ function SearchPage() {
                   alt=""
                 />
                 <div className="w-full overflow-hidden">
-                  <p className="truncate">{cake.name}</p>
+                  <p className="truncate text-sm md:text-base">{cake.name}</p>
                   <p className="mt-1.5 space-x-2">
-                    <span>
+                    <span className="text-[13px] md:text-base">
                       ₹{" "}
                       {cake.discountedPrice ??
                         findDiscountedPrice(cake.listPrice)}
                     </span>
-                    <span className="text-gray-800 line-through">
+                    <span className="text-[13px] text-gray-800 line-through md:text-base">
                       ₹ {cake.listPrice}
                     </span>
-                    <span className="rounded bg-[#1c9550]/10 px-1 py-0.5 text-[13px] text-[#1c9550]">
+                    <span className="rounded bg-[#1c9550]/10 px-1 py-0.5 text-[11px] text-[#1c9550] md:text-[13px]">
                       {cake.rating} ★
                     </span>
                   </p>
