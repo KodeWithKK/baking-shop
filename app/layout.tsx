@@ -21,6 +21,7 @@ const font = Poppins({
 export const metadata: Metadata = {
   title: "Bakings Shop",
   description: "A NextJs Project by @KodeWithKK",
+  icons: "icon.png",
 };
 
 export default async function RootLayout({
@@ -32,9 +33,6 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <head>
-        <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
-      </head>
       <body className={font.className} suppressHydrationWarning>
         <SessionProvider session={session}>
           <TanstackProvider>

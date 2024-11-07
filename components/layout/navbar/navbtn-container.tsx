@@ -35,7 +35,7 @@ function NavBtnContainer() {
   }, [cartItems]);
 
   return (
-    <div className="relative flex items-center gap-2.5 text-[15px] font-medium text-brand-600 lg:gap-4">
+    <div className="relative flex h-[49px] items-center gap-2.5 text-[15px] font-medium text-brand-600 lg:gap-4">
       {/* Search Bar */}
       <SearchBar />
 

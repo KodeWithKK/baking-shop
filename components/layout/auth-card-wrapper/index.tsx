@@ -27,7 +27,7 @@ function AuthCardWrapper({
   children,
 }: Readonly<AuthCardWrapperProps>) {
   return (
-    <div className="p w-[398px] rounded-md bg-white p-[20px] text-[15px] shadow max-sm:w-full">
+    <div className="p h-fit w-[398px] rounded-md bg-white p-[20px] text-[15px] shadow max-sm:w-full">
       <div className="mb-[20px] text-center">
         <h2 className="mb-1 text-[28px]">{title}</h2>
         <p className="text-pretty text-[15px] text-gray-800">{description}</p>

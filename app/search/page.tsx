@@ -70,17 +70,17 @@ function SearchPage() {
                   alt=""
                 />
                 <div className="w-full overflow-hidden">
-                  <p className="truncate text-sm md:text-base">{cake.name}</p>
+                  <p className="truncate text-sm sm:text-base">{cake.name}</p>
                   <p className="mt-1.5 space-x-2">
-                    <span className="text-[13px] md:text-base">
+                    <span className="text-[13px] sm:text-base">
                       ₹{" "}
                       {cake.discountedPrice ??
                         findDiscountedPrice(cake.listPrice)}
                     </span>
-                    <span className="text-[13px] text-gray-800 line-through md:text-base">
+                    <span className="text-[13px] text-gray-800 line-through sm:text-base">
                       ₹ {cake.listPrice}
                     </span>
-                    <span className="rounded bg-[#1c9550]/10 px-1 py-0.5 text-[11px] text-[#1c9550] md:text-[13px]">
+                    <span className="rounded bg-[#1c9550]/10 px-1 py-0.5 text-[11px] text-[#1c9550] sm:text-[13px]">
                       {cake.rating} ★
                     </span>
                   </p>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { login } from "@/actions/login";
 import { LoginSchema } from "@/schemas";
@@ -10,11 +10,14 @@ import { getSession } from "next-auth/react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
 
+import { useAppContext } from "@/context/app-provider";
 import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
 
 type Inputs = z.infer<typeof LoginSchema>;
 
 function useLoginPageHooks() {
+  const { closeLoginRequiredModal } = useAppContext();
+  const pathname = usePathname();
   const router = useRouter();
 
   const [showTwoFactor, setShowTwoFactor] = useState(false);
@@ -55,7 +58,10 @@ function useLoginPageHooks() {
 
           if (data?.isAuthenticated) {
             await getSession();
-            router.replace(callbackUrl || DEFAULT_LOGIN_REDIRECT);
+            closeLoginRequiredModal();
+            if (pathname.startsWith("/auth")) {
+              router.replace(callbackUrl || DEFAULT_LOGIN_REDIRECT);
+            }
           }
           if (data?.twoFactor) {
             setShowTwoFactor(true);
