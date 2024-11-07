@@ -62,7 +62,7 @@ function ProductCard({ data, className }: Readonly<Props>) {
         </p>
 
         <p className="">
-          <span className="text-[15px] font-medium">
+          <span className="text-sm font-medium md:text-[15px]">
             ₹{" "}
             {formatPrice(
               data.discountedPrice ?? findDiscountedPrice(data.listPrice),
@@ -71,13 +71,13 @@ function ProductCard({ data, className }: Readonly<Props>) {
           <span className="mx-1.5 text-[13px] line-through">
             ₹ {formatPrice(data.listPrice)}
           </span>
-          <span className="text-[13px] font-medium text-[#1c9550]">
+          <span className="text-xs font-medium text-[#1c9550] md:text-[13px]">
             ({findDiscount(data.listPrice, data.discountedPrice)}% OFF)
           </span>
         </p>
 
         <p className="">
-          <span className="rounded bg-[#1c9550]/10 px-1 py-0.5 text-[13px] font-medium text-[#1c9550]">
+          <span className="rounded bg-[#1c9550]/10 px-1 py-0.5 text-[11px] font-medium text-[#1c9550] md:text-[13px]">
             {data.rating || "NEW"} ★
           </span>
           {data.rating > 0 && data.totalReviews > 0 && (

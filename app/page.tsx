@@ -67,7 +67,7 @@ function CategoryDisplay({
         <h2 className="text-[26px] leading-none max-sm:text-[24px]">{name}</h2>
         <Link
           className="font-medium text-brand-600 max-sm:text-sm"
-          href={getCakeCategoryURL(cakesData[0].category)}
+          href={getCakeCategoryURL(cakesData?.[0]?.category)}
         >
           See All Cakes ➝
         </Link>
@@ -78,7 +78,7 @@ function CategoryDisplay({
           <ProductCard
             key={cakeData.id}
             data={cakeData}
-            className="w-[228px] flex-shrink-0"
+            className="w-[188px] flex-shrink-0 md:w-[198px] lg:w-[228px]"
           />
         ))}
       </ProductsDeck>
