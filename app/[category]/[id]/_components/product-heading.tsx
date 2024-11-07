@@ -16,7 +16,7 @@ function ProductHeading({ cakeData }: Readonly<{ cakeData: Cake }>) {
   }, [wishlistItems, cakeData.id]);
 
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between gap-1.5">
       <div>
         <h3 className="font-semibold">{cakeData.name}</h3>
         <p className="mt-1">
@@ -29,7 +29,7 @@ function ProductHeading({ cakeData }: Readonly<{ cakeData: Cake }>) {
       </div>
       <button
         className={cn(
-          "grid h-10 w-10 place-items-center rounded-full bg-gray-600",
+          "grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gray-600",
           isAlreadyInWishlist && "bg-brand-600/20",
         )}
         onClick={() => toggleWishlistItem(cakeData.id)}

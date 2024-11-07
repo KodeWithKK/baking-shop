@@ -27,13 +27,13 @@ function ProductsDeck({
     <div className="relative">
       <button
         className={cn(
-          "bg-bg-white group absolute -left-[20px] top-[50%] z-[10] grid h-12 w-12 translate-y-[-50%] place-items-center rounded-full bg-gray-975 shadow-md disabled:cursor-not-allowed",
+          "bg-bg-white group absolute -left-[20px] top-[50%] z-[10] grid h-12 w-12 translate-y-[-50%] place-items-center rounded-full bg-gray-975 shadow-md disabled:cursor-not-allowed disabled:bg-gray-800",
           isTouchDevice && "hidden",
         )}
         disabled={!hasCardsInLeft}
         onClick={handleLeftButton}
       >
-        <RightArrowIcon className="h-10 w-10 rotate-180 text-gray-200 group-disabled:text-gray-950" />
+        <RightArrowIcon className="h-10 w-10 rotate-180 text-gray-200 group-disabled:text-gray-600" />
       </button>
 
       <div
@@ -53,13 +53,13 @@ function ProductsDeck({
 
       <button
         className={cn(
-          "group absolute -right-[20px] top-[50%] z-[10] grid h-12 w-12 translate-y-[-50%] place-items-center rounded-full bg-gray-975 shadow-md disabled:cursor-not-allowed",
+          "group absolute -right-[20px] top-[50%] z-[10] grid h-12 w-12 translate-y-[-50%] place-items-center rounded-full bg-gray-975 shadow-md disabled:cursor-not-allowed disabled:bg-gray-800",
           isTouchDevice && "hidden",
         )}
         disabled={!hasCardsInRight}
         onClick={handleRightButton}
       >
-        <RightArrowIcon className="h-10 w-10 text-gray-200 group-disabled:text-gray-900" />
+        <RightArrowIcon className="h-10 w-10 text-gray-200 group-disabled:text-gray-600" />
       </button>
     </div>
   );

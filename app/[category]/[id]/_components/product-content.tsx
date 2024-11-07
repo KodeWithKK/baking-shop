@@ -50,7 +50,7 @@ function ProductContent({ cakeData }: Readonly<{ cakeData: Cake }>) {
       <img
         src="https://media.bakingo.com/bakingo-ssr/static/media/Info-1.aa9d95cd.png"
         alt="banner"
-        className="my-6 h-[135px] w-[400px] rounded-lg bg-gray-600"
+        className="my-6 w-[400px] rounded-lg bg-gray-600"
       />
 
       <div>
