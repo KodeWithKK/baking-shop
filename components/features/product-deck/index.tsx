@@ -25,16 +25,18 @@ function ProductsDeck({
 
   return (
     <div className="relative">
-      <button
-        className={cn(
-          "bg-bg-white group absolute -left-[20px] top-[50%] z-[10] grid h-12 w-12 translate-y-[-50%] place-items-center rounded-full bg-gray-975 shadow-md disabled:cursor-not-allowed disabled:bg-gray-800",
-          isTouchDevice && "hidden",
-        )}
-        disabled={!hasCardsInLeft}
-        onClick={handleLeftButton}
-      >
-        <RightArrowIcon className="h-10 w-10 rotate-180 text-gray-200 group-disabled:text-gray-600" />
-      </button>
+      <div className="h-15 w-15 group absolute -left-[35px] top-[50%] z-[10] flex translate-y-[-60%] items-center justify-center rounded-full bg-[#f7f7f7] p-2">
+        <button
+          className={cn(
+            "bg-bg-white h-12 w-12 rounded-full bg-gray-975 shadow-md disabled:cursor-not-allowed disabled:bg-gray-800",
+            isTouchDevice && "hidden",
+          )}
+          disabled={!hasCardsInLeft}
+          onClick={handleLeftButton}
+        >
+          <RightArrowIcon className="h-12 w-12 rotate-180 text-gray-200 group-disabled:text-gray-600" />
+        </button>
+      </div>
 
       <div
         className={cn(
@@ -51,16 +53,18 @@ function ProductsDeck({
         </div>
       </div>
 
-      <button
-        className={cn(
-          "group absolute -right-[20px] top-[50%] z-[10] grid h-12 w-12 translate-y-[-50%] place-items-center rounded-full bg-gray-975 shadow-md disabled:cursor-not-allowed disabled:bg-gray-800",
-          isTouchDevice && "hidden",
-        )}
-        disabled={!hasCardsInRight}
-        onClick={handleRightButton}
-      >
-        <RightArrowIcon className="h-10 w-10 text-gray-200 group-disabled:text-gray-600" />
-      </button>
+      <div className="h-15 w-15 group absolute -right-[35px] top-[50%] z-[10] flex translate-y-[-60%] items-center justify-center rounded-full bg-[#f7f7f7] p-2">
+        <button
+          className={cn(
+            "bg-bg-white h-12 w-12 rounded-full bg-gray-975 shadow-md disabled:cursor-not-allowed disabled:bg-gray-800",
+            isTouchDevice && "hidden",
+          )}
+          disabled={!hasCardsInRight}
+          onClick={handleRightButton}
+        >
+          <RightArrowIcon className="h-12 w-12 text-gray-200 group-disabled:text-gray-600" />
+        </button>
+      </div>
     </div>
   );
 }
