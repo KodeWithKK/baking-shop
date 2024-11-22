@@ -1,12 +1,10 @@
 import { Cake } from "@prisma/client";
 
-import { Review } from "@/types/global";
-
 import WrappedText from "@/components/features/wrapped-text";
-import { findDiscount, findDiscountedPrice, formatPrice } from "@/lib/pricing";
 
 import ProductForm from "./product-form";
 import ProductHeading from "./product-heading";
+import ProductReviews from "./product-review";
 import { dummyReviews } from "./utils";
 
 function ProductContent({ cakeData }: Readonly<{ cakeData: Cake }>) {
@@ -16,25 +14,7 @@ function ProductContent({ cakeData }: Readonly<{ cakeData: Cake }>) {
 
       <hr className="mt-[10px] border-gray-400" />
 
-      <div className="my-6">
-        <span className="mr-3 text-[18px] font-semibold">
-          ₹{" "}
-          {formatPrice(
-            cakeData.discountedPrice ?? findDiscountedPrice(cakeData.listPrice),
-          )}
-        </span>
-        <span className="text-gray-800 line-through">
-          ₹ {formatPrice(cakeData.listPrice)}
-        </span>
-        <span className="ml-3 mr-2 font-medium text-[#1C9550]">
-          ({findDiscount(cakeData.listPrice, cakeData.discountedPrice)}% OFF){" "}
-        </span>
-        <span className="rounded-md bg-gray-300 px-[10px] py-1 text-[11px] font-semibold">
-          (Inclusive of GST)
-        </span>
-      </div>
-
-      <ProductForm category={cakeData.category} />
+      <ProductForm cakeData={cakeData} />
 
       <hr className="border-gray-400" />
 
@@ -66,31 +46,6 @@ function ProductContent({ cakeData }: Readonly<{ cakeData: Cake }>) {
         <ProductReviews reviews={dummyReviews} />
       </div>
     </section>
-  );
-}
-
-function ProductReviews({ reviews }: Readonly<{ reviews: Review[] }>) {
-  return (
-    <div>
-      {reviews.map((review) => (
-        <div
-          key={review.id}
-          className="border-b border-gray-400 py-2.5 first:border-t"
-        >
-          <p>
-            <span className="text-[15px] font-bold">{review.name}</span>
-            <span className="ml-2 rounded bg-[#1C9550]/10 px-1 py-0.5 text-[13px] font-medium text-[#1C9550]">
-              {review.rating} ★
-            </span>
-          </p>
-          <p className="text-[12px] text-gray-700">
-            <span>Posted on {review.postedOn} • </span>
-            <span>{review.location}</span>
-          </p>
-          <p className="text-[15px]">{review.message}</p>
-        </div>
-      ))}
-    </div>
   );
 }
 

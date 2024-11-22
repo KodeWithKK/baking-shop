@@ -1,19 +1,22 @@
 import { CakeCategory } from "@prisma/client";
 
-export function findDiscountedPrice(listPrice: number): number {
-  const price = Math.trunc(listPrice * 0.89);
-  const remaining = 9 - (price % 10);
-  return price + remaining;
+export function findDynamicPrice(
+  price: number,
+  weight: number | null,
+  quantity: number,
+) {
+  if (weight) {
+    return price * (weight * 2) * quantity;
+  } else {
+    return price * quantity;
+  }
 }
 
 export function findDiscount(
   listPrice: number,
-  discountedPrice: number | null,
+  discountedPrice: number,
 ): number {
-  const newDiscountedPrice = discountedPrice ?? findDiscountedPrice(listPrice);
-  return Math.trunc(
-    ((listPrice - newDiscountedPrice) / newDiscountedPrice) * 100,
-  );
+  return Math.trunc(((listPrice - discountedPrice) / discountedPrice) * 100);
 }
 
 export function getCakeCategoryURL(category: CakeCategory) {

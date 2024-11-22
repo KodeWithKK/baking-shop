@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { InlineLoader } from "@/components/base/loaders";
 import useSearchQuery from "@/hooks/use-search-query";
 import { CloseIcon, SearchIcon } from "@/lib/icons/global";
-import { findDiscountedPrice } from "@/lib/pricing";
+import { formatPrice } from "@/lib/pricing";
 
 import NavButton from "./nav-btn";
 
@@ -81,9 +81,7 @@ function SearchBar() {
                   <p className="truncate">{cake.name}</p>
                   <p className="mt-1.5 space-x-2">
                     <span>
-                      ₹{" "}
-                      {cake.discountedPrice ??
-                        findDiscountedPrice(cake.listPrice)}
+                      ₹ {formatPrice(cake.discountedPrice ?? cake.listPrice)}
                     </span>
                     <span className="text-gray-800 line-through">
                       ₹ {cake.listPrice}

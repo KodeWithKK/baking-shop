@@ -15,12 +15,14 @@ function BillDetails({
           <p className="text-[15px]">Items total</p>
         </div>
         <div>
-          <span className="mr-2 text-sm font-medium">
+          <span className="text-sm font-medium">
             ₹ {formatPrice(totalDiscountedPrice)}
           </span>
-          <span className="text-sm text-gray-800 line-through">
-            ₹ {formatPrice(totalListPrice)}
-          </span>
+          {totalDiscountedPrice !== totalListPrice && (
+            <span className="ml-2 text-sm text-gray-800 line-through">
+              ₹ {formatPrice(totalListPrice)}
+            </span>
+          )}
         </div>
       </div>
 

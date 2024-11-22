@@ -2,12 +2,12 @@ import { type SessionCartItemCake } from "@/types/next-auth";
 
 import { useAppContext } from "@/context/app-provider";
 import { DeleteIcon, MessageIcon } from "@/lib/icons/global";
-import { findDiscountedPrice, formatPrice } from "@/lib/pricing";
+import { findDynamicPrice, formatPrice } from "@/lib/pricing";
 
 interface CartItemProps {
   itemId: string;
   quantity: number;
-  cakeWeight?: number;
+  cakeWeight: number | null;
   cakeMessage: string;
   cakeData: SessionCartItemCake;
 }
@@ -40,8 +40,11 @@ function CartItem({
             <span className="">
               ₹{" "}
               {formatPrice(
-                (cakeData.discountedPrice ??
-                  findDiscountedPrice(cakeData.listPrice)) * quantity,
+                findDynamicPrice(
+                  cakeData.discountedPrice ?? cakeData.listPrice,
+                  cakeWeight,
+                  quantity,
+                ),
               )}
             </span>
             <span className="space-x-1.5">

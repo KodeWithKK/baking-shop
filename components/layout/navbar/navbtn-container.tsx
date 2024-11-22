@@ -8,7 +8,7 @@ import Button from "@/components/base/button";
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { useAppContext } from "@/context/app-provider";
 import { CartOutlineIcon, UserCircledIcon } from "@/lib/icons/global";
-import { findDiscountedPrice, formatPrice } from "@/lib/pricing";
+import { formatPrice } from "@/lib/pricing";
 
 import NavButton from "./nav-btn";
 import SearchBar from "./search-bar";
@@ -27,9 +27,7 @@ function NavBtnContainer() {
 
   const totalCartValue = useMemo(() => {
     return cartItems.reduce((acc, item) => {
-      const discountedPrice =
-        item.cake.discountedPrice ?? findDiscountedPrice(item.cake.listPrice);
-
+      const discountedPrice = item.cake.discountedPrice ?? item.cake.listPrice;
       return acc + discountedPrice;
     }, 0);
   }, [cartItems]);

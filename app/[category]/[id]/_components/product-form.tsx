@@ -1,14 +1,15 @@
 "use client";
 
-import { CakeCategory } from "@prisma/client";
+import { Cake, CakeCategory } from "@prisma/client";
 
 import Input from "@/components/base/input";
+import { findDiscount, findDynamicPrice, formatPrice } from "@/lib/pricing";
 import { cn } from "@/lib/utils";
 
 import { useProductPageContext } from "./product-page-provider";
 import { cakeQuantities, cakeWeights } from "./utils";
 
-function ProductForm({ category }: Readonly<{ category: CakeCategory }>) {
+function ProductForm({ cakeData }: Readonly<{ cakeData: Cake }>) {
   const {
     selectedQuantity,
     selectedWeight,
@@ -20,12 +21,58 @@ function ProductForm({ category }: Readonly<{ category: CakeCategory }>) {
 
   return (
     <>
+      <div className="my-6">
+        <span className="mr-3 text-[18px] font-semibold">
+          ₹{" "}
+          {formatPrice(
+            findDynamicPrice(
+              cakeData.discountedPrice ?? cakeData.listPrice,
+              selectedWeight,
+              selectedQuantity,
+            ),
+          )}
+        </span>
+        {cakeData.discountedPrice && (
+          <span className="text-gray-800 line-through">
+            ₹{" "}
+            {formatPrice(
+              findDynamicPrice(
+                cakeData.listPrice,
+                selectedWeight,
+                selectedQuantity,
+              ),
+            )}
+          </span>
+        )}
+        {cakeData.discountedPrice && (
+          <span className="ml-3 mr-2 font-medium text-[#1C9550]">
+            (
+            {findDiscount(
+              findDynamicPrice(
+                cakeData.listPrice,
+                selectedWeight,
+                selectedQuantity,
+              ),
+              findDynamicPrice(
+                cakeData.discountedPrice ?? cakeData.listPrice,
+                selectedWeight,
+                selectedQuantity,
+              ),
+            )}
+            % OFF){" "}
+          </span>
+        )}
+        <span className="rounded-md bg-gray-300 px-[10px] py-1 text-[11px] font-semibold">
+          (Inclusive of GST)
+        </span>
+      </div>
       <div className="mb-6">
         <p className="text-[15px] font-medium">
-          Select {category === CakeCategory.PASTRIES ? "Quantity" : "Weights"}
+          Select{" "}
+          {cakeData.category === CakeCategory.PASTRIES ? "Quantity" : "Weights"}
         </p>
         <div className="mt-[10px] flex gap-3">
-          {category === "PASTRIES" &&
+          {cakeData.category === "PASTRIES" &&
             cakeQuantities.map(({ id, value }) => (
               <button
                 key={id}
@@ -39,7 +86,7 @@ function ProductForm({ category }: Readonly<{ category: CakeCategory }>) {
               </button>
             ))}
 
-          {category !== "PASTRIES" &&
+          {cakeData.category !== "PASTRIES" &&
             cakeWeights.map(({ id, value }) => (
               <button
                 key={id}

@@ -6,7 +6,6 @@ import { RemoveScroll } from "react-remove-scroll";
 
 import { useAppContext } from "@/context/app-provider";
 import { CloseIcon } from "@/lib/icons/global";
-import { findDiscountedPrice } from "@/lib/pricing";
 
 import BillDetails from "./bill-details";
 import CartFooter from "./cart-footer";
@@ -17,8 +16,7 @@ function CartModal() {
 
   const totalDiscountedPrice = useMemo(() => {
     return cartItems.reduce((acc, item) => {
-      const discountedPrice =
-        item.cake.discountedPrice ?? findDiscountedPrice(item.cake.listPrice);
+      const discountedPrice = item.cake.discountedPrice ?? item.cake.listPrice;
       return acc + discountedPrice * item.quantity;
     }, 0);
   }, [cartItems]);

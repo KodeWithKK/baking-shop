@@ -25,12 +25,14 @@ function ProductsDeck({
 
   return (
     <div className="relative">
-      <div className="h-15 w-15 group absolute -left-[35px] top-[50%] z-[10] flex translate-y-[-60%] items-center justify-center rounded-full bg-[#f7f7f7] p-2">
+      <div
+        className={cn(
+          "h-15 w-15 group absolute -left-[35px] top-[50%] z-[10] flex translate-y-[-60%] items-center justify-center rounded-full bg-[#f7f7f7] p-2",
+          isTouchDevice && "hidden",
+        )}
+      >
         <button
-          className={cn(
-            "bg-bg-white h-12 w-12 rounded-full bg-gray-975 shadow-md disabled:cursor-not-allowed disabled:bg-gray-800",
-            isTouchDevice && "hidden",
-          )}
+          className="bg-bg-white h-12 w-12 rounded-full bg-gray-975 shadow-md disabled:cursor-not-allowed disabled:bg-gray-800"
           disabled={!hasCardsInLeft}
           onClick={handleLeftButton}
         >
@@ -53,12 +55,14 @@ function ProductsDeck({
         </div>
       </div>
 
-      <div className="h-15 w-15 group absolute -right-[35px] top-[50%] z-[10] flex translate-y-[-60%] items-center justify-center rounded-full bg-[#f7f7f7] p-2">
+      <div
+        className={cn(
+          "h-15 w-15 group absolute -right-[35px] top-[50%] z-[10] flex translate-y-[-60%] items-center justify-center rounded-full bg-[#f7f7f7] p-2",
+          isTouchDevice && "hidden",
+        )}
+      >
         <button
-          className={cn(
-            "bg-bg-white h-12 w-12 rounded-full bg-gray-975 shadow-md disabled:cursor-not-allowed disabled:bg-gray-800",
-            isTouchDevice && "hidden",
-          )}
+          className="bg-bg-white h-12 w-12 rounded-full bg-gray-975 shadow-md disabled:cursor-not-allowed disabled:bg-gray-800"
           disabled={!hasCardsInRight}
           onClick={handleRightButton}
         >

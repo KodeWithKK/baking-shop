@@ -13,7 +13,7 @@ export interface SessionCartItemCake {
 
 export interface SessionCartItem {
   id: string;
-  cakeWeight?: number;
+  cakeWeight: number | null;
   quantity: number;
   cakeMessage: string;
   cake: SessionCartItemCake;

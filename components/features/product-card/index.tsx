@@ -7,20 +7,17 @@ import { Cake } from "@prisma/client";
 
 import { useAppContext } from "@/context/app-provider";
 import { HeartSolidIcon } from "@/lib/icons/global";
-import {
-  findDiscount,
-  findDiscountedPrice,
-  formatPrice,
-  getCakeCategoryURL,
-} from "@/lib/pricing";
+import { findDiscount, formatPrice, getCakeCategoryURL } from "@/lib/pricing";
 import { cn } from "@/lib/utils";
 
-type Props = {
+import { formatReviews } from "./utils";
+
+interface ProductCardProps {
   data: Cake;
   className?: string;
-};
+}
 
-function ProductCard({ data, className }: Readonly<Props>) {
+function ProductCard({ data, className }: Readonly<ProductCardProps>) {
   const { wishlistItems, toggleWishlistItem } = useAppContext();
 
   const isAlreadyInWishlist = useMemo(() => {
@@ -56,33 +53,35 @@ function ProductCard({ data, className }: Readonly<Props>) {
         </button>
       </div>
 
-      <div className="space-y-px p-2 pt-0">
-        <p className="overflow-hidden text-ellipsis text-nowrap text-[15px] font-medium">
+      <div className="px-2 py-1.5 md:py-1">
+        <p className="overflow-hidden text-ellipsis text-nowrap text-sm font-medium md:text-[15px]">
           {data.name}
         </p>
 
-        <p className="">
-          <span className="text-sm font-medium md:text-[15px]">
-            ₹{" "}
-            {formatPrice(
-              data.discountedPrice ?? findDiscountedPrice(data.listPrice),
-            )}
+        <p className="md:mt-0.5">
+          <span className="text-sm font-semibold md:text-[15px]">
+            ₹ {formatPrice(data.discountedPrice ?? data.listPrice)}
           </span>
-          <span className="mx-1.5 text-[13px] line-through">
-            ₹ {formatPrice(data.listPrice)}
-          </span>
-          <span className="text-xs font-medium text-[#1c9550] md:text-[13px]">
-            ({findDiscount(data.listPrice, data.discountedPrice)}% OFF)
-          </span>
+          {data.discountedPrice && (
+            <span className="mx-1.5 text-[13px] line-through">
+              ₹ {formatPrice(data.listPrice)}
+            </span>
+          )}
+          {data.discountedPrice && (
+            <span className="text-xs font-medium text-[#1c9550] md:text-[13px]">
+              ({findDiscount(data.listPrice, data.discountedPrice)}% OFF)
+            </span>
+          )}
         </p>
 
-        <p className="">
+        <p className="mt-0.5">
           <span className="rounded bg-[#1c9550]/10 px-1 py-0.5 text-[11px] font-medium text-[#1c9550] md:text-[13px]">
             {data.rating || "NEW"} ★
           </span>
           {data.rating > 0 && data.totalReviews > 0 && (
             <span className="ml-1.5 text-[13px]">
-              {data.totalReviews} Review{data.totalReviews > 1 && "s"}
+              {formatReviews(data.totalReviews)} Review
+              {data.totalReviews > 1 && "s"}
             </span>
           )}
         </p>
