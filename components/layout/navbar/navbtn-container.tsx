@@ -15,11 +15,12 @@ import SearchBar from "./search-bar";
 import UserOptions from "./user-options";
 
 function NavBtnContainer() {
-  const [showOptions, setShowOptions] = useState<boolean>(false);
-  const { cartItems, toggleCartModal } = useAppContext();
-
   const user = useCurrentUser();
   const pathname = usePathname();
+
+  const [showOptions, setShowOptions] = useState<boolean>(false);
+  const [isImageLoadFailed, setIsImageLoadFailed] = useState(false);
+  const { cartItems, toggleCartModal } = useAppContext();
 
   const handleCloseOptions = useCallback(() => {
     setShowOptions(false);
@@ -64,12 +65,15 @@ function NavBtnContainer() {
           className=""
           onClick={() => setShowOptions((prev) => !prev)}
         >
-          {!user.image && <UserCircledIcon className="h-[36px]" />}
+          {!user.image ||
+            (isImageLoadFailed && <UserCircledIcon className="h-[36px]" />)}
           {user.image && (
             <img
               src={user.image}
               className="h-[36px] rounded-full text-[15px] text-gray-900"
               alt="user"
+              referrerPolicy="no-referrer"
+              onError={() => setIsImageLoadFailed(true)}
             />
           )}
         </button>
