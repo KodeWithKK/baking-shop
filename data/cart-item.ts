@@ -6,7 +6,7 @@ import { db } from "@/lib/db";
 export const addToCart = async (
   cakeId: string,
   quantity: number,
-  cakeWeight: number | undefined,
+  cakeWeight: number | null,
   cakeMessage: string | undefined,
 ) => {
   const user = await getCurrentUser();

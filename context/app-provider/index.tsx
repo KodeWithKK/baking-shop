@@ -20,7 +20,7 @@ interface IAppContext {
   addToCart: (
     cakeId: string,
     cakeQuantity: number,
-    cakeWeight: number | undefined,
+    cakeWeight: number | null,
     cakeMessage: string,
     cakeData: Cake,
   ) => Promise<void>;
@@ -49,11 +49,6 @@ interface AppProviderProps {
 
 function AppProvider({ children }: Readonly<AppProviderProps>) {
   const [showLoginRequiredModal, setShowLoginRequiredModal] = useState(false);
-  const [showCartModal, setShowCartModal] = useState(false);
-
-  const toggleCartModal = useCallback(() => {
-    setShowCartModal((prev) => !prev);
-  }, []);
 
   const toggleLoginRequiredModal = useCallback(() => {
     setShowLoginRequiredModal((prev) => !prev);
@@ -64,6 +59,8 @@ function AppProvider({ children }: Readonly<AppProviderProps>) {
   }, []);
 
   const {
+    showCartModal,
+    toggleCartModal,
     cartItems,
     addToCart,
     increaseCartItemQuantity,

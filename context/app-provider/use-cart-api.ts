@@ -19,16 +19,25 @@ interface UseCartApiPrams {
 
 function useCartApi({ toggleLoginRequiredModal }: UseCartApiPrams) {
   const user = useCurrentUser();
+  const [showCartModal, setShowCartModal] = useState(false);
   const [cartItems, setCartItems] = useState<SessionCartItem[]>(() => {
     if (user) return user.cartItems;
     else return [];
   });
 
+  const toggleCartModal = useCallback(() => {
+    // if (!user) {
+    //   toggleLoginRequiredModal();
+    //   return;
+    // }
+    setShowCartModal((prev) => !prev);
+  }, []);
+
   const handleAddToCart = useCallback(
     async (
       cakeId: string,
       cakeQuantity: number,
-      cakeWeight: number | undefined,
+      cakeWeight: number | null,
       cakeMessage: string,
       cakeData: Cake,
     ) => {
@@ -132,6 +141,8 @@ function useCartApi({ toggleLoginRequiredModal }: UseCartApiPrams) {
   }, []);
 
   return {
+    showCartModal,
+    toggleCartModal,
     cartItems,
     addToCart: handleAddToCart,
     increaseCartItemQuantity: handleIncreaseCartItemQuantity,

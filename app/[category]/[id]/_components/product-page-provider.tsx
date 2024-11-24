@@ -83,7 +83,7 @@ function ProductPageProvider({
       addToCart(
         productId,
         selectedQuantity,
-        cakeData.category !== "PASTRIES" ? selectedWeight : undefined,
+        cakeData.category !== "PASTRIES" ? selectedWeight : null,
         cakeMessage,
         cakeData,
       );
